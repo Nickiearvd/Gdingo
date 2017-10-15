@@ -107,10 +107,14 @@
 		/* Nav hamburger*/
 		#showmenu {
 			float: left;
-			width: 24px;
+			width: 60px;
+			height:60px;
 			padding: 13px 0;
 			background: url("Images/menu.png") no-repeat center center;
+			background-color: transparent;
 			z-index: 100;
+			margin-left:10px;
+			background-size:80%;
 		}
 
 		.nav {
