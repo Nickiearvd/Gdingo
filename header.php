@@ -122,6 +122,11 @@
 		}
 
 		@media (min-width: 600px) {
+
+			.logo{
+				margin:auto;
+			}
+
 			.nav{
 				display:block;
 			}
