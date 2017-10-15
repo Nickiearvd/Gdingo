@@ -144,22 +144,9 @@
 				background-size: 100%;
 			}
 
-			/* NAVIGATION */
-
-
-			nav ul{
-				list-style:none;
-				margin:0;
-				padding:0;
-			}
-
 			.nav li, .nav > ul > li > a {
-				font-family: "open sans",sans-serif;
-				font-weight: 300;
 				display:inline;
-				text-transform: uppercase;
-				padding: 5px;
-				padding-bottom:2px;
+
 			}
 		}
 
