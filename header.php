@@ -146,13 +146,6 @@
 
 			/* NAVIGATION */
 
-			.nav{
-				text-align: center;
-				background-color: black;
-				padding:10px;
-				z-index: 1;
-				overflow: hidden;
-			}
 
 			nav ul{
 				list-style:none;
