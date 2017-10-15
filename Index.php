@@ -10,19 +10,31 @@
 	<body>
 		<?php include 'header.php';?>
 
-		<h3> TOP 10 DRINKS </h3>
+		
 
 		<!-- https://www.w3schools.com/w3css/w3css_slideshow.asp 
 		The basic to the slideshow is taken from w3schools -->
-		<div id="slideshow">
-
-			<img class="mySlides" src="Images/raspberry-mojito.jpg">
-			<img class="mySlides" src="Images/cheescake-smoothie.jpg">
-			<img class="mySlides" src="Images/passion-mojito.jpg">
-				<button class="slidebtn1" onclick="plusDivs(-1)">&#10094;</button>
-				<button class="slidebtn2" onclick="plusDivs(+1)">&#10095;</button>
+		<div id="content">
+			<div id="slideshow">
+				<div class="mySlides">
+					<h3>TOP 10</h3>
+					<img class="slideimg" src="Images/raspberry-mojito.jpg">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare dignissim nisl a convallis. Fusce ac purus quis sapien mollis blandit vel id velit. Duis eget maximus purus. </p>
+				</div>
+				<div class="mySlides">
+				<h3>TOP 10</h3>
+				<img class="slideimg" src="Images/cheescake-smoothie.jpg">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare dignissim nisl a convallis. Fusce ac purus quis sapien mollis blandit vel id velit. Duis eget maximus purus.</p>
+				</div>
+				<div class="mySlides">
+				<h3>TOP 10</h3>
+				<img class="slideimg" src="Images/passion-mojito.jpg">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare dignissim nisl a convallis. Fusce ac purus quis sapien mollis blandit vel id velit. Duis eget maximus purus. </p>
+				</div>
+					<button class="slidebtn1" onclick="plusDivs(-1)">&#10094;</button>
+					<button class="slidebtn2" onclick="plusDivs(+1)">&#10095;</button>
+			</div>
 		</div>
-
 		<script>
 			var slideIndex = 1;
 			showDivs(slideIndex);
