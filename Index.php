@@ -19,16 +19,19 @@
 				<div class="mySlides">
 					<h3>TOP 10</h3>
 					<img class="slideimg" src="Images/raspberry-mojito.jpg">
+					<h5>Raspberry fruit Mojito</h5>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare dignissim nisl a convallis. Fusce ac purus quis sapien mollis blandit vel id velit. Duis eget maximus purus. </p>
 				</div>
 				<div class="mySlides">
 				<h3>TOP 10</h3>
 				<img class="slideimg" src="Images/cheescake-smoothie.jpg">
+				<h5>Cheescake smoothie drink</h5>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare dignissim nisl a convallis. Fusce ac purus quis sapien mollis blandit vel id velit. Duis eget maximus purus.</p>
 				</div>
 				<div class="mySlides">
 				<h3>TOP 10</h3>
 				<img class="slideimg" src="Images/passion-mojito.jpg">
+				<h5>Passion fruit Mojito</h5>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare dignissim nisl a convallis. Fusce ac purus quis sapien mollis blandit vel id velit. Duis eget maximus purus. </p>
 				</div>
 					<button class="slidebtn1" onclick="plusDivs(-1)">&#10094;</button>
