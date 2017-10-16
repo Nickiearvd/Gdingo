@@ -1,3 +1,5 @@
+<?php include 'config.php';?>
+
 <!Doctype html>
 <html>
 <?php include 'header.php';?>
@@ -6,7 +8,6 @@
 			<Meta name="description" content="my page"/>
 			<Meta charset="utf-8"/>
 			<link rel="stylesheet" href="mainfinddrinks.css" type="text/css" />
-			<?php include 'config.php';?>
 	</head>
 	<body>
 		<div class='container'>
@@ -20,7 +21,7 @@
 						<input class="button" type="submit" name="submit" value="Search">
 
 					</div>
-					<img src="Images/tri3-01.png" class="tri"> <!-- triangle -->
+					<img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
 					<div class='ingr'>
 						<h3>What do you have home</h3>
 					    <input type="text" class="ing" name="searching" placeholder="Search after one ingrediens "></br>
