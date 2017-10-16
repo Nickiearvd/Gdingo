@@ -1,3 +1,14 @@
+#test {
+	width:30%;
+	height: 50%;
+	border-left:10px solid  #12e696;
+	border-bottom: 10px solid  #12e696;
+	margin:auto;
+	position: absolute;
+	left:17%;
+	top:40%;
+}
+
 /* MAIN */
 
 #content {
@@ -40,6 +51,16 @@ body {
 	margin-bottom: 40px;
 }
 
+.tri2 {
+	width:100%;
+	background-size: 100%;
+	z-index: -1;
+	margin-bottom: -5px;
+
+}
+
+
+
 #about {
  width:70%;
  border: 5px solid #e72262;
@@ -50,8 +71,34 @@ body {
  line-height: 1.7;
  padding: 30px;
  box-sizing: border-box;
+
 }
 
+#gallery {
+	width:100%;
+	background-color: #fff;
+	overflow: hidden;
+	padding-bottom: 40px;
+
+}
+
+#gallerycol {
+	width:70%;
+	height: auto;
+	overflow: hidden;
+	margin:auto;
+	column-count: 1;
+	column-fill: auto;
+	border-left: 10px solid #000;
+	border-right: 10px solid #000;
+	padding-right: 30px;
+	padding-left: 30px;
+	margin-top: 20px;
+}
+
+.galleryimg {
+	width:100%;
+}
 
 /* TOP 10 */
 	#slideshow {
@@ -155,6 +202,7 @@ h2 {
 	margin-top: 150px;
 	margin:auto;
 	line-height: 35px;
+	padding-bottom: 10px;
 }
 
 .introp {
@@ -162,6 +210,14 @@ h2 {
 	margin:auto;
 	font-size: 11px;
 	z-index: 1000;
+}
+
+@media (max-width: 1150px) {
+
+#test {
+	display: none;
+}
+
 }
 
 /* MEDIA MIN 600PX */
@@ -177,6 +233,7 @@ h2 {
 		overflow: hidden;
 		margin:auto;
 		margin-bottom: 50px;
+		position: relative;
 	}
 
 	#slideshow {
@@ -191,10 +248,14 @@ h2 {
 	}
 
 	#about {
+		margin-top: 70px;
 		width:35%;
 		float: left;
 	}
 
+	#gallerycol {
+		column-count: 3;
+	}
 
 	h3 {
 		font-size: 24px;
@@ -207,7 +268,7 @@ h2 {
 	h2 { 
 		width:20%;
 		float: left;
-		font-size: 35px;
+		font-size: 38px;
 		text-align: right;
 		margin-top: 150px;
 		margin-right: 10px;
