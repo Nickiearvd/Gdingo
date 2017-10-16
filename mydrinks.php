@@ -24,6 +24,8 @@ Generated 5 paragraphs, 507 words, 3429 bytes of Lorem Ipsum
 help@lipsum.com
 		</div>
 		<style>
+			.container{
+				padding-top:100px;
 			}
 		</style>
 	</body>

@@ -61,6 +61,7 @@
 			position:fixed;
 			width:100%;
 			z-index:1000000000;
+
 		}
 		
 
@@ -75,6 +76,10 @@
 			margin: 0 auto;
 			text-align: center;
 			display:block;
+			 transition: all 0.5s ease-in-out;
+		  -moz-transition: all 0.5s ease-in-out;
+		  -webkit-transition: all 0.5s ease-in-out;
+		  -o-transition: all 0.5s ease-in-out;
 		}
 
 
@@ -140,6 +145,10 @@
 			z-index: 100;
 			margin-left:10px;
 			background-size:80%;
+			 transition: all 0.5s ease-in-out;
+		  -moz-transition: all 0.5s ease-in-out;
+		  -webkit-transition: all 0.5s ease-in-out;
+		  -o-transition: all 0.5s ease-in-out;
 		}
 
 		.nav {
