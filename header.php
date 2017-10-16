@@ -84,7 +84,7 @@
 
 
 
-		/* ACTIVE */
+		/* ACTIVE **/
 
 		.active {
 			border-bottom:solid 2px white;
