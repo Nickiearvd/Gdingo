@@ -13,15 +13,21 @@
 
 			<div class="containersearch">
 				<form action="finddrinks.php" method="POST">
+				<h3>Search after</br> a drinkname</h3>
 					<div class='namedrink'>
-						<h3>Search after a drinkname</h3>
-						<input type="text" id="name" name="searchname" placeholder="Search after a drink name">
+			
+						<input type="text" id="name" name="searchname" placeholder="Search after a drink name"></br>
 						<input class="button" type="submit" name="submit" value="Search">
-					</div>
-				    <input type="text" id="ing1" name="searching" placeholder="Search after one ingrediens ">
-				    <input type="text" id="ing2" name="searching" placeholder="Search after one ingrediens ">
 
-				    <input class="button" type="submit" name="submit" value="Search">
+					</div>
+					<img src="Images/tri3-01.png" class="tri"> <!-- triangle -->
+					<div class='ingr'>
+						<h3>What do you have home</h3>
+					    <input type="text" class="ing" name="searching" placeholder="Search after one ingrediens "></br>
+					    <input type="text" class="ing" name="searching" placeholder="Search after one ingrediens ">
+					     <input class="button" type="submit" name="submit" value="Search">
+				    </div>
+
 		  		</form>
 			</div>
 
