@@ -5,27 +5,40 @@
 		<meta charset="utf-8" />
 		<script type="text/javascript" src="jquery.min.js"></script>
 		<script>
-			$(document).ready( function() {
 
-			var icon = $("#showmenu");
-			var menu = $(".nav");
+			$(document).ready( function() { // Add a open class, enable to show or not the navigation 
+				var icon = $("#showmenu");
+				var menu = $(".nav");
 
-			icon.click( function(event) {
-				event.preventDefault();
-				menu.toggleClass("open");
+				icon.click( function(event) {
+					event.preventDefault();
+					menu.toggleClass("open");
+				} );
+
 			} );
-
-		} );
+			jQuery(document).ready(function($) { //https://catchthemes.com/support-forum/topic/sticky-header-and-menu-shrink-on-page-scroll/
+			    $(window).scroll(function () {
+			        if ($(window).scrollTop() > 100) { 
+			            $('header').addClass('shrink'); // Add each thing you want to make smaller when scrolling
+			            $('#showmenu').addClass('shrink');
+			            $('.logo').addClass('shrink');
+			        }
+			        else{
+			            $('header').removeClass('shrink');
+			            $('#showmenu').removeClass('shrink');
+			            $('.logo').removeClass('shrink');
+			        }
+			    });
+			});
 		</script>
 
 	</head>
 	<body>
-		<section id= "header">
+		<header id= "header">
 			<a href="#" id="showmenu"></a>
-			<img src="Images/logotype.png" class="logo" >
-			
-		</section>
-		<nav class="nav">
+			<a href="#" class='logo'></a>
+
+			<nav class="nav">
 			<ul>
 				<li><a class="<?php echo ($current_page == 'index.php' || $current_page == '') ? 'active' : NULL ?>" href="index.php"> Home</a></li>
 				<li><a class="<?php echo $current_page == 'aboutus.php' ? 'active' : NULL ?>" href="aboutus.php">Find drinks</a></li>
@@ -34,6 +47,8 @@
 				<li><a class="<?php echo $current_page == 'gallery.php' ? 'active' : NULL ?>" href="gallery.php">About us</a></li>
 			</ul>
 		</nav>
+			
+		</header>
 	</body>
 
 	<style>
@@ -41,18 +56,33 @@
 			margin:0;
 		}
 
+		header{
+			overflow: hidden;
+			position:fixed;
+			width:100%;
+			z-index:1000000000;
+
+		}
+		
+
 		/* LOGOTYPE */
 
-		.logo{
-			padding-top: 10px;
-			padding-bottom:10px;
-			width:20%;
-			max-width: 200px;
-			margin-left:40%;
-			margin-right:40%;
+		.logo {
+			float:right;
+			width: 100px;
+			height:100px;
+			background: url("Images/logotype.png") no-repeat center center;
+			background-size:80%;
+			margin: 0 auto;
+			text-align: center;
 			display:block;
-			z-index: 1;
+			 transition: all 0.5s ease-in-out;
+		  -moz-transition: all 0.5s ease-in-out;
+		  -webkit-transition: all 0.5s ease-in-out;
+		  -o-transition: all 0.5s ease-in-out;
 		}
+
+
 
 		/* ACTIVE */
 
@@ -115,6 +145,10 @@
 			z-index: 100;
 			margin-left:10px;
 			background-size:80%;
+			 transition: all 0.5s ease-in-out;
+		  -moz-transition: all 0.5s ease-in-out;
+		  -webkit-transition: all 0.5s ease-in-out;
+		  -o-transition: all 0.5s ease-in-out;
 		}
 
 		.nav {
@@ -124,6 +158,44 @@
 		.nav.open {
 			display: block;
 		}
+
+		/************** SHRINK **************/
+
+		header.shrink {
+		  position:fixed;
+		  clear:both;
+		  width:100%;
+		  transition: all 0.5s ease-in-out;
+		  -moz-transition: all 0.5s ease-in-out;
+		  -webkit-transition: all 0.5s ease-in-out;
+		  -o-transition: all 0.5s ease-in-out;
+		}
+		#showmenu.shrink {
+			width: 30px;
+			height:30px;
+			z-index: 10000444444400;
+		  transition: all 0.5s ease-in-out;
+		  -moz-transition: all 0.5s ease-in-out;
+		  -webkit-transition: all 0.5s ease-in-out;
+		  -o-transition: all 0.5s ease-in-out;
+
+		}
+
+		.logo.shrink {
+			float:right;
+			width: 100px;
+			height:50px;
+			background: url("Images/logotext.png") no-repeat center center;
+			background-size:100%;
+			margin-right:10px;
+			 transition: all 0.5s ease-in-out;
+		  -moz-transition: all 0.5s ease-in-out;
+		  -webkit-transition: all 0.5s ease-in-out;
+		  -o-transition: all 0.5s ease-in-out;
+	
+		}
+
+		/************** MEDIA QUERIES 1 **************/
 
 		@media (min-width: 600px) {
 
