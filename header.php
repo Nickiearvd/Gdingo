@@ -22,11 +22,13 @@
 			            $('header').addClass('shrink'); // Add each thing you want to make smaller when scrolling
 			            $('#showmenu').addClass('shrink');
 			            $('.logo').addClass('shrink');
+			            $('.nav').addClass('shrink');
 			        }
 			        else{
 			            $('header').removeClass('shrink');
 			            $('#showmenu').removeClass('shrink');
 			            $('.logo').removeClass('shrink');
+			            $('.nav').removeClass('shrink');
 			        }
 			    });
 			});
@@ -68,7 +70,6 @@
 		/* LOGOTYPE */
 
 		.logo {
-			float:right;
 			width: 100px;
 			height:100px;
 			background: url("Images/logotype.png") no-repeat center center;
@@ -76,10 +77,10 @@
 			margin: 0 auto;
 			text-align: center;
 			display:block;
-			 transition: all 0.5s ease-in-out;
-		  -moz-transition: all 0.5s ease-in-out;
-		  -webkit-transition: all 0.5s ease-in-out;
-		  -o-transition: all 0.5s ease-in-out;
+			transition: all 0.5s ease-in-out;
+			-moz-transition: all 0.5s ease-in-out;
+			-webkit-transition: all 0.5s ease-in-out;
+			-o-transition: all 0.5s ease-in-out;
 		}
 
 
@@ -142,14 +143,14 @@
 
 		/* Nav hamburger*/
 		#showmenu {
-			float: left;
+			float: right;
 			width: 60px;
 			height:60px;
-			padding: 13px 0;
+			padding: 20px 0;
 			background: url("Images/menu.png") no-repeat center center;
 			background-color: transparent;
 			z-index: 100;
-			margin-left:10px;
+			margin-right:10px;
 			background-size:80%;
 			 transition: all 0.5s ease-in-out;
 		  -moz-transition: all 0.5s ease-in-out;
@@ -184,11 +185,12 @@
 		  -moz-transition: all 0.5s ease-in-out;
 		  -webkit-transition: all 0.5s ease-in-out;
 		  -o-transition: all 0.5s ease-in-out;
+		  padding: 13px 0;
 
 		}
 
 		.logo.shrink {
-			float:right;
+			float:left;
 			width: 100px;
 			height:50px;
 			background: url("Images/logotext.png") no-repeat center center;
@@ -205,13 +207,33 @@
 
 		@media (min-width: 600px) {
 
+
 			.logo{
 				margin:auto;
+				width: 150px;
+				height:150px;
+				background-size:100%;
+				margin-top: 10px;
+			}
+
+			.logo.shrink{
+				display: block;
+				width: 200px;
+				background-size:100%;
+				z-index:1;
+				margin-left:15px;
 			}
 
 			.nav{
 				display:block;
 			}
+
+			.nav.shrink{
+				float:right;
+				display:inline;
+				z-index:10;
+			}
+
 			#showmenu {
 				display:none;
 			}
@@ -233,6 +255,8 @@
 
 			.nav li, .nav > ul > li > a {
 				display:inline;
+				line-height: 15px;
+				margin-bottom: 10px;
 
 			}
 		}
