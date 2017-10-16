@@ -1,0 +1,18 @@
+.container{
+	padding-top:200px;
+}
+
+h3{
+	font-family: 'open sans',helvetica;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+
+}
+
+.namedrink{
+	margin-bottom: 100px;
+}
+
+#name{
+	width:50%;
+}
