@@ -8,7 +8,7 @@ $strings = explode('/', $url);
 
 $current_page = end($strings);
 
-$dbname = 'library';
+$dbname = 'Gdingodrink';
 $dbuser = 'root';
 $dbpass = 'root';
 $dbserver = 'localhost';
