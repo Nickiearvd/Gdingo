@@ -1,0 +1,207 @@
+#test {
+	width:30%;
+	height: 50%;
+	border-left:10px solid  #12e696;
+	border-bottom: 10px solid  #12e696;
+	margin:auto;
+	position: absolute;
+	left:17%;
+	top:40%;
+}
+
+/* MAIN */
+
+#content {
+	overflow: hidden;
+	width:100%;
+	margin:auto;
+	background-color: #000;
+}
+
+#c {
+	height:100px;
+}
+
+body {
+	font-family: 'open sans', helvetica;
+	background: #000;
+}
+
+#intro {
+	background-color: #fff;
+	overflow: hidden;
+	text-align: center;
+}
+
+.introbtn {
+	margin:auto;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	background-color: #e72262;
+	color: #fff;
+	border:none;
+	padding: 10px 25px 10px 25px;
+	font-size: 14px;
+}
+
+.tri {
+	width:100%;
+	background-size: 100%;
+	z-index: -1;
+	margin-bottom: 40px;
+}
+
+.tri2 {
+	width:100%;
+	background-size: 100%;
+	z-index: -1;
+	margin-bottom: -5px;
+
+}
+
+
+
+/*DRINKBOX*/
+.drinkbox{
+	border: 2px solid #e72262;
+
+	width: 33%;
+	overflow: hidden;
+	padding-bottom: 0px;
+	margin-bottom: 20px;
+	 
+}
+
+	.edit, .error{
+		float: left;
+		background: #e72262;
+		width: 20px;
+		height: 20px;
+		border-radius: 20px;
+		border: solid #e72262 10px;
+		text-align: center;
+		margin-left: 10px;
+
+	}
+	.edit:hover, .error:hover{
+		background-color: #000;
+		border: solid #000 10px;
+
+	}
+	.buttons{
+		margin-left: 25%;
+		margin-top: 0px;
+		display: block;
+		float: right;
+	}
+	.bildhalva{
+		float: left;
+		width: 30%;
+	}
+		.knapp{
+			width: 18px;
+			 margin: 1px auto;
+
+		}
+		.thumbnail{
+				width: 100%;
+				padding: 10px;
+		}	
+
+		.rating{
+			width: 100%;
+			padding-left: 10px;
+		}
+		.ratinglogo{
+			width: 15%;
+		}
+
+
+	.texthalva{
+		width: 70%;
+		float: left;
+
+	}
+
+	.recept{
+		padding-left: 25px;
+	}
+/* FONTS */
+
+
+
+h3 {
+	text-align:center;
+	font-family: 'open sans', helvetica;
+	font-size: 32px;
+}
+
+p {
+	font-family: 'open sans', helvetica;
+	font-size: 11px;
+	color: #ffF;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 40px;
+	width:60%;
+	text-align: center;
+	margin: auto;
+	padding-top: 30px;
+	line-height: 35px;
+	margin-bottom: 10px;
+	}
+
+h2 {
+	color:#fff;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 35px;
+	line-height: 35px;
+	padding-bottom: 10px;
+}
+
+
+
+@media (max-width: 1150px) {
+
+#test {
+	display: none;
+}
+
+}
+
+/* MEDIA MIN 600PX */
+
+@media (min-width: 700px) {
+
+	#c {
+	height:200px;
+}
+	
+	#firstc {
+		width:90%;
+		overflow: hidden;
+		margin:auto;
+		margin-bottom: 50px;
+		position: relative;
+	}
+
+	
+
+	h3 {
+		font-size: 24px;
+	}
+
+	h1 {
+		width: 30%;
+	}
+
+
+	
+
+
+}
