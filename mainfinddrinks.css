@@ -1,3 +1,6 @@
+html{
+	width:100%;
+}
 .container{
 	padding-top:200px;
 }
@@ -5,7 +8,7 @@
 h3{
 	font-family: 'open sans',helvetica;
 	text-transform: uppercase;
-	font-size: 50px;
+	font-size: 40px;
 	color:black;
 	margin:0;
 	line-height: 45px;
@@ -15,11 +18,12 @@ h3{
 }
 
 .namedrink{
-	margin-bottom: 0px;
-	margin-top: 50px;
-	background-color: black;
+	margin-bottom: 50px;
+	margin-top: 20px;
+	background-color: white;
 	width:100%;
-	padding:40px 10px;
+	padding:20px 10px;
+	box-sizing: border-box;
 
 }
 
@@ -32,17 +36,58 @@ h3{
 
 .tri{
 	width:100%;
-	margin-bottom: 100px;
+	margin-bottom: 0px;
+	padding-bottom: 0;
 }
+
 
 .button{
 	width:80%;
 	margin:0 auto;
 	display: block;
+	margin:auto;
+	text-align: center;
+	background-color: #e72262;
+	color: #fff;
+	border:none;
+	padding: 10px 25px 10px 25px;
+	font-size: 14px;
+	box-sizing: border-box;
+	-webkit-appearance: none;
 
+}
+
+
+.button:focus { 
+	outline: none;
 }
 
 .ing{
-	width:50%;
+
+	width:80%;
+	margin:0 auto;
 	height:20px;
+	display: block;
 }
+
+.ingr{ /*div */
+	background-color: black;
+	margin-top:-4px;
+	margin-right: 0;
+	padding-top: 0;
+	width:100%;
+	padding-bottom: 80px;
+}
+
+.ingr > h3{
+	color: white;
+	padding-top: 30px;
+	margin-bottom: 40px;
+}
+
+.ingr > .button{
+	margin-top:20px;
+}
+
+
+

@@ -21,13 +21,14 @@
 						<input class="button" type="submit" name="submit" value="Search">
 
 					</div>
-					<img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
+					<img src="Images/tri-2svart.png" class="tri"> <!-- triangle -->
 					<div class='ingr'>
 						<h3>What do you have home</h3>
 					    <input type="text" class="ing" name="searching" placeholder="Search after one ingrediens "></br>
 					    <input type="text" class="ing" name="searching" placeholder="Search after one ingrediens ">
 					     <input class="button" type="submit" name="submit" value="Search">
 				    </div>
+				    <img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
 
 		  		</form>
 			</div>
