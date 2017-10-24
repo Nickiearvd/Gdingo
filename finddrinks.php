@@ -99,6 +99,14 @@
 
 							echo '<table bgcolor=white cellpadding="6">';
 							echo '<tr><b><th>ID</th><th>Name</th> <th>Author</th> <th>Ing</th></b> </tr>';
+
+							while ($stmt->fetch()) {
+
+							    echo "<tr>";
+							    echo "<td> $DrinkId </td><td> $DrinkName </td><td> $DrinkAuthor </td><td> $IngId </td>";
+							    
+							    echo "</tr>";
+							}
 							echo "</table>";
 			                
 			                
