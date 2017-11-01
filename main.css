@@ -1,6 +1,6 @@
 #test {
 	width:30%;
-	height: 50%;
+	height: 40%;
 	border-left:10px solid  #12e696;
 	border-bottom: 10px solid  #12e696;
 	margin:auto;
@@ -70,6 +70,8 @@ body {
  color:#fff;
  line-height: 1.7;
  padding: 30px;
+ padding-top: 65px;
+ padding-bottom:60px;
  box-sizing: border-box;
 
 }
@@ -225,7 +227,7 @@ h2 {
 @media (min-width: 700px) {
 
 	#c {
-	height:200px;
+	height:230px;
 }
 	
 	#firstc {
