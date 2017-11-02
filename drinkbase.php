@@ -11,7 +11,7 @@
 	}
 
 
-	$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Drinks.DrinkReceipt, Ingredients.IngId, Ingredients.NameIng
+	$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkSaved, Drinks.DrinkPicture, Drinks.DrinkReceipt, Ingredients.IngId, Ingredients.NameIng
 	FROM Drinks 
 	JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
 	JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId 
@@ -19,7 +19,7 @@
 
 	$result = $db->query($query);
 	$stmt = $db->prepare($query);
-	$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $DrinkReceipt, $IngId, $NameIng); // Same as the query. 
+	$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkSaved, $DrinkPicture, $DrinkReceipt, $IngId, $NameIng); // Same as the query. 
 	$stmt->execute();
 	$alling=array(); // Create an array in reason to store all the differents ingredients. 
 
@@ -42,11 +42,20 @@
 			<div class='side'>
 	    		<?php 
 	    			echo "<img class='drinkimage' src=Images/DrinkPictures/$DrinkPicture>";
-	    		 ?>
+	    		?>
+
 
     		</div>
     		<div class="heart">
-				<?php echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like.png"></a>' ?> 
+				<?php 
+					if ($DrinkSaved == 0){ // Show the heart to fav a drink. Heart deisgn depends on if it's already fav or not.
+						echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like.png"></a>';
+					} 
+					else if ($DrinkSaved == 1){
+						echo '<a href="RemoveFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like2.png"></a>'; 
+					} 
+
+				?> 
 			</div>
 			<div class='maincontent'>
 				<h3><?php echo $DrinkName; ?></h3>
