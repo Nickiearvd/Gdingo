@@ -56,14 +56,14 @@
 
 						
 
-						$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Ingredients.IngId, Ingredients.NameIng, Drinks.DrinkSaved, Drinks.DrinkPicture, Drinks.DrinkReceipt 
+						$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng, Drinks.DrinkSaved 
 
 						from Drinks 
 
 						JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
 						JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId
 
-						where DrinkSaved is true";
+						WHERE DrinkSaved is true";
 
 						if ($searchname && !$searching) { // Name search only
 						    $query = $query . " where DrinkName like '%" . $searchname . "%'GROUP BY DrinkName ";
@@ -78,20 +78,22 @@
 						  # Here's the query using an associative array for the results
 						  $result = $db->query($query);
 						  echo "<p> $result->num_rows matching drinks found </p>";
- 
+ 	
 
 						# Here's the query using bound result parameters
 
 						$stmt = $db->prepare($query);
-						$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $IngId, $NameIng,$DrinkSaved, $DrinkPicture, $DrinkReceipt ); // Same as the query. 
+						echo "befor";
+						$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $DrinkSaved); // Same as the query. 
+						echo "after";
 						$stmt->execute();
 
 						echo '<table bgcolor=white cellpadding="6">';
 						echo '<tr><b><th>Name</th> <th>Author</th> </b> </tr>';
 
+
 						while ($stmt->fetch()) {
 			        	
-			   
 
 						    echo "<tr>";
 						    echo "<td><a href='drinkbase.php?DrinkId=$DrinkId'> $DrinkName <a> </td><td> $DrinkAuthor </td>";
@@ -102,7 +104,7 @@
 
 
 					?>
-					
+
 				</form>
 
 			</div> <!-- intro ends -->
