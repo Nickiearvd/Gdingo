@@ -17,10 +17,12 @@
 				<h3>Looking for a drink? </h3>
 					<div class='namedrink'>
 						<div class='fixbackground'>
+							<img src="Images/tri.png" class="tri"> <!-- triangle -->
 							<input type="text" id="name" name="searchname" placeholder="Search after a drink name"></br>
 							<input type="text" class="ing" name="searching" placeholder="Search after one ingrediens "></br>
 						    <input class="button" type="submit" name="submit" value="Search">
 					    </div>
+					     <img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
 
 						<?php
 							$searchname = "";
@@ -79,6 +81,7 @@
 							 while ($stmt->fetch()) {
 
 							    echo "<a href='drinkbase.php?DrinkId=$DrinkId'> <img class='DrinkPic' src='Images/DrinkPictures/$DrinkPicture'> <a>";
+							    echo "<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'> $DrinkName <a>";
 							}
 
 						?>
