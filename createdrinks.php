@@ -1,6 +1,3 @@
-<?php include 'dbConfig';?>
-
-
 <!Doctype html>
 <html>
 <head>
@@ -16,25 +13,51 @@
 
 </head>
 <body>
+
  <?php
+
+$conn=mysqli_connect("localhost","root","root","Gd");
+
+if(!$conn)
+{
+die("Connection failed: " . mysqli_connect_error());
+}
 
   if(isset($_POST['save']))
 {
-    $sql = "INSERT INTO test (username, email)
-    VALUES ('".$_POST["username"]."','".$_POST["email"]."')";
+    $q = "INSERT INTO Drinks (DrinkName, DrinkPicture, DrinkReceipt)
+    VALUES ('".$_POST["drinkName"]."','".$_POST["drinkPic"]."','".$_POST["drinkRecipe"]."')";
 
-    $result = mysqli_query($conn,$sql);
+    $q2 = "INSERT INTO Ingredients (NameIng)
+    VALUES ('".$_POST["drinkIng"]."')";
+
+    $result = mysqli_query($conn,$q);
+    $result = mysqli_query($conn,$q2);
 
 }
 
 ?>
 
 <form action="createdrinks.php" method="post"> 
-<label id="first"> First name:</label><br/>
-<input type="text" name="username"><br/>
+<label id="first"> The name of the drink:</label><br/>
+<input type="text" name="drinkName"><br/>
 
-<label id="first">Email</label><br/>
-<input type="text" name="email"><br/>
+<label id="first">Image:</label><br/>
+<input type="file" name="drinkPic" accept="image/*">
+
+<br><br>
+
+<label id="first">Recipe</label><br/>
+<input type="text" name="drinkRecipe"><br/>
+
+<label id="first">Ingredients</label><br/>
+<input type="text" name="drinkIng"><br/>
+
+<label id="first">Ingredients</label><br/>
+<input type="text" name="drinkIng"><br/>
+
+<label id="first">Ingredients</label><br/>
+<input type="text" name="drinkIng"><br/>
 
 <button type="submit" name="save">save</button>
 
