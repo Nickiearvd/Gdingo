@@ -61,7 +61,9 @@
 
 						
 
-						$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Ingredients.IngId, Ingredients.NameIng, Drinks.DrinkSaved from Drinks 
+						$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Ingredients.IngId, Ingredients.NameIng, Drinks.DrinkSaved, Drinks.DrinkPicture, Drinks.DrinkReceipt 
+
+						from Drinks 
 
 						JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
 						JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId
@@ -86,15 +88,15 @@
 						# Here's the query using bound result parameters
 
 						$stmt = $db->prepare($query);
-						$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $IngId, $NameIng,$DrinkSaved ); // Same as the query. 
+						$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $IngId, $NameIng,$DrinkSaved, $DrinkPicture, $DrinkReceipt ); // Same as the query. 
 						$stmt->execute();
 
 						echo '<table bgcolor=white cellpadding="6">';
 						echo '<tr><b><th>Name</th> <th>Author</th> </b> </tr>';
 
 						while ($stmt->fetch()) {
-			        		if($DrinkSaved==1)
-			            		$DrinkSaved="Yes";
+			        	
+			   
 
 						    echo "<tr>";
 						    echo "<td><a href='drinkbase.php?DrinkId=$DrinkId'> $DrinkName <a> </td><td> $DrinkAuthor </td><td> $DrinkSaved </td> ";
@@ -109,17 +111,21 @@
 				
 				<div class="drinkbox">	
 					<div class="bildhalva">
-						<img class="thumbnail" src="Images/passion-mojito.jpg">
+						<?php echo "<img class='thumbnail' src='Images/DrinkPictures/$DrinkPicture'>" ?>
 						
 					</div>		
 					<div class="texthalva">
 						<h2><?php echo "$DrinkName";?></h2>
-						<p class="recept">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et maximus augue. Vivamus vel dolor nisi. Quisque molestie scelerisque diam nec semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br> Nunc ac mollis orci. Maecenas ac volutpat massa. Nunc et ligula accumsan, condimentum lectus nec, fringilla nisl.
+						<p class="recept"><?php echo "$DrinkReceipt";?>
 						</p>	
 					</div>
 					<div class="buttons">
 					<div class="error">
-						<img class="knapp" src="Images/error.png">
+						
+						<?php echo '<a href="RemoveFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/error.png"></a>'; ?>
+
+
+						
 						
 					</div>
 					<div class="edit">
