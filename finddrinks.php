@@ -77,7 +77,12 @@
 							echo '<table bgcolor=white cellpadding="6">';
 							echo '<tr><b><th>Name</th> <th>Author</th> </b> </tr>';
 
-							while ($stmt->fetch()) {
+							 while ($stmt->fetch()) {
+		                        if(==1)
+		                            $DrinkSaved="Yes";
+		                        else $DrinkSaved ="No";
+
+		                       
 
 							    echo "<tr>";
 							    echo "<td><a href='drinkbase.php?DrinkId=$DrinkId '> $DrinkName <a> </td><td> $DrinkAuthor </td> ";
