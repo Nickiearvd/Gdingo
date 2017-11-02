@@ -13,6 +13,7 @@
 				icon.click( function(event) {
 					event.preventDefault();
 					menu.toggleClass("open");
+					icon.toggleClass("open");
 				} );
 
 			} );
@@ -144,15 +145,24 @@
 		/* Nav hamburger*/
 		#showmenu {
 			float: right;
-			width: 60px;
-			height:60px;
-			padding: 20px 0;
+			width: 40px;
+			height:40px;
+			padding: 30px 0;
 			background: url("Images/menu.png") no-repeat center center;
 			background-color: transparent;
 			z-index: 100;
-			margin-right:10px;
+			margin-right:20px;
 			background-size:80%;
 			 transition: all 0.5s ease-in-out;
+		  -moz-transition: all 0.5s ease-in-out;
+		  -webkit-transition: all 0.5s ease-in-out;
+		  -o-transition: all 0.5s ease-in-out;
+		}
+		#showmenu.open{
+			background-color: black;
+			background: url("Images/menuopen.png") no-repeat center center;
+			background-size:80%;
+			transition: all 0.5s ease-in-out;
 		  -moz-transition: all 0.5s ease-in-out;
 		  -webkit-transition: all 0.5s ease-in-out;
 		  -o-transition: all 0.5s ease-in-out;

@@ -22,7 +22,7 @@
 				<form action="mydrinks.php" method="POST">
 					<input type="text" id="name" name="searchname" placeholder="Search after a drink name"></br>
 					<input type="text" class="ing" name="searching" placeholder="Search after one ingrediens "></br>
-					<input class="introbtn" type="submit" name="submit" value="Search">
+					<input class="button" type="submit" name="submit" value="Search">
 
 				</form>
 
