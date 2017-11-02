@@ -16,16 +16,18 @@
 
 </head>
 <body>
-
  <?php
-    if(isset($_POST['save'])){
-        $sql = "INSERT INTO test (username, email)
-        VALUES ('".$_POST["username"]."','".$_POST["email"]."')";
 
-      $result = mysqli_query($conn,$sql);
-    }
+  if(isset($_POST['save']))
+{
+    $sql = "INSERT INTO test (username, email)
+    VALUES ('".$_POST["username"]."','".$_POST["email"]."')";
 
-    ?>
+    $result = mysqli_query($conn,$sql);
+
+}
+
+?>
 
 <form action="createdrinks.php" method="post"> 
 <label id="first"> First name:</label><br/>
@@ -33,9 +35,6 @@
 
 <label id="first">Email</label><br/>
 <input type="text" name="email"><br/>
-
-<label id="first">Age</label><br/>
-<input type="text" name="age"><br/>
 
 <button type="submit" name="save">save</button>
 
