@@ -43,7 +43,11 @@
 	    		<?php 
 	    			echo "<img class='drinkimage' src=Images/DrinkPictures/$DrinkPicture>";
 	    		 ?>
+
     		</div>
+    		<div class="heart">
+				<?php echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like.png"></a>' ?> 
+			</div>
 			<div class='maincontent'>
 				<h3><?php echo $DrinkName; ?></h3>
 				<div class='ingrblack'>
@@ -94,21 +98,20 @@
 			margin:0;
 			line-height: 45px;
 			margin-bottom: 5px;
-	
 			color:#E61262;
 			text-align:center;
-			
-
 		}
+
 		.ingrblack{
 			background-color:black;
 			color:white;
 			padding-top: 0px;
-
 		}
+
 		.receipt{
 			margin: 0;
 		}
+
 		.receipt p{
 			margin:20px;
 			margin-top:5px;
@@ -147,6 +150,20 @@
 			width:100%;
 			margin:0;
 			padding:0;
+		}
+		.heart {
+			background: white;
+			width: 20px;
+			height: 20px;
+			border-radius: 20px;
+			padding:8px;
+			position:absolute;
+			right:40px;
+			top:120px;
+
+		}
+		.knapp{
+			width: 40px;
 		}
 
 	</style>
