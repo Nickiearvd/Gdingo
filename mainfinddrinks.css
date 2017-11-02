@@ -1,12 +1,18 @@
 html{
 	width:100%;
+	margin:0;
 }
 .container{
-	padding-top:200px;
+	padding-top:150px;
+}
+.fixbackground{
+	background-color: black;
+
 }
 
 h3{
 	font-family: 'open sans',helvetica;
+	font-weight: 800;
 	text-transform: uppercase;
 	font-size: 40px;
 	color:black;
@@ -19,10 +25,10 @@ h3{
 
 .namedrink{
 	margin-bottom: 50px;
-	margin-top: 20px;
+	margin-top: 10px;
 	background-color: white;
 	width:100%;
-	padding:20px 10px;
+	padding:0;
 	box-sizing: border-box;
 
 }

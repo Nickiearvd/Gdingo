@@ -16,10 +16,11 @@
 				<form action="finddrinks.php" method="POST">
 				<h3>Looking for a drink? </h3>
 					<div class='namedrink'>
-			
-						<input type="text" id="name" name="searchname" placeholder="Search after a drink name"></br>
-						<input type="text" class="ing" name="searching" placeholder="Search after one ingrediens "></br>
-					    <input class="button" type="submit" name="submit" value="Search">
+						<div class='fixbackground'>
+							<input type="text" id="name" name="searchname" placeholder="Search after a drink name"></br>
+							<input type="text" class="ing" name="searching" placeholder="Search after one ingrediens "></br>
+						    <input class="button" type="submit" name="submit" value="Search">
+					    </div>
 
 						<?php
 							$searchname = "";
@@ -71,13 +72,13 @@
 							# Here's the query using bound result parameters
 
 							$stmt = $db->prepare($query);
-							$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor,$DrinkName, $IngId, $NameIng); // Same as the query. 
+							$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng); // Same as the query. 
 							$stmt->execute();
 
 
 							 while ($stmt->fetch()) {
 
-							    echo "<a href='drinkbase.php?DrinkId=$DrinkId'> <img class='DrinkPic' src='Images/DrinkPictures/$DrinkName'> <a>";
+							    echo "<a href='drinkbase.php?DrinkId=$DrinkId'> <img class='DrinkPic' src='Images/DrinkPictures/$DrinkPicture'> <a>";
 							}
 
 						?>
