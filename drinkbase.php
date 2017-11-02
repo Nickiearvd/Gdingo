@@ -16,6 +16,7 @@
 	JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
 	JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId 
 	WHERE Drinks.DrinkId=$DrinkId" ; // Get all the informartion related to the drinkid
+
 	$result = $db->query($query);
 	$stmt = $db->prepare($query);
 	$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $DrinkReceipt, $IngId, $NameIng); // Same as the query. 
@@ -37,13 +38,13 @@
 	</head>
 	<body>
 		<div class='container'>
-			<h3><?php echo "" .$DrinkName; ?></h3>
+			<h3><?php echo $DrinkName; ?></h3>
 
 			<ul><?php foreach($alling as $value){
     			echo "<li>" . $value . "</li><br>";} ?>
     		</ul>
-    		<?php echo "" .$DrinkReceipt;
-    		echo "<img src=/Images/DrinkPictures/mojitop.jpg>";
+    		<?php echo $DrinkReceipt;
+    		echo "<img src=Images/DrinkPictures/$DrinkPicture>";
     		 ?>
 
 
