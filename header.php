@@ -45,8 +45,7 @@
 					<li><a class="<?php echo ($current_page == 'index.php' || $current_page == '') ? 'active' : NULL ?>" href="index.php"> Home</a></li>
 					<li><a class="<?php echo $current_page == 'finddrinks.php' ? 'active' : NULL ?>" href="finddrinks.php">Find drinks</a></li>
 					<li><a class="<?php echo $current_page == 'mydrinks.php' ? 'active' : NULL ?>" href="mydrinks.php">My drinks</a></li>
-					<li><a class="<?php echo $current_page == 'mybooks.php' ? 'active' : NULL ?>" href="mybooks.php">Inspo</a></li>
-					<li><a class="<?php echo $current_page == 'gallery.php' ? 'active' : NULL ?>" href="gallery.php">About us</a></li>
+					
 				</ul>
 			</nav>
 			
