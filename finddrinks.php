@@ -78,10 +78,7 @@
 							echo '<tr><b><th>Name</th> <th>Author</th> </b> </tr>';
 
 							 while ($stmt->fetch()) {
-		                        if(1==1)
-		                            $DrinkSaved="Yes";
-		                        else $DrinkSaved ="No";
-
+		                        
 		                       
 
 							    echo "<tr>";

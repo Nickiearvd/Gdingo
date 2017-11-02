@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 02, 2017 at 04:34 PM
+-- Generation Time: Nov 02, 2017 at 06:31 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.6
 
@@ -23,16 +23,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `Drinks` (
   `DrinkId` int(11) NOT NULL,
   `DrinkName` varchar(255) NOT NULL,
-  `DrinkAuthor` varchar(255) NOT NULL
+  `DrinkAuthor` varchar(255) NOT NULL,
+  `DrinkPicture` varchar(255) NOT NULL,
+  `DrinkReceipt` text NOT NULL,
+  `DrinkSaved` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `Drinks`
 --
 
-INSERT INTO `Drinks` (`DrinkId`, `DrinkName`, `DrinkAuthor`) VALUES
-(1, 'Mojito', 'Nickie'),
-(2, 'Nickiedrink', 'Nickie');
+INSERT INTO `Drinks` (`DrinkId`, `DrinkName`, `DrinkAuthor`, `DrinkPicture`, `DrinkReceipt`, `DrinkSaved`) VALUES
+(1, 'Mojito', 'Nickie', 'mojitop.jpg', 'In a tall thin glass, crush some mint with a fork to coat the inside. Add 2 tsp sugar and 3 tbsp lemon juice and stir thoroughly. Top with ice. Add 1 1/2 oz rum and mix. Top off with *chilled* club soda (or seltzer). Add a lemon slice and the remaining mint, and serve. \r\nServe in \"Parfait Glass\"', 1),
+(2, 'Nickiedrink', 'Nickie', 'mojitorp.jpg', '', 0);
 
 -- --------------------------------------------------------
 
@@ -79,10 +82,12 @@ INSERT INTO `Ingredients` (`IngId`, `NameIng`) VALUES
 (4, 'Bacardi razz'),
 (5, 'Gin'),
 (6, 'Lime'),
-(7, 'Mint'),
+(7, 'Mint leaves'),
 (8, 'Soda water'),
 (9, 'Crushed ice'),
-(10, 'sprite');
+(10, 'sprite'),
+(11, 'Bacardi Carta Blanca'),
+(12, 'Sugar');
 
 --
 -- Indexes for dumped tables
@@ -120,7 +125,7 @@ ALTER TABLE `Drinks`
 -- AUTO_INCREMENT for table `Ingredients`
 --
 ALTER TABLE `Ingredients`
-  MODIFY `IngId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IngId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- Constraints for dumped tables
 --
