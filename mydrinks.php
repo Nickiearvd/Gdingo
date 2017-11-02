@@ -24,14 +24,9 @@
 					<input type="text" class="ing" name="searching" placeholder="Search after one ingrediens "></br>
 					<input class="button" type="submit" name="submit" value="Search">
 
-				</form>
-
-			</div> <!-- intro ends -->
-
-			<img src="Images/tri.png" class="tri"> <!-- triangle -->
 
 
-				<?php
+					<?php
 						$searchname = "";
 						$searching = "";
 						if (isset($_POST) && !empty($_POST)) {
@@ -99,7 +94,7 @@
 			   
 
 						    echo "<tr>";
-						    echo "<td><a href='drinkbase.php?DrinkId=$DrinkId'> $DrinkName <a> </td><td> $DrinkAuthor </td><td> $DrinkSaved </td> ";
+						    echo "<td><a href='drinkbase.php?DrinkId=$DrinkId'> $DrinkName <a> </td><td> $DrinkAuthor </td>";
 						    
 						    echo "</tr>";
 						}
@@ -107,6 +102,15 @@
 
 
 					?>
+					
+				</form>
+
+			</div> <!-- intro ends -->
+
+			<img src="Images/tri.png" class="tri"> <!-- triangle -->
+			
+
+
 			<div id="firstc"> <!-- black container starts -->			
 				
 				<div class="drinkbox">	
@@ -123,9 +127,6 @@
 					<div class="error">
 						
 						<?php echo '<a href="RemoveFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/error.png"></a>'; ?>
-
-
-						
 						
 					</div>
 					<div class="edit">
