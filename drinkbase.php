@@ -58,12 +58,12 @@
 				?> 
 			</div>
 			<div class='maincontent'>
-				<h3><?php echo $DrinkName; ?></h3>
+				<h3><?php echo $DrinkName; ?></h3> <!-- Print out the name of the drink-->
 				<div class='ingrblack'>
 					<img src="Images/tri.png" class="tri"> <!-- triangle -->
 					<h4>What do you need? </h4>
 					<ul><?php foreach($alling as $value){
-		    			echo "<li>" . $value . "</li><br>";} ?>
+		    			echo "<li>" . $value . "</li><br>";} ?> <!-- Print out each value that you can find into the ingredients array -->
 		    		</ul>
 		    	</div>
 		    	<div class='receipt'>
