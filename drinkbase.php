@@ -54,6 +54,7 @@
 		    		</ul>
 		    	</div>
 		    	<div class='receipt'>
+		    		<img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
 			    	<h4>Wonder how to make it? </h4>
 		    		<?php echo "<p>" . $DrinkReceipt. "<p>"; ?>
 		    	</div>
@@ -106,10 +107,11 @@
 
 		}
 		.receipt{
-			margin:20px;
+			margin: 0;
 		}
 		.receipt p{
-			margin:0;
+			margin:20px;
+			margin-top:5px;
 			font-family: 'open sans',helvetica;
 			font-size: 14px;
 		}
@@ -143,6 +145,8 @@
 		}
 		.tri{
 			width:100%;
+			margin:0;
+			padding:0;
 		}
 
 	</style>
