@@ -49,7 +49,7 @@
 
 							# Build the query. Users are allowed to search on title, author, or both
 
-							$query = " select Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Ingredients.IngId, Ingredients.NameIng from Drinks 
+							$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng FROM Drinks 
 							JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
 							JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId" ;
 
@@ -71,23 +71,14 @@
 							# Here's the query using bound result parameters
 
 							$stmt = $db->prepare($query);
-							$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $IngId, $NameIng); // Same as the query. 
+							$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor,$DrinkName, $IngId, $NameIng); // Same as the query. 
 							$stmt->execute();
 
-							echo '<table bgcolor=white cellpadding="6">';
-							echo '<tr><b><th>Name</th> <th>Author</th> </b> </tr>';
 
 							 while ($stmt->fetch()) {
-		                        
-		                       
 
-							    echo "<tr>";
-							    echo "<td><a href='drinkbase.php?DrinkId=$DrinkId '> $DrinkName <a> </td><td> $DrinkAuthor </td> ";
-							    
-							    echo "</tr>";
+							    echo "<a href='drinkbase.php?DrinkId=$DrinkId'> <img class='DrinkPic' src='Images/DrinkPictures/$DrinkName'> <a>";
 							}
-							echo "</table>";
-
 
 						?>
 
