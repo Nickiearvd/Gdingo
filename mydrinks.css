@@ -102,10 +102,10 @@ body {
 .drinkbox{
 	border: 2px solid #e72262;
 
-	width: 33%;
+	width: 90%;
 	overflow: hidden;
 	padding-bottom: 0px;
-	margin-bottom: 20px;
+	margin: 20px auto;
 	 
 }
 
