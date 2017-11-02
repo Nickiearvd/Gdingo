@@ -7,7 +7,11 @@ html{
 }
 .fixbackground{
 	background-color: black;
+	padding-bottom: 40px;
 
+}
+p{
+	font-family: 'open sans',helvetica;
 }
 
 h3{
@@ -30,7 +34,6 @@ h3{
 	width:100%;
 	padding:0;
 	box-sizing: border-box;
-
 }
 
 #name{
@@ -38,6 +41,7 @@ h3{
 	margin:0 auto;
 	height:20px;
 	display: block;
+	margin-top: 40px;
 }
 
 .tri{
@@ -101,6 +105,10 @@ h3{
 	width:49%;
 	box-sizing: border-box;
 	margin:0 auto;
+}
+
+.DrinkPic:hover{
+	opacity: 0.3; 
 }
 
 
