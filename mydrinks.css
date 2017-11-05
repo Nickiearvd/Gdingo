@@ -33,6 +33,27 @@ body {
 	text-align: center;
 }
 
+
+
+
+.DrinkPic{
+	width: 40%;
+	margin: 0 auto;
+	  transition: .5s ease;
+  backface-visibility: hidden;
+
+
+}
+
+.DrinkPic:hover{
+	opacity: 0.3;
+
+}
+
+#drinkDiv{
+	display: inline;
+	width: 30%;
+}
 .introbtn {
 	margin:auto;
 	margin-top: 20px;
@@ -98,10 +119,12 @@ body {
 	outline: none;
 }
 
+
+
 /*DRINKBOX*/
 .drinkbox{
 	border: 2px solid #e72262;
-
+	color: #fff;
 	width: 90%;
 	overflow: hidden;
 	padding-bottom: 0px;
@@ -157,6 +180,7 @@ body {
 	.texthalva{
 		width: 70%;
 		float: left;
+		color: #000;
 
 	}
 
@@ -192,7 +216,7 @@ h1 {
 	}
 
 h2 {
-	color:#fff;
+	color:#000;
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 35px;

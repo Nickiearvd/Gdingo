@@ -19,6 +19,12 @@
 			<div id="intro"> <!-- intro starts -->
 				<h1>MY DRINKING SHELF</h1>
 				
+				
+
+			</div> <!-- intro ends -->
+
+			<img src="Images/tri.png" class="tri"> <!-- triangle -->
+			<div id="firstc"> <!-- black container starts -->		
 				<form action="mydrinks.php" method="POST">
 					<input type="text" id="name" name="searchname" placeholder="Search after a drink name"></br>
 					<input type="text" class="ing" name="searching" placeholder="Search after one ingrediens "></br>
@@ -75,69 +81,12 @@
 						    $query = $query . " where DrinkName like '%" . $searchname. "%' and NameIng like '%" . $searching . "%'"; // unfinished
 						}
 						
-						  # Here's the query using an associative array for the results
-						  $result = $db->query($query);
-						  echo "<p> $result->num_rows matching drinks found </p>";
- 	
-
-						# Here's the query using bound result parameters
-
-						$stmt = $db->prepare($query);
-						echo "befor";
-						$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $DrinkSaved); // Same as the query. 
-						echo "after";
-						$stmt->execute();
-
-						echo '<table bgcolor=white cellpadding="6">';
-						echo '<tr><b><th>Name</th> <th>Author</th> </b> </tr>';
-
-
-						while ($stmt->fetch()) {
-			        	
-
-						    echo "<tr>";
-						    echo "<td><a href='drinkbase.php?DrinkId=$DrinkId'> $DrinkName <a> </td><td> $DrinkAuthor </td>";
-						    
-						    echo "</tr>";
-						}
-						echo "</table>";
-
+					
 
 					?>
 
 				</form>
-
-			</div> <!-- intro ends -->
-
-			<img src="Images/tri.png" class="tri"> <!-- triangle -->
-			
-
-
-			<div id="firstc"> <!-- black container starts -->			
 				
-				<div class="drinkbox">	
-					<div class="bildhalva">
-						<?php echo "<img class='thumbnail' src='Images/DrinkPictures/$DrinkPicture'>" ?>
-						
-					</div>		
-					<div class="texthalva">
-						<h2><?php echo "$DrinkName";?></h2>
-						<p class="recept"><?php echo "$DrinkReceipt";?>
-						</p>	
-					</div>
-					<div class="buttons">
-					<div class="error">
-						
-						<?php echo '<a href="RemoveFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/error.png"></a>'; ?>
-						
-					</div>
-					<div class="edit">
-						<img class="knapp" src="Images/edit.png">
-						
-					</div>
-
-
-				</div>
 			</div>
 
 			
@@ -145,8 +94,51 @@
 
 			<img src="Images/tri3.png" class="tri2"> <!-- triangle -->
 			
-			
+			<div id="intro">
+			<?php 
+					  # Here's the query using an associative array for the results
+						  $result = $db->query($query);
+						  echo "<p> $result->num_rows matching drinks found </p>";
+ 	
 
+						# Here's the query using bound result parameters
+
+						$stmt = $db->prepare($query);
+						$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $DrinkSaved); // Same as the query. 
+
+						$stmt->execute();
+
+						echo '<table bgcolor=white cellpadding="6">';
+						echo '<tr><b><th>Name</th> <th>Author</th> </b> </tr>';
+
+							 while ($stmt->fetch()) {
+
+							    echo "<div id='drinkDiv'> <a href='drinkbase.php?DrinkId=$DrinkId'> <img class='DrinkPic' src='Images/DrinkPictures/$DrinkPicture'> </a>
+							    	<div class='buttons'>
+										<div class='error'>
+											
+											<a href='RemoveFav.php?DrinkId=$DrinkId'><img class='knapp' src='Images/error.png'></a>
+											
+										</div>
+										<div class='edit'>
+											<img class='knapp' src='Images/edit.png'>
+											
+										</div>
+										</div>
+
+							    ";
+
+
+							    echo "<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'> $DrinkName <a>";
+							}
+  
+						
+						echo "</table>";
+
+
+			 ?>
+
+			
 		</div> <!-- content div ends -->
 
 		<script> 
