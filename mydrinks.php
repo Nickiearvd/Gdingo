@@ -113,23 +113,18 @@
 
 							 while ($stmt->fetch()) {
 
-							    echo "<div id='drinkDiv'> <a href='drinkbase.php?DrinkId=$DrinkId'> <img class='DrinkPic' src='Images/DrinkPictures/$DrinkPicture'> </a>
-							    	<div class='buttons'>
-										<div class='error'>
-											
-											<a href='RemoveFav.php?DrinkId=$DrinkId'><img class='knapp' src='Images/error.png'></a>
-											
-										</div>
-										<div class='edit'>
-											<img class='knapp' src='Images/edit.png'>
-											
-										</div>
-										</div>
+							    echo "<div id='drinkDiv'> 
+							    <div class='error'>
+									<a href='RemoveFav.php?DrinkId=$DrinkId'><img class='knapp' src='Images/error.png'></a>		
+								</div>
+
+
+							    <a href='drinkbase.php?DrinkId=$DrinkId'> <img class='DrinkPic' src='Images/DrinkPictures/$DrinkPicture'> </a>
+
+							    </div>
 
 							    ";
 
-
-							    echo "<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'> $DrinkName <a>";
 							}
   
 						

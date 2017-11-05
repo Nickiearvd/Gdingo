@@ -36,24 +36,7 @@ body {
 
 
 
-.DrinkPic{
-	width: 40%;
-	margin: 0 auto;
-	  transition: .5s ease;
-  backface-visibility: hidden;
 
-
-}
-
-.DrinkPic:hover{
-	opacity: 0.3;
-
-}
-
-#drinkDiv{
-	display: inline;
-	width: 30%;
-}
 .introbtn {
 	margin:auto;
 	margin-top: 20px;
@@ -120,73 +103,53 @@ body {
 }
 
 
+	.DrinkPic{
+		width: 100%;
+		margin: -22px auto;
+		transition: .5s ease;
+	  	backface-visibility: hidden;
+	  	float: left;
+	  	display: inline;
 
-/*DRINKBOX*/
-.drinkbox{
-	border: 2px solid #e72262;
-	color: #fff;
-	width: 90%;
-	overflow: hidden;
-	padding-bottom: 0px;
-	margin: 20px auto;
-	 
-}
 
-	.edit, .error{
+	}
+
+	.DrinkPic:hover{
+		opacity: 0.3;
+
+	}
+
+	#drinkDiv{
+		display: inline;
+		width: 45%;
+		overflow: hidden;
 		float: left;
+		margin: 2.5%;
+	}
+
+	.error{
 		background: #e72262;
 		width: 20px;
 		height: 20px;
 		border-radius: 20px;
 		border: solid #e72262 10px;
-		text-align: center;
 		margin-left: 10px;
+		display: inline;
+		float: right;
 
 	}
-	.edit:hover, .error:hover{
+	.error:hover{
 		background-color: #000;
 		border: solid #000 10px;
 
 	}
-	.buttons{
-		margin-left: 25%;
-		margin-top: 0px;
-		display: block;
-		float: right;
-	}
-	.bildhalva{
-		float: left;
-		width: 30%;
-	}
-		.knapp{
-			width: 18px;
-			 margin: 1px auto;
 
-		}
-		.thumbnail{
-				width: 100%;
-				padding: 10px;
-		}	
-
-		.rating{
-			width: 100%;
-			padding-left: 10px;
-		}
-		.ratinglogo{
-			width: 15%;
-		}
-
-
-	.texthalva{
-		width: 70%;
-		float: left;
-		color: #000;
-
+	.knapp{
+		width: 100%;
 	}
 
-	.recept{
-		padding-left: 25px;
-	}
+	
+
 /* FONTS */
 
 
