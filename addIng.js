@@ -1,20 +1,20 @@
-document.addEventListener("DOMContentLoaded", function adda() {
+document.addEventListener("DOMContentLoaded", function () {
 
-	document.getElementById('connectDrink').addEventListener('click', function (e) {
+	document.getElementById('connectDrinkIng').addEventListener('click', function (e) {
 		e.preventDefault();
-		var div = document.getElementById('AllIng');
-		var ing = document.getElementById('ing1');
+		var div = document.getElementById('IngToDrink');
+		var ing = document.getElementById('Ingredients');
 		var newText = document.createElement("li");
-		ing.seletedIndex
-		newText.innerText = ing[ing.seletedIndex].innerText;
+		ing.selectedIndex;
+		newText.innerText = ing[ing.selectedIndex].innerText;
 		div.appendChild(newText);
-		hiddenValue = ing[ing.seletedIndex].value;
+		hiddenValue = ing[ing.selectedIndex].value;
 		newHidden = document.createElement("input");
 		newHidden.type = "hidden";
-		newHidden.value = ing[ing.seletedIndex].value;
-		newHidden.name = "ing1[]";
+		newHidden.value = ing[ing.selectedIndex].value;
+		newHidden.name = "Ingredients[]";
 		div.appendChild(newHidden);
-		ing.removeChild(ing[ing.seletedIndex]);
+		ing.removeChild(ing[ing.selectedIndex]);
 
 	})
 })
