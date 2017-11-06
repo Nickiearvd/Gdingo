@@ -12,6 +12,7 @@ html{
 }
 p{
 	font-family: 'open sans',helvetica;
+	text-align: center;
 }
 
 h3{
@@ -102,7 +103,7 @@ h3{
 }
 
 .DrinkPic{
-	width:49%;
+	width:100%;
 	box-sizing: border-box;
 	margin:0 auto;
 }
@@ -110,6 +111,29 @@ h3{
 .DrinkPic:hover{
 	opacity: 0.3; 
 }
+
+.gridone{
+ 	position: relative;
+ 	width:49%;
+ 	display: inline-block;
+
+ }
+ .DrinkName{
+ 	float:left;
+ 	position:absolute;
+ 	left:center;
+ 	top:50%;
+ 	width:100%;
+ 	text-align: center;
+	font-family: 'open sans',helvetica;
+	font-weight: 800;
+	text-transform: uppercase;
+	text-decoration: none;
+	color:black;
+
+
+ }
+
 
 
 

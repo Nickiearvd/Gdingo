@@ -108,27 +108,20 @@
 
 						$stmt->execute();
 
-						echo '<table bgcolor=white cellpadding="6">';
-						echo '<tr><b><th>Name</th> <th>Author</th> </b> </tr>';
-
 							 while ($stmt->fetch()) {
 
-							    echo "<div id='drinkDiv'> 
+							    echo "<div class='gridone'>
 							    <div class='error'>
 									<a href='RemoveFav.php?DrinkId=$DrinkId'><img class='knapp' src='Images/error.png'></a>		
 								</div>
 
-
-							    <a href='drinkbase.php?DrinkId=$DrinkId'> <img class='DrinkPic' src='Images/DrinkPictures/$DrinkPicture'> </a>
-
-							    </div>
-
 							    ";
+							    echo "<a href='drinkbase.php?DrinkId=$DrinkId'> <img class='DrinkPic' src='Images/DrinkPictures/$DrinkPicture'> <a>";
+							    echo "<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'> $DrinkName <a>";
+							    echo "</div>";
 
 							}
-  
-						
-						echo "</table>";
+
 
 
 			 ?>

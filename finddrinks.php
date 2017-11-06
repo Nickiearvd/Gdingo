@@ -79,9 +79,11 @@
 
 
 							 while ($stmt->fetch()) {
-
+								echo "<div class='gridone'>";
 							    echo "<a href='drinkbase.php?DrinkId=$DrinkId'> <img class='DrinkPic' src='Images/DrinkPictures/$DrinkPicture'> <a>";
 							    echo "<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'> $DrinkName <a>";
+							    echo "</div>";
+				
 							}
 
 						?>
