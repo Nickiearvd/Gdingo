@@ -6,41 +6,57 @@
 <meta name="description" content="$1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" type="text/css" href="style.css">
-
 <title>test</title>
 
+<script src="adding.js"></script>
 
 </head>
 <body>
 
  <?php
 
-$conn=mysqli_connect("localhost","root","root","Gd");
+$db=mysqli_connect("localhost","root","root","Gd");
 
-if(!$conn)
+if(!$db)
 {
 die("Connection failed: " . mysqli_connect_error());
 }
 
+
+
+
+
   if(isset($_POST['save']))
 {
-    $q = "INSERT INTO Drinks (DrinkName, DrinkPicture, DrinkReceipt)
-    VALUES ('".$_POST["drinkName"]."','".$_POST["drinkPic"]."','".$_POST["drinkRecipe"]."')";
+    
 
-    $q2 = "INSERT INTO Ingredients (NameIng)
-    VALUES ('".$_POST["drinkIng"]."')";
-
-    $result = mysqli_query($conn,$q);
-    $result = mysqli_query($conn,$q2);
 
 }
 
 ?>
-
 <form action="createdrinks.php" method="post"> 
+
 <label id="first"> The name of the drink:</label><br/>
-<input type="text" name="drinkName"><br/>
+<input type="text" name="drinkName"><br/><br>
+
+<label id="first">Author</label><br/>
+<select id="author1" name="getAuthor[]">
+		<?php
+
+			$getAuthor = "SELECT * FROM Drinks";
+
+			$stmt = $db->prepare($getAuthor);
+			$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $DrinkReceipt, $DrinkSaved);
+
+			$stmt->execute();
+
+			while ($stmt->fetch()) {
+				echo "<option>".$DrinkAuthor."</option>";
+			}
+
+		?>
+
+</select><br><br>
 
 <label id="first">Image:</label><br/>
 <input type="file" name="drinkPic" accept="image/*">
@@ -48,16 +64,33 @@ die("Connection failed: " . mysqli_connect_error());
 <br><br>
 
 <label id="first">Recipe</label><br/>
-<input type="text" name="drinkRecipe"><br/>
+<input type="text" name="drinkRecipe"><br/><br>
+
+<br><ul id="allIng">
+		</ul><br>
 
 <label id="first">Ingredients</label><br/>
-<input type="text" name="drinkIng"><br/>
+<select id="ing1" name="getIng">
+		<?php
 
-<label id="first">Ingredients</label><br/>
-<input type="text" name="drinkIng"><br/>
+			$getIng = "SELECT * FROM Ingredients";
 
-<label id="first">Ingredients</label><br/>
-<input type="text" name="drinkIng"><br/>
+			$stmt = $db->prepare($getIng);
+			$stmt->bind_result($IngId, $NameIng);
+
+			$stmt->execute();
+
+			while ($stmt->fetch()) {
+				echo "<option>".$NameIng."</option>";
+			}
+
+		?>
+
+
+
+</select><br>
+<button id="connectDrink" for="getIng">Add Ingredient</button>
+<br><br>
 
 <button type="submit" name="save">save</button>
 
