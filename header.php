@@ -3,6 +3,7 @@
 	<head>
 		<title>Min sida</title>
 		<meta charset="utf-8" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
 		<script type="text/javascript" src="jquery.min.js"></script>
 		<script>
 
@@ -200,6 +201,7 @@
 		}
 
 		.logo.shrink {
+			margin-left: 20px;
 			float:left;
 			width: 100px;
 			height:50px;

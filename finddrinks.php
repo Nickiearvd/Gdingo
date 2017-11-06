@@ -16,10 +16,13 @@
 				<form action="finddrinks.php" method="POST">
 				<h3>Looking for a drink? </h3>
 					<div class='namedrink'>
-			
-						<input type="text" id="name" name="searchname" placeholder="Search after a drink name"></br>
-						<input type="text" class="ing" name="searching" placeholder="Search after one ingrediens "></br>
-					    <input class="button" type="submit" name="submit" value="Search">
+						<div class='fixbackground'>
+							<img src="Images/tri.png" class="tri"> <!-- triangle -->
+							<input type="text" id="name" name="searchname" placeholder="Search after a drink name"></br>
+							<input type="text" class="ing" name="searching" placeholder="Search after one ingrediens "></br>
+						    <input class="button" type="submit" name="submit" value="Search">
+					    </div>
+					     <img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
 
 						<?php
 							$searchname = "";
@@ -49,7 +52,7 @@
 
 							# Build the query. Users are allowed to search on title, author, or both
 
-							$query = " select Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Ingredients.IngId, Ingredients.NameIng from Drinks 
+							$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng FROM Drinks 
 							JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
 							JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId" ;
 
@@ -71,23 +74,15 @@
 							# Here's the query using bound result parameters
 
 							$stmt = $db->prepare($query);
-							$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $IngId, $NameIng); // Same as the query. 
+							$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng); // Same as the query. 
 							$stmt->execute();
 
-							echo '<table bgcolor=white cellpadding="6">';
-							echo '<tr><b><th>Name</th> <th>Author</th> </b> </tr>';
 
 							 while ($stmt->fetch()) {
-		                        
-		                       
 
-							    echo "<tr>";
-							    echo "<td><a href='drinkbase.php?DrinkId=$DrinkId '> $DrinkName <a> </td><td> $DrinkAuthor </td> ";
-							    
-							    echo "</tr>";
+							    echo "<a href='drinkbase.php?DrinkId=$DrinkId'> <img class='DrinkPic' src='Images/DrinkPictures/$DrinkPicture'> <a>";
+							    echo "<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'> $DrinkName <a>";
 							}
-							echo "</table>";
-
 
 						?>
 
