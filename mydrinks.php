@@ -80,6 +80,9 @@
 						if ($searchname && $searching) { // Name and Ingredients search
 						    $query = $query . " where DrinkName like '%" . $searchname. "%' and NameIng like '%" . $searching . "%'"; // unfinished
 						}
+						if (!$searchname && !$searching){
+							echo "hej";
+						}
 						
 					
 

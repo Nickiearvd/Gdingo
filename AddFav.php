@@ -16,7 +16,7 @@
                         window.location = "finddrinks.php";
                     }
 
-                    setTimeout(redirect, 2000);
+                    setTimeout(redirect, 1000);
 
                 } );
                

@@ -110,7 +110,7 @@ body {
 		border-radius: 20px;
 		border: solid #e72262 10px;
 		margin-left: 10px;
-		display: inline;
+		display: block;
 		float: right;
 		position:absolute;
 		right:0;
@@ -132,9 +132,10 @@ body {
 		margin:0 auto;
 	}
 
-	.DrinkPic:hover{ /***PROBLEME NÄR MAN HOVER FÖR ATT KLICKA PÅ REMOVE ***/
-		opacity: 0.3; 
+	.DrinkPic:hover {
+
 	}
+	
 
 	.gridone{
 	 	position: relative;
@@ -155,7 +156,6 @@ body {
 		color:black;
 	 }
 
-	
 
 /* FONTS */
 
