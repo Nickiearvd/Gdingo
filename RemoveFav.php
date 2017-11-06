@@ -17,7 +17,7 @@
                         window.location = "mydrinks.php";
                     }
 
-                    setTimeout(redirect, 2000);
+                    setTimeout(redirect, 1000);
 
                 } );
                
