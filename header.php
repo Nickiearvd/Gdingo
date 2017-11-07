@@ -103,6 +103,7 @@
 		#header{
 			background-color:black;
 			background-size: 100%;
+
 		}
 
 		/* NAVIGATION */
@@ -219,7 +220,9 @@
 
 		@media (min-width: 600px) {
 
-
+			body{
+				margin: 0 auto;
+			}
 			.logo{
 				margin:auto;
 				width: 150px;
@@ -263,6 +266,8 @@
 			#header{
 				background-color:black;
 				background-size: 100%;
+
+
 			}
 
 			.nav li, .nav > ul > li > a {

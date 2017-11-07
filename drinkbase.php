@@ -31,40 +31,49 @@
 
 <!Doctype html>
 <html>
-<?php include 'header.php';?>
+
 	<head>
 		<title>DrinkBase</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
 			<Meta charset="utf-8"/>
 	</head>
 	<body>
+	<div id="pageContainer">
+	<?php include 'header.php';?>
+
+
 		<div class='container'>
-			<div class='side'>
-	    		<?php 
-	    			echo "<img class='drinkimage' src=Images/DrinkPictures/$DrinkPicture>";
-	    		?>
+
+			<div class="drinkside">
+				<div class='side'>
+		    		<?php 
+		    			echo "<img class='drinkimage' src=Images/DrinkPictures/$DrinkPicture>";
+		    		?>
 
 
-    		</div>
-    		<div class="heart">
-				<?php 
-					if ($DrinkSaved == 0){ // Show the heart to fav a drink. Heart deisgn depends on if it's already fav or not.
-						echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like.png"></a>';
-					} 
-					else if ($DrinkSaved == 1){
-						echo '<a href="RemoveFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like2.png"></a>'; 
-					} 
+	    		</div>
+	    		<div class="heart">
+					<?php 
+						if ($DrinkSaved == 0){ // Show the heart to fav a drink. Heart deisgn depends on if it's already fav or not.
+							echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like.png"></a>';
+						} 
+						else if ($DrinkSaved == 1){
+							echo '<a href="RemoveFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like2.png"></a>'; 
+						} 
 
-				?> 
-			</div>
-			<div  class="back">
+					?> 
+				</div>
+				<div  class="back">
 
-				<a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
-			</div>
-			<div class='maincontent'>
+					<a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
+				</div>
 				<h3><?php echo $DrinkName; ?></h3> <!-- Print out the name of the drink-->
+			</div>
+
+			<div class='maincontent'>
+				
 				<div class='ingrblack'>
-					<img src="Images/tri.png" class="tri"> <!-- triangle -->
+					<img src="Images/tri.png" class="tri1"> <!-- triangle -->
 					<h4>What do you need? </h4>
 					<ul><?php foreach($alling as $value){
 		    			echo "<li>" . $value . "</li><br>";} ?> <!-- Print out each value that you can find into the ingredients array -->
@@ -76,19 +85,38 @@
 		    		<?php echo "<p>" . $DrinkReceipt. "<p>"; ?>
 		    	</div>
     		</div>
-
-
+		
 		</div>
+	</div>
 	</body>
 
 
 
 	<style>
 
+	body{
+		margin: 0 auto;
+	}
+	#pageContainer{
+		background-color: #000;
+		margin: 0 auto;
+	}
+
 		.container{
-			padding-top:100px;
-			overflow: hidden;
+			padding-top:150px;
+			margin: 0 auto;
+			text-align: center;
+			max-width: 900px;
+
 		}
+		.drinkside{
+			position: relative;
+			float:left;
+			width:100%;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		
 		h3{
 			font-family: 'open sans',helvetica;
 			font-weight: 800;
@@ -130,6 +158,7 @@
 			margin-top:5px;
 			font-family: 'open sans',helvetica;
 			font-size: 14px;
+		
 		}
 
 		.maincontent{
@@ -139,10 +168,8 @@
 			box-sizing: border-box;
 		}
 		.side{
-			float:left;
-			width:100%;
-			text-align: center;
-			margin-bottom: 20px;
+			
+
 		}
 		.drinkimage{
 			width:50%;
@@ -159,7 +186,7 @@
 			text-align:center;
 			padding:0;
 		}
-		.tri{
+		.tri, .tri1{
 			width:100%;
 			margin:0;
 			padding:0;
@@ -172,7 +199,7 @@
 			padding:8px;
 			position:absolute;
 			right:40px;
-			top:120px;
+			top:0px;
 
 		}
 		.back{
@@ -182,10 +209,42 @@
 			padding:8px;
 			position:absolute;
 			left:20px;
-			top:120px;
+			top:0px;
 		}
 		.knapp{
 			width: 40px;
+		}
+
+		@media (min-width: 600px) {
+
+
+			.heart, .back, .side{
+				margin-top: 60px;
+			}
+			.drinkside{
+			float:left;
+			width:60%;
+			text-align: center;
+			margin-bottom: 20px;
+			display: inline;
+			margin: 0 auto;
+
+			}
+			.maincontent{
+				float:left;
+				width:40%;
+				display: inline;
+				margin: 0 auto;
+			
+			}
+			.tri1{
+				display: none;
+			}
+			
+				h4{
+				padding-top:70px;
+			}
+			
 		}
 
 	</style>
