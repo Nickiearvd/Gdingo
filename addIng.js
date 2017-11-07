@@ -18,3 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	})
 })
+
+$(document).ready( function() { // Add a open class, enable to show or not the navigation 
+	var button = $(".button2");
+	var form = $(".ingredientForm");
+
+	button.click( function(event) {
+		event.preventDefault();
+		form.toggleClass("open");
+		button.toggleClass("open");
+	} );
+
+} );
