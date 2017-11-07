@@ -105,7 +105,7 @@
 					<button class='button2'>You don't find your ingredient? Click here to add more</button></br>
 				</div>
 				<input  class="receipt" type="text" required placeholder="Receipt" name="DrinkReceipt"></br>
-				<input type="submit" name="addDrink">
+				<input class='button3' type="submit" name="addDrink">
 			</form>
 
 
@@ -134,6 +134,7 @@
 			font-family: 'open sans',helvetica;
 			text-align: center;
 		}
+		/***************TEXT STYLE****************/
 
 		h2{
 			font-family: 'open sans',helvetica;
@@ -146,33 +147,7 @@
 			margin-bottom: 30px;
 			text-align: center;
 		}
-		.select{
-			width:60%;
-			margin:0 auto;
-			box-sizing: border-box;
-			display: block;
-			height:20px;
-			padding:15px;
-			float:left;
-		}
-
-		.fieldDrink{
-			width:70%;
-			margin:0 auto;
-			box-sizing: border-box;
-			display: block;
-			height:20px;
-			padding:15px;
-		}
-		.receipt{
-			width:70%;
-			margin:0 auto;
-			box-sizing: border-box;
-			display: block;
-			height:20px;
-			padding:15px;
-			padding-bottom:100px;
-		}
+		/***************BUTTONS****************/
 
 		.button{
 			width:39%;
@@ -184,6 +159,7 @@
 			color: #fff;
 			border:none;
 			padding: 5px 15px 5px 15px;
+			height:30px;
 			font-size: 10px;
 			box-sizing: border-box;
 			-webkit-appearance: none;
@@ -205,15 +181,6 @@
 			float:right;
 		} 
 
-		.addDrink{
-			width:70%;
-			margin:0 auto;
-			box-sizing: border-box;
-			display: block;
-			overflow: hidden;
-			margin-bottom: 30px;
-		}
-
 		.button:focus, .button2:focus, .button3:focus { 
 			outline: none;
 		}
@@ -233,6 +200,45 @@
 			-webkit-appearance: none;
 		}
 
+		/***************TEXTFIELDS***************/
+		.select{
+			width:60%;
+			margin:0 auto;
+			box-sizing: border-box;
+			display: block;
+			height:30px;
+			float:left;
+			}
+
+		.fieldDrink{
+			width:70%;
+			margin:0 auto;
+			box-sizing: border-box;
+			display: block;
+			height:20px;
+			padding:15px;
+		}
+		.receipt{
+			width:70%;
+			margin:0 auto;
+			box-sizing: border-box;
+			display: block;
+			height:20px;
+			padding:15px;
+			padding-bottom:100px;
+		}
+
+		.addDrink{
+			width:70%;
+			margin:0 auto;
+			box-sizing: border-box;
+			display: block;
+			overflow: hidden;
+			margin-bottom: 30px;
+		}
+
+		/***************ADDINGR***************/
+
 		#IngToDrink{
 			margin:0;
 			padding:0;
@@ -247,14 +253,13 @@
 			margin:0;
 
 		}
-
 		.ingredientForm{
 			display: none;
 		}
 		.ingredientForm.open{
 			display: block;
 			position: absolute;
-			top:250px;
+			top:260px;
 			width:70%;
 			left:15%;
 		}
