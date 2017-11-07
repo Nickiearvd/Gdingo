@@ -57,6 +57,10 @@
 
 				?> 
 			</div>
+			<div  class="back">
+
+				<a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
+			</div>
 			<div class='maincontent'>
 				<h3><?php echo $DrinkName; ?></h3> <!-- Print out the name of the drink-->
 				<div class='ingrblack'>
@@ -170,6 +174,15 @@
 			right:40px;
 			top:120px;
 
+		}
+		.back{
+			width: 20px;
+			height: 20px;
+			border-radius: 20px;
+			padding:8px;
+			position:absolute;
+			left:20px;
+			top:120px;
 		}
 		.knapp{
 			width: 40px;

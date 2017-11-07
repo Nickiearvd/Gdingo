@@ -33,24 +33,29 @@
 
 
 					<?php
-						$searchname = "";
-						$searching = "";
-						if (isset($_POST) && !empty($_POST)) {
-			            	# Protection form field. 
-			            	$searchname= htmlentities($searchname);
-							$searchname = mysqli_real_escape_string($db, $searchname);
+							$searchname = "";
+							$searching = "";
 
-							$searching= htmlentities($searching);
-							$searching = mysqli_real_escape_string($db, $searching);
-			                
-			                #first trim the search, so no white spaces appear prior to the text entered
-			                $searchname = trim($_POST['searchname']);
-			                $searching = trim($_POST['searching']);
-			            }
-			            $searchname = addslashes($searchname);
-			            $searching = addslashes($searching);
-			            # Open the database
-						@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+							@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+							if (isset($_POST) && !empty($_POST)) {
+
+								#first trim the search, so no white spaces appear prior to the text entered
+				                $searchname = trim($_POST['searchname']);
+				                $searching = trim($_POST['searching']);
+
+				            	# Protection form field. 
+				            	$searchname = mysqli_real_escape_string($db, $searchname);
+				            	$searchname= htmlentities($searchname);
+
+				            	$searching = mysqli_real_escape_string($db, $searching);
+								$searching= htmlentities($searching);
+								
+				                $searchname = addslashes($searchname);
+				            	$searching = addslashes($searching);
+				                
+				            }
+			          
 
 						if ($db->connect_error) {
 						    echo "could not connect: " . $db->connect_error;
@@ -61,13 +66,9 @@
 						# Build the query. Users are allowed to search on title, author, or both
 
 						
-
-						$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng, Drinks.DrinkSaved 
-
-						from Drinks 
-
-						JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
-						JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId
+						$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng, Drinks.DrinkSaved FROM Drinks 
+							JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
+							JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId 
 
 						WHERE DrinkSaved is true";
 
@@ -80,11 +81,15 @@
 						if ($searchname && $searching) { // Name and Ingredients search
 						    $query = $query . " where DrinkName like '%" . $searchname. "%' and NameIng like '%" . $searching . "%'"; // unfinished
 						}
-						if (!$searchname && !$searching){
-							echo "hej";
-						}
+						if (!$searchdrink && !$searchingredients) {
+    						 $query = $query . " GROUP BY DrinkName";
+
+
+    						}
 						
 					
+
+
 
 					?>
 
@@ -111,18 +116,16 @@
 
 						$stmt->execute();
 
-							 while ($stmt->fetch()) {
+							  while ($stmt->fetch()) {
 
-							    echo "<div class='gridone'>
-							    <div class='error'>
-									<a href='RemoveFav.php?DrinkId=$DrinkId'><img class='knapp' src='Images/error.png'></a>		
-								</div>
+							 	echo "<div class='gridone'>
 
-							    ";
-							    echo "<a href='drinkbase.php?DrinkId=$DrinkId'> <img class='DrinkPic' src='Images/DrinkPictures/$DrinkPicture'> <a>";
-							    echo "<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'> $DrinkName <a>";
-							    echo "</div>";
+							 	<a href='drinkbase.php?DrinkId=$DrinkId'>
+							 	<img class='DrinkPic' src=\"Images/DrinkPictures/" . $DrinkPicture . "\" GROUP BY DrinkPicture> </a>
+							 	<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'>" . $DrinkName . " </a>
 
+							 	</div>";
+				
 							}
 
 
