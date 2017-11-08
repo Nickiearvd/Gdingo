@@ -14,21 +14,24 @@
 		
 	</div>
 	<img src="Images/tri.png" class="tri"> <!-- triangle -->
+	<div id="line"></div>
+
 	<div id="footerImg">
 		<img class="footerLogo" src="Images/logotext.png" >
-		<p class="footerP">Thank you for visiting, welcome back!</p>
-		
-		
-		
+		<p class="footerP1">Thank you for visiting, welcome back!</p>
 	</div>
 
-	<a href="finddrinks.php"><button class="exitbtn"> SIGN UP!</button></a>
+	<div id="rightSide">
+		<a href="finddrinks.php"><button class="exitbtn"> SIGN UP!</button></a>
+	</div>
 	<div class="links">
 		
-	<img class="link" src="Images/facebook.png" >
-	<img class="link" src="Images/twitter.png" >
-	<img class="link" src="Images/instagram.png" >
+		<img class="link" src="Images/facebook.png" >
+		<img class="link" src="Images/twitter.png" >
+		<img class="link" src="Images/instagram.png" >
 	</div>
+
+
 	<div id="footerCopyrights">
 		
 		<p class="footerP">Copyright © 2017 All rights reserved by GDingo Company</p>
@@ -53,9 +56,10 @@
 	    text-align: center;
 	    vertical-align: middle;
 	    line-height: normal;
-	    margin: 0;
+	    margin: 0 auto;
 	    bottom: -10px;
 	    width: 100%;
+	    max-width: 1100px;
 	}
 
 	#whiteDiv{
@@ -72,7 +76,6 @@
 	#footerImg{
 		/*border-bottom: solid #fff 2px;*/
 		padding-bottom: 15px;
-		background-color: #000;
 		width: 70%;
 		margin: 20px auto 0 auto;
 	}
@@ -96,7 +99,7 @@
 		margin: 10px auto;
 		height: 80px;
 	}
-	.footerP{
+	.footerP, .footerP1{
 		padding-top: 15px;
 		font-size: 11px;
 	}
@@ -124,8 +127,35 @@
 		@media (min-width: 600px) {
 			#footerImg{
 				width: 40%;
+				max-width: 290px;
 				float: left;
 				display: inline;
+				margin-top: -100px;
+				padding: 0 7% 50px;
+			}
+			.exitbtn {
+				margin-top: -120px;
+				width: 100%;			
+			}
+			.footerP1{
+				display: none;
+			}
+			.links{
+				margin-top: 90px;
+			}
+			#line{
+				width: 2px;
+				height: 100px;
+				background-color: #fff;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			#rightSide{
+				margin-top: -58px;
+				width: 30%;
+				max-width: 290px;
+				float: right;
+				padding: 0 7%; 
 			}
 		}
 	</style>

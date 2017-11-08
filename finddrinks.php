@@ -102,16 +102,10 @@
 						?>
 
 					</div>
-					<img src="Images/tri-2svart.png" class="tri"> <!-- triangle -->
-					<div class='ingr'>
-					
-	
-				    </div>
-				    
 
 		  		</form>
 			</div>
-
+		<?php include 'footer.php';?>
 		</div>
 	</body>
 </html>

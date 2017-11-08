@@ -1,9 +1,13 @@
 html{
 	width:100%;
 	margin:0;
+	background-color: black;
 }
 .container{
 	padding-top:150px;
+	background-color: white;
+	text-align: center;
+
 }
 .fixbackground{
 	background-color: black;
