@@ -96,8 +96,8 @@
 	}
 
 	#footerCopyrights{
-		margin: 10px auto;
-		height: 80px;
+		margin: 10px auto 0 auto;
+		height: 50px;
 	}
 	.footerP, .footerP1{
 		padding-top: 15px;
@@ -130,8 +130,8 @@
 				max-width: 290px;
 				float: left;
 				display: inline;
-				margin-top: -100px;
-				padding: 0 7% 50px;
+				margin-top: -140px;
+				padding: 0 7% 0px;
 			}
 			.exitbtn {
 				margin-top: -120px;
@@ -147,11 +147,11 @@
 				width: 2px;
 				height: 100px;
 				background-color: #fff;
-				margin: 0 auto;
+				margin: 30px auto;
 				overflow: hidden;
 			}
 			#rightSide{
-				margin-top: -58px;
+				margin-top: -98px;
 				width: 30%;
 				max-width: 290px;
 				float: right;

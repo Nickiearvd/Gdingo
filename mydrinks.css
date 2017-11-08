@@ -1,13 +1,4 @@
-#test {
-	width:30%;
-	height: 50%;
-	border-left:10px solid  #12e696;
-	border-bottom: 10px solid  #12e696;
-	margin:auto;
-	position: absolute;
-	left:17%;
-	top:40%;
-}
+
 
 html{
 	width:100%;
@@ -20,8 +11,9 @@ html{
 #content {
 	overflow: hidden;
 	width:100%;
-	margin:auto;
-	background-color: #000;
+	margin:0 auto;
+	background-color: black;
+
 
 }
 
@@ -34,14 +26,43 @@ body {
 	background: #000;
 }
 
+#firstc{
+	background-color: black;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+
+
+}
+
+form{
+	max-width: 700px;
+	margin: 30px auto 0 auto;
+}
 #intro {
 	background-color: #fff;
 	overflow: hidden;
 	text-align: center;
+	padding-bottom: 30px;
+	margin: 0 auto;
+	z-index: 5;
+}
+
+#gridsystem{
+	max-width: 1100px;
+	margin: 0 auto;
+	
 }
 
 
-
+#intro1{
+	text-align: center;
+	color: #000;
+	background-color: #fff;
+	width: 100%;
+	margin: 0 auto;
+}
 
 
 .introbtn {
@@ -58,16 +79,18 @@ body {
 
 .tri {
 	width:100%;
+	max-width: 1100px;
 	background-size: 100%;
 	z-index: -1;
-	margin-bottom: 40px;
+	margin:0 auto;
+	padding:0;
 }
 
 .tri2 {
 	width:100%;
 	background-size: 100%;
-	z-index: -1;
-	margin-bottom: -5px;
+	max-width: 1100px;
+	margin: 0 auto 0 auto;
 
 }
 
@@ -133,50 +156,129 @@ body {
 		width: 100%;
 	}
 
-	.DrinkPic{
-		
-		box-sizing: border-box;
-		margin:0 auto;
-
-		position: relative;
-	    margin: -50% auto;/* virtualy height needed turn don to zero */
-	    width: 100%;/* height will follow within image ratio */
-	    height:auto;/* to overrride attribute height set in tag */
-	    vertical-align:middle;/* finalise vertical centering on baseline*/
-		
-	}
-
-	.DrinkPic:hover {
-
-	}
-	.cut{
-		display:block;
-	    height:200px;/*set an height */
-	    line-height:200px;/* set the baseline at 100px from top*/
-	    overflow:hidden;/* crops/cut off */
-	}
 
 	.gridone{
 	 	position: relative;
-	 	width:45%;
+	 	width:350px;
 	 	display: inline-block;
 	 	margin: 5px;
+	 	max-width: 400px;
 
 	}
-	 .DrinkName{ 
-	 	float:left;
-	 	position:absolute;
-	 	left:0;
-	 	top:50%;
-	 	width:100%;
-	 	text-align: center;
+
+
+
+
+
+.grid{
+		list-style-type: none;
+		margin: 0 auto;
+		padding: 0px;
+		height:280px;/*set an height */
+	    line-height:280px;/* set the baseline at 100px from top*/
+	    overflow:hidden;/* crops/cut off */
+		text-align: center;
+	}
+
+	.grid li{
+		float: left;
+		padding: 0px;
+		position: relative;
+		overflow: hidden;
+
+
+		position: relative;
+	    /*margin: -50% auto;/* virtualy height needed turn don to zero */
+	    /*width: 100%;/* height will follow within image ratio */
+	    /*height:auto;/* to overrride attribute height set in tag */
+	    /*vertical-align:middle;/* finalise vertical centering on baseline*/
+		
+	}
+
+	.grid li:hover .caption{
+		opacity: 1;
+
+	}
+
+	.grid li:hover img{
+		opacity: 1;
+		transform: scale(1.15,1.15);
+		-webkit-transform:scale(1.15,1.15);
+		-moz-transform:scale(1.15,1.15);
+		-ms-transform:scale(1.15,1.15);
+		-o-transform:scale(1.15,1.15);
+	}
+
+
+	.grid img{
+		margin: 0 auto;
+		padding: 0px;
+		float: left;
+		z-index: 4;
+		width: 100%;
+		text-align: center;
+	}
+
+
+	.grid .caption{
+		cursor: pointer;
+		text-align: center;
+		position: absolute;
+		opacity: 0;
+		-webkit-transition:all 0.45s ease-in-out;
+		-moz-transition:all 0.45s ease-in-out;
+		-o-transition:all 0.45s ease-in-out;
+		-ms-transition:all 0.45s ease-in-out;
+		transition:all 0.45s ease-in-out;
+	}
+
+	.grid img{
+		-webkit-transition:all 0.25s ease-in-out;
+		-moz-transition:all 0.25s ease-in-out;
+		-o-transition:all 0.25s ease-in-out;
+		-ms-transition:all 0.25s ease-in-out;
+		transition:all 0.25s ease-in-out;
+	}
+	.grid .blur{
+		background-color: rgba(0,0,0,0.65);
+		height: 280px;
+		width: 350px;
+		z-index: 5;
+		position: absolute;
+	
+	}
+
+	h4 a{
+		text-transform: uppercase;
+		font-size: 20px;
+		color: white;
 		font-family: 'open sans',helvetica;
 		font-weight: 800;
 		text-transform: uppercase;
 		text-decoration: none;
-		color:black;
-	 }
 
+		float:left;
+	 	position:absolute;
+	 	left:0;
+	 	top:0;
+	 	width:100%;
+	 	text-align: center;
+	}
+	
+
+
+.clicks{
+
+	color: #fff;
+}
+
+
+
+/*margin: -50% auto;/* virtualy height needed turn don to zero 
+ width: 100%;/* height will follow within image ratio 
+height:auto;/* to overrride attribute height set in tag 
+vertical-align:middle;/* finalise vertical centering on baseline
+*/
 
 /* FONTS */
 
@@ -195,15 +297,18 @@ p {
 }
 
 h1 {
+	
+	padding-top: 40px;
+	margin-bottom: 13px;
+	font-family: 'open sans',helvetica;
+	font-weight: 800;
 	text-transform: uppercase;
-	font-weight: bold;
 	font-size: 40px;
-	width:60%;
+	color:white;
+	margin:18px auto 0 auto;
+	line-height: 45px;
 	text-align: center;
-	margin: auto;
-	padding-top: 30px;
-	line-height: 35px;
-	margin-bottom: 10px;
+	width: 100%;
 	}
 
 h2 {
@@ -225,7 +330,7 @@ h2 {
 
 /* MEDIA MIN 600PX */
 
-@media (min-width: 700px) {
+@media (min-width: 600px) {
 
 	#c {
 	height:200px;
@@ -244,9 +349,7 @@ h2 {
 		font-size: 24px;
 	}
 
-	h1 {
-		width: 30%;
-	}
+	
 
 
 	

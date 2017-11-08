@@ -11,19 +11,23 @@
 	</head>
 	<body>
 		<div class='container'>
-
+		<img src="Images/tri2.png" class="tri1"> <!-- triangle -->
+			<div id="whiteborder">
 			<div class="containersearch">
+			
+
+			
 				<form action="finddrinks.php" method="POST">
-				<h3>Looking for a drink? </h3>
+				
 					<div class='namedrink'>
 						<div class='fixbackground'>
-							<img src="Images/tri.png" class="tri"> <!-- triangle -->
+							<h3>explore</h3>
 							<input type="text" id="name" name="searchname" placeholder="Search after a drink name"></br>
 							<input type="text" class="ing" name="searching" placeholder="Search after one ingrediens "></br>
 						    <input class="button" type="submit" name="submit" value="Search">
 					    </div>
-					     <img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
-
+					     
+					     <div id="gridsystem">
 						<?php
 							$searchname = "";
 							$searching = "";
@@ -91,13 +95,19 @@
 
 
 							 	echo "<div class='gridone'>
-							 			<ul class='caption-style-4'>
+							 			<ul class='grid'>
 
 							 				<li>
 							 					<img src=\"Images/DrinkPictures/" . $DrinkPicture . "\" GROUP BY DrinkPicture>
 							 					<div class='caption'>
 							 						
-							 						<div class='blur'><h4><a href='drinkbase.php?DrinkId=$DrinkId'>" . $DrinkName . " </a></h4></div>
+							 						<div class='blur'>
+
+							 							<div class='text'><h4><a href='drinkbase.php?DrinkId=$DrinkId'>" . $DrinkName . " </a></h4>
+							 							<p class='clicks'>Click to see more</p>
+							 							</div>
+
+							 						</div>
 							 						<div class='caption-text'></div>
 							 						
 
@@ -107,14 +117,16 @@
 							 			</ul>
 							 	
 
-							 	</div>";
+							 	</div>"
+							 	;
 							}
 
 						?>
-
+						</div>
 					</div>
 
 		  		</form>
+		  		</div>
 			</div>
 		<?php include 'footer.php';?>
 		</div>

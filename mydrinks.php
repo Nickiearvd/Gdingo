@@ -11,29 +11,20 @@
 	<body>
 
 		<div id="c"></div> <!-- For the menu -->
-
-		<!-- https://www.w3schools.com/w3css/w3css_slideshow.asp 
-		The basic to the slideshow is taken from w3schools -->
 		<div id="content">
 
-			<div id="intro"> <!-- intro starts -->
-				<h1>MY DRINKING SHELF</h1>
-				
-				
+	
 
-			</div> <!-- intro ends -->
-
-			<img src="Images/tri.png" class="tri"> <!-- triangle -->
-			<div id="firstc"> <!-- black container starts -->		
+			
+			
+			<div id="firstc"> <!-- black container starts -->	
+				<h1>my favourites</h1>
 				<form action="mydrinks.php" method="POST">
 					<input type="text" id="name" name="searchname1" placeholder="Search after a drink name"></br>
 					<input type="text" class="ing" name="searching1" placeholder="Search after one ingrediens "></br>
 					<input class="button" type="submit" name="submit" value="Search">
 
-
-
 					<?php
-
 							$searchname1 = "";
 							$searching1 = "";
 
@@ -85,17 +76,16 @@
     					};
 
 					?>
-
 				</form>
-				
-			</div>
 
+			</div>
 			
 			</div> <!-- blackc ends-->
-
-			<img src="Images/tri3.png" class="tri2"> <!-- triangle -->
 			
 			<div id="intro">
+				<img src="Images/tri-3svart.png" class="tri2"> <!-- triangle -->
+			<div id="gridsystem">
+
 			<?php 
 
 					  # Here's the query using an associative array for the results
@@ -115,13 +105,30 @@
 
 
 							 	echo "<div class='gridone'>
+							 			<ul class='grid'>
 
-							 	<a href='drinkbase.php?DrinkId=$DrinkId'>
-							 	<div class='cut'>
-							 	<img class='DrinkPic' src=\"Images/DrinkPictures/" . $DrinkPicture . "\" GROUP BY DrinkPicture> </div></a>
-							 	<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'>" . $DrinkName . " </a>
+							 				<li>
+							 					<img src=\"Images/DrinkPictures/" . $DrinkPicture . "\" GROUP BY DrinkPicture>
+							 					<div class='caption'>
+							 						
+							 						<div class='blur'>
 
-							 	</div>";
+							 							<div class='text'><h4><a href='drinkbase.php?DrinkId=$DrinkId'>" . $DrinkName . " </a></h4>
+							 							<p class='clicks'>Click to see more</p>
+							 							</div>
+
+							 						</div>
+							 						<div class='caption-text'></div>
+							 						
+
+							 					</div>
+
+							 				</li>
+							 			</ul>
+							 	
+
+							 	</div>"
+							 	;
 				
 							}
 
@@ -129,12 +136,11 @@
 
 			 ?>
 
-			
+			</div>
+
 		</div> <!-- content div ends -->
+		<div id="fotterINC">
 		<?php include 'footer.php';?>
-		<script> 
-			
-		</script>
-		
+		</div>
 	</body>
 </html>
