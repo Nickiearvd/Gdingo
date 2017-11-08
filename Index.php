@@ -77,7 +77,7 @@
 					?>
 				</div>
 			</div>
-
+		<?php include 'footer.php';?>
 		</div> <!-- content div ends -->
 
 		<script> 
