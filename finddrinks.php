@@ -63,19 +63,18 @@
 
 							if ($searchname && !$searching) { // Name search only
 							    $query = $query . " where DrinkName like '%" . $searchname . "%'GROUP BY DrinkName ";
-							}
+							};
 							if (!$searchname && $searching) { // Ingredients only 
 								    $query = $query . " where NameIng like '%" . $searching . "%'";
-								}
+							};
 							if ($searchname && $searching) { // Name and Ingredients search
 							    $query = $query . " where DrinkName like '%" . $searchname. "%' and NameIng like '%" . $searching . "%'"; // unfinished
 
-							}
-							 if (!$searchdrink && !$searchingredients) {
-    						 $query = $query . " GROUP BY DrinkName";
+							};
+							 if (!$searchname && !$searching) {
+    						 	$query = $query . " GROUP BY DrinkName";
 
-
-    						}
+    						};
 							  # Here's the query using an associative array for the results
 							  $result = $db->query($query);
 							  echo "<p> $result->num_rows matching drinks found </p>";
