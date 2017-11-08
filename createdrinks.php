@@ -16,6 +16,9 @@
 		</div>
 	</div>
 		<?php
+
+			$DrinkPicture = trim($_GET['DrinkPicture']); // Get the DrinkId from the finddrinks page the user clicked on.
+			echo $DrinkPicture ;
 			@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
 			if ($db->connect_error) {
@@ -78,10 +81,9 @@
 
 					$stmt = $db->prepare($addDrinksIng);
 					$stmt->execute();
-					echo $Id. '</br>'.'bbb';
-					echo $DrinkId;
 
 				}
+				header('location:fileUpload.php');
 			}
 			// Get all ingredients 
 			$getIng = "SELECT * FROM Ingredients";

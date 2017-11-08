@@ -10,9 +10,9 @@
 		<div class='c'>
 			<h2>My Creations</h2>
 			<div  class="back">
-
-				<a href='createdrinks.php?' ><img class="knapp" src="Images/plus.png"></a>
+				<a href='fileUpload.php?' ><img class="knapp" src="Images/plus.png"></a>
 			</div>
+
 			<?php 
 
 				@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -32,10 +32,13 @@
 				$stmt = $db->prepare($query);
 				$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $Username ); // Same as the query. 
 				$stmt->execute();
+				echo "<img src='Images/tri.png' class='tri'>";
 				echo "<div class='grid'>";
+				
 				while ($stmt->fetch()) { // Show the 
 
 				echo "<div class='gridone'>
+				<a href='updatedrink.php?DrinkId=$DrinkId' ><img class='knappedit' src='Images/edit.png'></a>
 
 				<a href='drinkbase.php?DrinkId=$DrinkId'>
 				<div class='cut'>
@@ -45,6 +48,7 @@
 				</div>";
 				}
 				echo "</div>";
+				echo "<img src='Images/tri-3svart.png' class='tri2'>";
 
 
 			?>
@@ -69,11 +73,22 @@
 			text-align: center;
 		}
 
+		.tri{
+			width:100%;
+			background-color: black;
+			margin-top: -20px;
+			padding-bottom: 30px;
+		}
+		.tri2{
+			width:100%;
+			margin-top: 0px;
+			padding-bottom: 30px;
+		}
+
 		.DrinkPic{
 			
 			box-sizing: border-box;
 			margin:0 auto;
-
 			position: relative;
 		    margin: -50% auto;/* virtualy height needed turn don to zero */
 		    width: 100%;/* height will follow within image ratio */
@@ -83,7 +98,7 @@
 		}
 
 		.DrinkPic:hover {
-
+			
 		}
 		.cut{
 			display:block;
@@ -104,7 +119,10 @@
 			width:100%;
 			margin:0 auto;
 			text-align: center;
-			padding:0;
+			background-color: black;
+			margin-top: -5px;
+			padding-bottom: 40px;
+			
 		}
 		 .DrinkName{ 
 		 	float:left;
@@ -129,10 +147,19 @@
 			padding:10px;
 			border-radius: 50px;
 		}
-		.knapp:hover{
+		.knapp:hover, .knappedit:hover{
 			background-color: black;
+		}
 
-
+		.knappedit{
+			width: 20px;
+			background-color: #e72262;
+			padding:10px;
+			border-radius: 1px;
+			position:absolute;
+			left:-5px;
+			top:10px;
+			z-index: 111111;
 		}
 	</style>
 </html>
