@@ -92,11 +92,11 @@
 							 	echo "<div class='gridone'>
 
 							 	<a href='drinkbase.php?DrinkId=$DrinkId'>
-							 	<img class='DrinkPic' src=\"Images/DrinkPictures/" . $DrinkPicture . "\" GROUP BY DrinkPicture> </a>
+							 	<div class='cut'>
+							 	<img class='DrinkPic' src=\"Images/DrinkPictures/" . $DrinkPicture . "\" GROUP BY DrinkPicture> </div></a>
 							 	<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'>" . $DrinkName . " </a>
 
 							 	</div>";
-				
 							}
 
 						?>
@@ -107,7 +107,6 @@
 					
 	
 				    </div>
-				    <img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
 				    
 
 		  		</form>
