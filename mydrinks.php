@@ -131,7 +131,7 @@
 
 			
 		</div> <!-- content div ends -->
-
+		<?php include 'footer.php';?>
 		<script> 
 			
 		</script>

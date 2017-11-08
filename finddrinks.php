@@ -89,12 +89,23 @@
 
 							 while ($stmt->fetch()) {
 
-							 	echo "<div class='gridone'>
 
-							 	<a href='drinkbase.php?DrinkId=$DrinkId'>
-							 	<div class='cut'>
-							 	<img class='DrinkPic' src=\"Images/DrinkPictures/" . $DrinkPicture . "\" GROUP BY DrinkPicture> </div></a>
-							 	<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'>" . $DrinkName . " </a>
+							 	echo "<div class='gridone'>
+							 			<ul class='caption-style-4'>
+
+							 				<li>
+							 					<img src=\"Images/DrinkPictures/" . $DrinkPicture . "\" GROUP BY DrinkPicture>
+							 					<div class='caption'>
+							 						
+							 						<div class='blur'><h4><a href='drinkbase.php?DrinkId=$DrinkId'>" . $DrinkName . " </a></h4></div>
+							 						<div class='caption-text'></div>
+							 						
+
+							 					</div>
+
+							 				</li>
+							 			</ul>
+							 	
 
 							 	</div>";
 							}
@@ -102,16 +113,10 @@
 						?>
 
 					</div>
-					<img src="Images/tri-2svart.png" class="tri"> <!-- triangle -->
-					<div class='ingr'>
-					
-	
-				    </div>
-				    
 
 		  		</form>
 			</div>
-
+		<?php include 'footer.php';?>
 		</div>
 	</body>
 </html>
