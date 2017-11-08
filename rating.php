@@ -1,3 +1,4 @@
+
 	 <style>
             /****** Rating Starts *****/
             @import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
@@ -47,18 +48,16 @@
                             $("#demo1 .stars").click(function () {
                            
                                 $.post('rating.php',{rate:$(this).val()},function(d){
-                                    if(d>0)
-                                    {
-                                        alert('You already rated');
-                                    }else{
-                                        alert('Thanks For Rating');
-                                    }
+                                    
                                 });
-                                $(this).attr("checked");
+                                
                             });
                         });
                     </script>
         <?php
+
+
+     
  
 /*
  *  Simple Rating System using CSS, JQuery, AJAX, PHP, MySQL
@@ -66,7 +65,7 @@
  */
  
 $ipaddress = md5($_SERVER['REMOTE_ADDR']); // here I am taking IP as UniqueID but you can have user_id from Database or SESSION
- 
+
 $servername = "localhost"; // Server details
 $username = "root";
 $password = "root";
@@ -79,6 +78,7 @@ if ($conn->connect_error) {
 }
  
 if (isset($_POST['rate']) && !empty($_POST['rate'])) {
+
  
     $rate = $conn->real_escape_string($_POST['rate']);
 // check if user has already rated
@@ -96,4 +96,5 @@ if (isset($_POST['rate']) && !empty($_POST['rate'])) {
     }
 }
 $conn->close();
+
 ?>

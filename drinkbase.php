@@ -14,7 +14,7 @@
 	$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkSaved, Drinks.DrinkPicture, Drinks.DrinkReceipt, Ingredients.IngId, Ingredients.NameIng
 	FROM Drinks 
 	JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
-	JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId 
+	JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId
 	WHERE Drinks.DrinkId=$DrinkId" ; // Get all the informartion related to the drinkid
 
 	$result = $db->query($query);
