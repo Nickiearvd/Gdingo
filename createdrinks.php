@@ -9,6 +9,12 @@
 	</head>
 	<body>
 	<div class='c'>
+	<div class="drinkside">
+		<div  class="back">
+
+			<a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
+		</div>
+	</div>
 		<?php
 			@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -128,6 +134,7 @@
 	<style>
 		.c{
 			padding-top:150px;
+			position:relative;
 
 		}
 		p{
@@ -198,6 +205,19 @@
 			font-size: 10px;
 			box-sizing: border-box;
 			-webkit-appearance: none;
+		}
+
+		.back{
+			width: 20px;
+			height: 20px;
+			border-radius: 20px;
+			padding:8px;
+			position:absolute;
+			left:10px;
+			top:-50px;
+		}
+		.knapp{
+			width: 40px;
 		}
 
 		/***************TEXTFIELDS***************/
@@ -289,6 +309,13 @@
 		}
 		.tri{
 			width:100%;
+		}
+		.drinkside{
+			position: relative;
+			float:left;
+			width:100%;
+			text-align: center;
+			margin-bottom: 20px;
 		}
 
 	</style>

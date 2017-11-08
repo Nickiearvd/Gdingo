@@ -8,6 +8,11 @@
 	</head>
 	<body>
 		<div class='c'>
+			<h2>My Creations</h2>
+			<div  class="back">
+
+				<a href='createdrinks.php?' ><img class="knapp" src="Images/plus.png"></a>
+			</div>
 			<?php 
 
 				@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -48,7 +53,20 @@
 	</body>
 	<style>
 		.c{
-			padding-top: 200px;
+			padding-top: 150px;
+		}
+		/***************TEXT STYLE****************/
+
+		h2{
+			font-family: 'open sans',helvetica;
+			font-weight: 800;
+			text-transform: uppercase;
+			font-size: 40px;
+			color:black;
+			margin:0;
+			line-height: 45px;
+			margin-bottom: 30px;
+			text-align: center;
 		}
 
 		.DrinkPic{
@@ -101,5 +119,20 @@
 			text-decoration: none;
 			color:black;
 		 }
+
+		.knapp{
+			width: 35px;
+			margin:0 auto;
+			display: block;
+			margin-bottom: 30px;
+			background-color: #e72262;
+			padding:10px;
+			border-radius: 50px;
+		}
+		.knapp:hover{
+			background-color: black;
+
+
+		}
 	</style>
 </html>
