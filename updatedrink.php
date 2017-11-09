@@ -27,6 +27,7 @@
 	while ($stmt->fetch()) {
 		array_push($alling,$NameIng); // Put the ingredients in the array
 	}
+
 							
 ?>
 <!Doctype html>
@@ -37,6 +38,12 @@
 	</head>
 	<body>
 		<div class='c'>
+			<div  class="delete">
+				<?php echo '<a href="delete.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knappdelete" src="Images/delete.png"></a>'; ?>
+			</div>
+			<div  class="edit">
+				<a href="#" ><img class="knappdelete" src="Images/edit.png"></a>
+			</div>
 
 			<div class="drinkside">
 				<div class='side'>
@@ -85,7 +92,7 @@
 	</body>
 	<style>
 		.c{
-				padding-top: 150px;
+				padding-top: 200px;
 			}
 			/***************TEXT STYLE****************/
 
@@ -224,6 +231,34 @@
 		}
 		.knapp{
 			width: 40px;
+		}
+		.delete {
+			background: #E61262;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			padding:10px;
+			position:absolute;
+			margin:0 auto ;
+			top:150px;
+			left:35%;
+		}
+		.knappdelete{
+			width: 25px;
+		}
+		.edit {
+			background: #E61262;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			padding:10px;
+			position:absolute;
+			margin:0 auto ;
+			top:150px;
+			left:55%;
+		}
+		.delete:hover, .edit:hover{
+			background-color: black;
 		}
 
 		@media (min-width: 600px) {
