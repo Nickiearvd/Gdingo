@@ -101,6 +101,7 @@
 				<input class="fieldDrink" type="text" required placeholder="Name" name="DrinkName"></br>
 				<div class="addDrink">
 					<ul id="IngToDrink">
+						
 					</ul>
 					<select class="select" id="Ingredients" name="addIng[]">
 					<?php 
