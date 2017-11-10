@@ -1,17 +1,22 @@
 
+<?php require ('includes/config.php');?>
+<?php require ('config.php');?>
+
+
 <?php
 
-require('includes/config.php'); 
 
 //if not logged in redirect to login page
-if( !$user->is_logged_in() ){ header('Location: indexlogin.php'); exit(); }
+if(!$user->is_logged_in()){ header('Location: login.php'); exit(); }
+
 
 //define page title
 $title = 'Members Page';
 
 //include header template
-include 'config.php';
-require ('layout/top.php');
+
+include 'layout/top.php';
+
 ?>
 
 <!Doctype html>
@@ -50,7 +55,6 @@ require ('layout/top.php');
 	
 
 
-					
 
 					$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng, members.username FROM Drinks 
 					JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
