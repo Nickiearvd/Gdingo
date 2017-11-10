@@ -21,7 +21,9 @@
 #c {
 	height:100px;
 }
-
+a{
+	cursor: pointer;
+}
 body {
 	font-family: 'open sans', helvetica;
 	background: #000;
@@ -32,17 +34,26 @@ body {
 	overflow: hidden;
 	text-align: center;
 }
-.introbtn:hover, .LogIn:hover{
+.introbtn:hover{
 		opacity: 0.2;
 		cursor: pointer;
 	}
 
 .LogIn{
 	display: block;
-	
+	color: #fff;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+	margin: auto;
+	padding-top: 30px;
+	line-height: 35px;
+	margin-bottom: 20px;
+
 }
 
-.introbtn, .LogIn {
+
+.introbtn {
 	margin:auto;
 	margin-top: 20px;
 	text-align: center;
@@ -216,7 +227,7 @@ h1 {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 40px;
-	width:60%;
+
 	text-align: center;
 	margin: auto;
 	padding-top: 30px;

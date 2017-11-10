@@ -13,7 +13,7 @@
 			<div  class="back">
 				<a href='fileUpload.php?' ><img class="knapp" src="Images/plus.png"></a>
 			</div>
-
+			<div id="gridsystem">
 			<?php 
 
 				@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -34,27 +34,44 @@
 				$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $Username ); // Same as the query. 
 				$stmt->execute();
 				echo "<img src='Images/tri.png' class='tri'>";
-				echo "<div class='grid'>";
 				
 				
-				while ($stmt->fetch()) { // Show the 
+				while ($stmt->fetch()) {
 
-				echo "<div class='gridone'>
-		
 
-				<a href='updatedrink.php?DrinkId=$DrinkId'>
-				<div class='cut'>
-				<img class='DrinkPic' src=\"Images/DrinkPictures/" . $DrinkPicture . "\" GROUP BY DrinkPicture> </div></a>
-				<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'>" . $DrinkName . " </a>
+							 	echo "<div class='gridone'>
+							 			<ul class='grid'>
 
-				</div>";
-				}
-				echo "</div>";
-				echo "<img src='Images/tri-3svart.png' class='tri2'>";
+							 				<li>
+							 					<img src=\"Images/DrinkPictures/" . $DrinkPicture . "\" GROUP BY DrinkPicture>
+							 					<div class='caption'>
+							 						
+							 						<div class='blur'>
+
+							 							<div class='text'><h4><a href='drinkbase.php?DrinkId=$DrinkId'>" . $DrinkName . " </a></h4>
+							 							<p class='clicks'>Click to see more</p>
+							 							</div>
+
+							 						</div>
+							 						<div class='caption-text'></div>
+							 						
+
+							 					</div>
+
+							 				</li>
+							 			</ul>
+							 	
+
+							 	</div>"
+							 	;
+				
+							}
+
 
 
 			?>
-
+			</div>
+			<?php include 'footer.php';?>
 		</div>
 	</body>
 </html>

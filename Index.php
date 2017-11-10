@@ -18,7 +18,7 @@
 
 			<div id="intro"> <!-- intro starts -->
 
-				<h1>In search for a drink?</h1>
+				<h1>Find your favourite drink!</h1>
 				<p class="introp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et maximus augue. Vivamus vel dolor nisi. Quisque molestie scelerisque diam nec semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br> Nunc ac mollis orci. Maecenas ac volutpat massa. Nunc et ligula accumsan, condimentum lectus nec, fringilla nisl.
 				Sed elit elit, auctor non sollicitudin ultrices, semper vitae nisi. Proin pharetra erat nisi, in tristique nisl sagittis et. Nullam iaculis imperdiet condimentum. Donec imperdiet commodo aliquam. Vestibulum eleifend est justo, quis lacinia libero blandit at. Aliquam vehicula nisl sed nulla gravida maximus. In suscipit a nulla et suscipit. </p>
 				<a href="finddrinks.php"><button class="introbtn"> SEARCH NOW</button></a>
@@ -29,11 +29,12 @@
 			<div id="firstc"> <!-- container with about + top starts -->	
 
 					<div class="icons">
-					<a href="finddrinks.php"><button class="LogIn"> LOG IN</button></a>
+
 		
 						<img class="icon" src="Images/search.png" >
 						<img class="icon" src="Images/like1.png" >
 						<img class="icon" src="Images/plus.png" >
+						<a class="LogIn">LOG IN >></a>
 					</div>
 
 			

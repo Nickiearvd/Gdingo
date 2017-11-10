@@ -27,58 +27,8 @@
 			padding-bottom: 30px;
 		}
 
-		.DrinkPic{
-			
-			box-sizing: border-box;
-			margin:0 auto;
-			position: relative;
-		    margin: -50% auto;/* virtualy height needed turn don to zero */
-		    width: 100%;/* height will follow within image ratio */
-		    height:auto;/* to overrride attribute height set in tag */
-		    vertical-align:middle;/* finalise vertical centering on baseline*/
-			
-		}
-
-		.DrinkPic:hover {
-			
-		}
-		.cut{
-			display:block;
-		    height:200px;/*set an height */
-		    line-height:200px;/* set the baseline at 100px from top*/
-		    overflow:hidden;/* crops/cut off */
-		}
-
-		.gridone{
-		 	position: relative;
-		 	width:45%;
-		 	display: inline-block;
-		 	margin: 5px;
-		}
-
-		.grid{
-			display: inline-block;
-			width:100%;
-			margin:0 auto;
-			text-align: center;
-			background-color: black;
-			margin-top: -5px;
-			padding-bottom: 40px;
-			
-		}
-		 .DrinkName{ 
-		 	float:left;
-		 	position:absolute;
-		 	left:0;
-		 	top:50%;
-		 	width:100%;
-		 	text-align: center;
-			font-family: 'open sans',helvetica;
-			font-weight: 800;
-			text-transform: uppercase;
-			text-decoration: none;
-			color:black;
-		 }
+		
+		
 
 		.knapp{
 			width: 35px;
@@ -91,4 +41,128 @@
 		}
 		.knapp:hover{
 			background-color: black;
+
 		}
+
+
+
+#gridsystem{
+	max-width: 1100px;
+	margin: 0 auto;
+	background-color: #000;
+	text-align: center;
+	
+}
+.gridone{
+	 	position: relative;
+	 	width:350px;
+	 	display: inline-block;
+	 	margin: 5px;
+	 	max-width: 400px;
+
+	}
+
+
+.grid{
+		list-style-type: none;
+		margin: 0 auto;
+		padding: 0px;
+		height:280px;/*set an height */
+	    line-height:280px;/* set the baseline at 100px from top*/
+	    overflow:hidden;/* crops/cut off */
+		text-align: center;
+	}
+
+	.grid li{
+		float: left;
+		padding: 0px;
+		position: relative;
+		overflow: hidden;
+
+
+		position: relative;
+	    /*margin: -50% auto;/* virtualy height needed turn don to zero */
+	    /*width: 100%;/* height will follow within image ratio */
+	    /*height:auto;/* to overrride attribute height set in tag */
+	    /*vertical-align:middle;/* finalise vertical centering on baseline*/
+		
+	}
+
+	.grid li:hover .caption{
+		opacity: 1;
+
+	}
+
+	.grid li:hover img{
+		opacity: 1;
+		transform: scale(1.15,1.15);
+		-webkit-transform:scale(1.15,1.15);
+		-moz-transform:scale(1.15,1.15);
+		-ms-transform:scale(1.15,1.15);
+		-o-transform:scale(1.15,1.15);
+	}
+
+
+	.grid img{
+		margin: 0 auto;
+		padding: 0px;
+		float: left;
+		z-index: 4;
+		width: 100%;
+		text-align: center;
+	}
+
+
+	.grid .caption{
+		cursor: pointer;
+		text-align: center;
+		position: absolute;
+		opacity: 0;
+		-webkit-transition:all 0.45s ease-in-out;
+		-moz-transition:all 0.45s ease-in-out;
+		-o-transition:all 0.45s ease-in-out;
+		-ms-transition:all 0.45s ease-in-out;
+		transition:all 0.45s ease-in-out;
+	}
+
+	.grid img{
+		-webkit-transition:all 0.25s ease-in-out;
+		-moz-transition:all 0.25s ease-in-out;
+		-o-transition:all 0.25s ease-in-out;
+		-ms-transition:all 0.25s ease-in-out;
+		transition:all 0.25s ease-in-out;
+	}
+	.grid .blur{
+		background-color: rgba(0,0,0,0.65);
+		height: 280px;
+		width: 350px;
+		z-index: 5;
+		position: absolute;
+	
+	}
+
+	h4 a{
+		text-transform: uppercase;
+		font-size: 20px;
+		color: white;
+		font-family: 'open sans',helvetica;
+		font-weight: 800;
+		text-transform: uppercase;
+		text-decoration: none;
+
+		float:left;
+	 	position:absolute;
+	 	left:0;
+	 	top:0;
+	 	width:100%;
+	 	text-align: center;
+	}
+	
+
+
+.clicks{
+
+	color: #fff;
+}
+
+
