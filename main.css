@@ -55,15 +55,21 @@ body {
 
 
 .introbtn {
-	margin:auto;
-	margin-top: 20px;
-	text-align: center;
-	background-color: #e72262;
-	color: #fff;
-	border:none;
-	padding: 10px 25px 10px 25px;
-	font-size: 14px;
+		margin: 30px auto;
+		text-align: center;
+		font-family: 'open sans',helvetica;
+		font-weight: 800;
+		text-transform: uppercase;
+		font-size: 18px;
+		background-color: #e72262;
+		color: #fff;
+		border:none;
+		width: 160px;
+		padding: 10px;
 }
+
+
+
 
 .tri {
 	width:100%;
@@ -90,9 +96,7 @@ body {
  margin-top: 20px;
  color:#fff;
  line-height: 1.7;
- padding: 30px;
- padding-top: 65px;
- padding-bottom:60px;
+ padding: 10px;
  box-sizing: border-box;
 
 }
@@ -228,7 +232,7 @@ h1 {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 40px;
-	
+
 	text-align: center;
 	margin: auto;
 	padding-top: 30px;

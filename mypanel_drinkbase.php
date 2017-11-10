@@ -42,7 +42,7 @@
 				<?php echo '<a href="delete.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knappdelete" src="Images/delete.png"></a>'; ?>
 			</div>
 			<div  class="edit">
-				<a href="#" ><img class="knappdelete" src="Images/edit.png"></a>
+				<?php echo '<a href="update.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knappdelete" src="Images/edit.png"></a>'; ?>
 			</div>
 
 			<div class="drinkside">
