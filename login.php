@@ -1,101 +1,95 @@
-
-<?php include 'config.php';?>
 <?php
+//include config
+require_once('includes/config.php');
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//check if already logged in move to home page
+if( $user->is_logged_in() ){ header('Location: index.php'); exit(); }
 
-#this function is for older PHP versions that use Magic Quotes.
-#
-//    function escapestring($input) {
-//    if (get_magic_quotes_gpc()) {
-//    $input = stripslashes($input);
-//    }
-//
-//    @ $db = new mysqli('localhost', 'root', '', 'testinguser');
-//
-//
-//    return mysqli_real_escape_string($db, $input);
-//
-//    }
+//process login form if submitted
+if(isset($_POST['submit'])){
 
-@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+	if (!isset($_POST['username'])) $error[] = "Please fill out all fields";
+	if (!isset($_POST['password'])) $error[] = "Please fill out all fields";
 
-if ($db->connect_error) {
-    echo "could not connect: " . $db->connect_error;
-    printf("<br><a href=index.php>Return to home page </a>");
-    exit();
-}
+	$username = $_POST['username'];
+	if ( $user->isValidUsername($username)){
+		if (!isset($_POST['password'])){
+			$error[] = 'A password must be entered';
+		}
+		$password = $_POST['password'];
 
-    #the mysqli_real_espace_string function helps us solve the SQL Injection
-    #it adds forward-slashes in front of chars that we can't store in the username/pass
-    #in order to excecute a SQL Injection you need to use a ' (apostrophe)
-    #Basically we want to output something like \' in front, so it is ignored by code and processed as text
+		if($user->login($username,$password)){
+			$_SESSION['username'] = $username;
+			header('Location: memberpage.php');
+			exit;
 
-if (isset($_POST['username'], $_POST['userpass'])) {
-    #with statement under we're making it SQL Injection-proof
-    $uname = mysqli_real_escape_string($db, $_POST['username']);
-    
-    #without function, so here you can try to implement the SQL injection
-    #various types to do it, either add ' -- to the end of a username, which will comment out
-    #or simply use 
-    #' OR '1'='1' #
-    #$uname = $_POST['username'];
-    
-    #here we hash the password, and we want to have it hashed in the database as well
-    #optimally when you create a user (through code) you simply send a hash
-    #hasing can be done using different methods, MD5, SHA1 etc.
-    
-    $upass = sha1($_POST['userpass']);
-    
-    #just to see what we are selecting, and we can use it to test in phpmyadmin/heidisql
-    
-    
-    
-    $query = ("SELECT * FROM user WHERE uname = '{$uname}' "."AND upass = '{$upass}'");
-       
-    
-    $stmt = $db->prepare($query);
-    $stmt->execute();
-    $stmt->store_result(); 
-    
-    #here we create a new variable 'totalcount' just to check if there's at least
-    #one user with the right combination. If there is, we later on print out "access granted"
-    $totalcount = $stmt->num_rows();
-    
-    
-    
-}
+		} else {
+			$error[] = 'Wrong username or password or your account has not been activated.';
+		}
+	}else{
+		$error[] = 'Usernames are required to be Alphanumeric, and between 3-16 characters long';
+	}
+
+
+
+}//end if submit
+
+//define page title
+$title = 'Login';
+
+//include header template
+require('layout/header.php'); 
 ?>
-<!DOCTYPE html>
 
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        
-        
-        
-        if (isset($totalcount)) {
-            if ($totalcount == 0) {
-                echo '<h2>You got it wrong. Can\'t break in here!</h2>';
-            } else {
-                echo '<h2>Welcome! Correct password.</h2>';
-                echo '<h4><a href="fileupload.php"><b>Click here to upload pictures.</b></a></h4>';
-            }
-        }
-        ?>
-        <form method="POST" action="">
-            <input type="text" name="username" placeholder="Username">
-            <input type="password" name="userpass" placeholder="Password">
-            <input type="submit" value="Go">
-        </form>
+	
+<div class="container">
 
-    </body>
-</html>
+	<div class="row">
+
+	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+			<form role="form" method="post" action="" autocomplete="off">
+				<h2>Please Login</h2>
+				
+				<hr>
+
+				<?php
+				//check for any errors
+				if(isset($error)){
+					foreach($error as $error){
+						echo '<p class="bg-danger">'.$error.'</p>';
+					}
+				}
+
+				
+
+				
+				?>
+
+				<div class="form-group">
+					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="User Name" value="<?php if(isset($error)){ echo htmlspecialchars($_POST['username'], ENT_QUOTES); } ?>" tabindex="1">
+				</div>
+
+				<div class="form-group">
+					<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="3">
+				</div>
+				
+				
+				
+				<hr>
+				<div class="row">
+					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Login" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
+					<div class="col-xs-6 col-md-6"><a href="index.php" class="btn btn-primary btn-block btn-lg">Register</a></div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+</div>
+
+
+<?php 
+//include header template
+require('layout/footer.php'); 
+?>
