@@ -40,15 +40,21 @@ $title = 'Login';
 //include header template
 require('layout/top.php'); 
 ?>
-
-	
 <div class="container">
-
+	<div id="lala">
+	<h2>Please Login</h2>
+	<img class="knapp" src="Images/arrow.png">
+</div>
+<div id="form">
+<img src="Images/tri.png" class="tri2">
+	
 	<div class="row">
 
 	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" method="post" action="" autocomplete="off">
-				<h2>Please Login</h2>
+
+				
+				
 				
 				<hr>
 
@@ -77,19 +83,21 @@ require('layout/top.php');
 				
 				<hr>
 				<div class="row">
-					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Login" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
-					<div class="col-xs-6 col-md-6"><a href="indexlogin.php" class="btn btn-primary btn-block btn-lg">Register</a></div>
+					<input type="submit" name="submit" value="Login" class="loginbtn" tabindex="5">
+					<a href="indexlogin.php"><input type="button" name="none" value="Register" class="loginbtn" tabindex="5"></a>
 				</div>
 			</form>
 		</div>
 	</div>
-
-
-
+</div>
+	<div id="vit">
+<img src="Images/tri-3svart.png" class="tri3">
+</div>
 </div>
 
-
+<div id="svart">
 <?php 
 //include header template
 require('layout/end.php'); 
 ?>
+</div>
