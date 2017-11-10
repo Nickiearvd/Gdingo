@@ -52,8 +52,8 @@
 					<li><a class="<?php echo $current_page == 'mypanel.php' ? 'active' : NULL ?>" href="mypanel.php">My Drinks</a></li>
 
 						<li><font color="#e72262"><?php 
-						$str = "Log out";
-						$str2 = "Log in";
+						$str = "<a href='logout.php'>Log out</a>";
+						$str2 = "<a href='login.php'>Log in</a>";
 						if($user->is_logged_in()){ echo $str;
 						}
 						else { echo $str2;
