@@ -1,3 +1,4 @@
+<?php include 'includes/config.php';?>
 <?php include 'config.php';?>
 <!Doctype html>
 <html>
@@ -56,7 +57,16 @@
 				Sed elit elit, auctor non sollicitudin ultrices, semper vitae nisi. Proin pharetra erat nisi, in tristique nisl sagittis et. Nullam iaculis imperdiet condimentum. Donec imperdiet commodo aliquam. Vestibulum eleifend est justo, quis lacinia libero blandit at. Aliquam vehicula nisl sed nulla gravida maximus. In suscipit a nulla et suscipit. </p>
 				<a href="finddrinks.php"><button class="introbtn"> SEARCH NOW</button></a>
 				<p>or</p>
-				<a href="login.php" class="LogIn">LOG IN</a>
+				
+
+				<p ><?php 
+						$str = "<a class='LogIn' href='logout.php'>Log out</a>";
+						$str2 = "<a class='LogIn' href='login.php'>Log in</a>";
+						if($user->is_logged_in())
+							{ echo $str;}
+						else { echo $str2;
+						}?></p>
+
 			</div> <!-- intro ends -->
 
 			<img src="Images/tri.png" class="tri"> <!-- triangle -->
