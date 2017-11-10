@@ -49,7 +49,7 @@
 							 						<div class='blur'>
 
 							 							<div class='text'><h4><a href='drinkbase.php?DrinkId=$DrinkId'>" . $DrinkName . " </a></h4>
-							 							<p class='clicks'>Click to see more</p>
+							 							<p class='clicks'>Click to edit</p>
 							 							</div>
 
 							 						</div>
