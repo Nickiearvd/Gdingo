@@ -54,7 +54,7 @@
                 }
                 
                 // Prepare an update statement and execute it
-                $stmt = $db->prepare("UPDATE Drinks SET DrinkSaved=0 WHERE DrinkId = ?");
+                $stmt = $db->prepare("UPDATE Favo SET DrinkSaved=0 WHERE DrinkId = $DrinkId");
                 $stmt->bind_param('i', $DrinkId);
                 $stmt->execute();
                 exit;

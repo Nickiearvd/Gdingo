@@ -10,16 +10,16 @@
 		exit();
 	}
 
-
-	$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkSaved, Drinks.DrinkPicture, Drinks.DrinkReceipt, Ingredients.IngId, Ingredients.NameIng
-	FROM Drinks 
-	JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
-	JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId
-	WHERE Drinks.DrinkId=$DrinkId" ; // Get all the informartion related to the drinkid
+	$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng, Favo.DrinkSaved, members.username FROM Drinks 
+		JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
+		JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId 
+		JOIN Favo ON Favo.DrinkId= Drinks.DrinkId 
+		JOIN members ON Favo.username = members.username
+		WHERE Drinks.DrinkId=$DrinkId"; 
 
 	$result = $db->query($query);
 	$stmt = $db->prepare($query);
-	$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkSaved, $DrinkPicture, $DrinkReceipt, $IngId, $NameIng); // Same as the query. 
+	$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $DrinkSaved, $username ); // Same as the query. 
 	$stmt->execute();
 	$alling=array(); // Create an array in reason to store all the differents ingredients. 
 
@@ -48,6 +48,7 @@
 				<div class='side'>
 		    		<?php 
 		    			echo "<img class='drinkimage' src=Images/DrinkPictures/$DrinkPicture>";
+
 		    		?>
 
 
@@ -56,6 +57,7 @@
 					<?php 
 						if ($DrinkSaved == 0){ // Show the heart to fav a drink. Heart deisgn depends on if it's already fav or not.
 							echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like.png"></a>';
+
 						} 
 						else if ($DrinkSaved == 1){
 							echo '<a href="RemoveFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like2.png"></a>'; 
@@ -83,7 +85,8 @@
                         <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
  
                     </fieldset>
-				<?php include 'rating.php'; ?> 
+				<?php include 'rating.php'; 
+				?> 
 			</div>
 
 			</div>

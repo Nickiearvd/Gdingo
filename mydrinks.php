@@ -62,7 +62,7 @@
 							JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId 
 							JOIN Favo ON Favo.DrinkId= Drinks.DrinkId 
 							JOIN members ON Favo.username = members.username
-							WHERE Drinks.DrinkSaved=1"; // PROBLEME WHEN SEARCHING
+							WHERE Favo.DrinkSaved=1"; // PROBLEME WHEN SEARCHING
 
 						if ($searchname1 && !$searching1) { // Name search only
 						    $query = $query . " AND DrinkName like '%" . $searchname1 . "%'GROUP BY DrinkName ";
@@ -99,7 +99,7 @@
 						 
 
 						$stmt = $db->prepare($query);
-						$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $DrinkSaved,); // Same as the query. 
+						$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $DrinkSaved, $username ); // Same as the query. 
 						$stmt->execute();
 
 
