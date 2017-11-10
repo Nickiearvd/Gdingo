@@ -40,7 +40,7 @@
 	<body>
 		<header id= "header">
 			<a href="#" id="showmenu"></a>
-			<a href="#" class='logo'></a>
+			<a href="index.php" class='logo'></a>
 
 			<nav class="nav">
 				<ul>
