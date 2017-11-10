@@ -172,6 +172,20 @@
 		.c{
 			padding-top: 150px;
 		}
+		/***************TEXT STYLE****************/
+
+		h2{
+			font-family: 'open sans',helvetica;
+			font-weight: 800;
+			text-transform: uppercase;
+			font-size: 40px;
+			color:black;
+			margin:0;
+			line-height: 45px;
+			margin-bottom: 30px;
+			text-align: center;
+		}
+
 		h3{
 			font-family: 'open sans',helvetica;
 			font-weight: 800;
@@ -185,6 +199,8 @@
 
 
 		}
+
+		/***************Buttons***************/
 		.drinkside{
 			position: relative;
 			float:left;
@@ -270,6 +286,8 @@
 			text-align:center;
 			padding:0;
 		}
-
+		.tri{
+			width:100%;
+		}
 	</style>
 </html>
