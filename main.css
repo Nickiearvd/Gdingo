@@ -17,12 +17,32 @@
 	margin:auto;
 	background-color: #000;
 }
+#firstc {
+		width:100%;
+		overflow: hidden;
+		margin:auto;
+		margin-bottom: 40px;
+		position: relative;
+		background-color: #000;
+		text-align: center;
+	}
+
 
 #c {
 	height:100px;
 }
+
+#pinkline{
+	height: 2.5px;
+	width: 280px;
+	margin: 10px auto 15px auto;
+	background-color: #e72262;
+	padding: 0;
+
+}
 a{
 	cursor: pointer;
+
 }
 body {
 	font-family: 'open sans', helvetica;
@@ -33,6 +53,7 @@ body {
 	background-color: #fff;
 	overflow: hidden;
 	text-align: center;
+	padding: 0px;
 }
 .introbtn:hover{
 		opacity: 0.2;
@@ -41,20 +62,23 @@ body {
 
 .LogIn{
 	display: block;
-	color: #fff;
-	font-weight: bold;
+	color: #000;
 	font-size: 30px;
 	text-align: center;
 	margin: auto;
-	padding-top: 30px;
+	padding-top: 5px;
 	line-height: 35px;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
+	font-family: 'open sans',helvetica;
+	font-weight: 800;
+	width: 100%;
+	text-decoration: underline;
 
 }
 
 
 .introbtn {
-		margin: 30px auto;
+		margin: 60px auto 5px auto;
 		text-align: center;
 		font-family: 'open sans',helvetica;
 		font-weight: 800;
@@ -72,24 +96,29 @@ body {
 
 .tri {
 	width:100%;
+	max-width: 1100px;
 	background-size: 100%;
 	z-index: -1;
-	margin-bottom: 40px;
+	margin: 0 auto -5px auto;
+	display: block;
 }
 
 .tri2 {
 	width:100%;
+	max-width: 1100px;
 	background-size: 100%;
 	z-index: -1;
-	margin-bottom: -5px;
+	display: block;
+	margin: 0 auto -5px auto;
 
 }
 
 
 
 #about {
- width:70%;
- border: 5px solid #e72262;
+ width:80%;
+ max-width: 500px;
+ border: 2.5px solid #e72262;
  margin:0;
  margin:auto;
  margin-top: 20px;
@@ -104,7 +133,8 @@ body {
 	width:100%;
 	background-color: #fff;
 	overflow: hidden;
-	padding-bottom: 40px;
+	padding: 0 0 40px 0;
+
 
 }
 
@@ -127,22 +157,33 @@ body {
 }
 
 .icons{
-	width: 100%;
+	width: 309px;
 	margin: 0 auto;
 	text-align: center;
+
+
 }
 .icon{
-	width: 40px;
-	margin: 12px;
+	width: 45px;
+	height: 45px;
+	margin: 18px;
 	padding: 10px;
+	float: left;
 	background-color: #e72262;
 	border: solid 1px #000;
-	border-radius: 30px;
+	border-radius: 45px;
+	text-align: center;
 }
 .icon:hover{
 		opacity: 0.2;
 		cursor: pointer;
 	}
+
+.iconIMG{
+	width: 40px;
+	padding-top: 3px;
+	text-align: center;
+}
 
 /* TOP 10 */
 	#slideshow {
@@ -228,34 +269,38 @@ p {
 }
 
 h1 {
+	margin-bottom: 5px;
+	font-family: 'open sans',helvetica;
+	font-weight: 800;
+	padding-top: 5px;
 	text-transform: uppercase;
-	font-weight: bold;
 	font-size: 40px;
-
+	color:black;
+	margin:20px auto;
+	line-height: 45px;
 	text-align: center;
-	margin: auto;
-	padding-top: 30px;
-	line-height: 35px;
-	margin-bottom: 10px;
-	}
+}
 
 h2 {
-	
+	font-family: 'open sans',helvetica;
+	font-weight: 800;
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 35px;
-	margin-top: 150px;
 	margin:auto;
 	line-height: 35px;
 	padding-bottom: 10px;
+	padding-top: 40px;
 }
 
 .introp {
-	width: 75%;
+	text-align: left;
 	margin:auto;
+	max-width: 500px;
 	font-size: 11px;
 	z-index: 1000;
 	color: #000;
+	padding: 20px;
 }
 
 @media (max-width: 1150px) {
@@ -268,18 +313,15 @@ h2 {
 
 /* MEDIA MIN 600PX */
 
-@media (min-width: 700px) {
+@media (min-width: 600px) {
 
 	#c {
 	height:230px;
 }
 	
 	#firstc {
-		width:90%;
-		overflow: hidden;
-		margin:auto;
-		margin-bottom: 50px;
-		position: relative;
+	
+		margin-bottom: 0px;
 	}
 
 	#slideshow {
@@ -293,11 +335,7 @@ h2 {
 
 	}
 
-	#about {
-		margin-top: 70px;
-		width:35%;
-		float: left;
-	}
+	
 
 	#gallerycol {
 		column-count: 3;
@@ -305,24 +343,6 @@ h2 {
 
 	h3 {
 		font-size: 24px;
-	}
-
-	h1 {
-		width: 30%;
-	}
-
-	h2 { 
-		width:20%;
-		float: left;
-		font-size: 38px;
-		text-align: right;
-		margin-top: 150px;
-		margin-right: 10px;
-
-	 }
-
-	.introp {
-		width: 45%;
 	}
 
 
