@@ -1,4 +1,4 @@
-<?php require('includes/config.php');
+<?php require('layout/top.php');
 
 //if logged in redirect to members page
 if( $user->is_logged_in() ){ header('Location: mypanel.php'); exit(); }
@@ -99,7 +99,6 @@ if(isset($_POST['submit'])){
 $title = 'Demo';
 
 //include header template
-require('layout/top.php');
 ?>
 
 <div class="container">

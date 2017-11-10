@@ -5,6 +5,7 @@
     <title><?php if(isset($title)){ echo $title; }?></title>
     
     <link rel="stylesheet" href="style/main.css">
+   
 </head>
 <body>
 	<?php include 'header.php';?>

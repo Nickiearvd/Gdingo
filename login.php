@@ -1,7 +1,7 @@
 <?php
 //include config
-require_once('includes/config.php');
-
+require('includes/config.php'); 
+require ('layout/top.php');
 //check if already logged in move to home page
 if( $user->is_logged_in() ){ header('Location: indexlogin.php'); exit(); }
 
@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
 
 		if($user->login($username,$password)){
 			$_SESSION['username'] = $username;
-			header('Location: memberpage.php');
+			header('Location: mypanel.php');
 			exit;
 
 		} else {
@@ -38,8 +38,8 @@ if(isset($_POST['submit'])){
 $title = 'Login';
 
 //include header template
-require('layout/top.php'); 
 ?>
+
 <div class="container">
 	<div id="lala">
 	<h2>Please Login</h2>
@@ -84,7 +84,7 @@ require('layout/top.php');
 				<hr>
 				<div class="row">
 					<input type="submit" name="submit" value="Login" class="loginbtn" tabindex="5">
-					<a href="indexlogin.php"><input type="button" name="none" value="Login" class="loginbtn" tabindex="5"></a>
+					<a href="indexlogin.php"><input type="button" name="none" value="Register" class="loginbtn" tabindex="5"></a>
 				</div>
 			</form>
 		</div>

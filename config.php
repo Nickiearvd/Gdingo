@@ -13,6 +13,8 @@ $dbuser = 'root';
 $dbpass = 'root';
 $dbserver = 'localhost';
 
+
+
 #the following three will get you the current page, how?
 #first you assign the URI (which is the end of the URL as we talked on the Lecture 2)
 #You get that by using the superglobal $_SERVER['REQUEST_URI']
