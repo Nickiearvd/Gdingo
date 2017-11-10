@@ -1,23 +1,23 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.7.2
 -- https://www.phpmyadmin.net/
 --
--- Värd: localhost
--- Tid vid skapande: 10 nov 2017 kl 10:44
--- Serverversion: 5.6.35
--- PHP-version: 7.1.8
+-- Host: localhost
+-- Generation Time: Nov 10, 2017 at 10:48 AM
+-- Server version: 5.6.35
+-- PHP Version: 7.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Databas: `Gd`
+-- Database: `Gd`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `Drinks`
+-- Table structure for table `Drinks`
 --
 
 CREATE TABLE `Drinks` (
@@ -30,7 +30,7 @@ CREATE TABLE `Drinks` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumpning av Data i tabell `Drinks`
+-- Dumping data for table `Drinks`
 --
 
 INSERT INTO `Drinks` (`DrinkId`, `DrinkName`, `DrinkAuthor`, `DrinkPicture`, `DrinkReceipt`, `DrinkSaved`) VALUES
@@ -49,7 +49,7 @@ INSERT INTO `Drinks` (`DrinkId`, `DrinkName`, `DrinkAuthor`, `DrinkPicture`, `Dr
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `DrinksIng`
+-- Table structure for table `DrinksIng`
 --
 
 CREATE TABLE `DrinksIng` (
@@ -58,7 +58,7 @@ CREATE TABLE `DrinksIng` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumpning av Data i tabell `DrinksIng`
+-- Dumping data for table `DrinksIng`
 --
 
 INSERT INTO `DrinksIng` (`DrinkId`, `IngId`) VALUES
@@ -123,7 +123,7 @@ INSERT INTO `DrinksIng` (`DrinkId`, `IngId`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `Ingredients`
+-- Table structure for table `Ingredients`
 --
 
 CREATE TABLE `Ingredients` (
@@ -132,7 +132,7 @@ CREATE TABLE `Ingredients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumpning av Data i tabell `Ingredients`
+-- Dumping data for table `Ingredients`
 --
 
 INSERT INTO `Ingredients` (`IngId`, `NameIng`) VALUES
@@ -174,7 +174,7 @@ INSERT INTO `Ingredients` (`IngId`, `NameIng`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `User`
+-- Table structure for table `User`
 --
 
 CREATE TABLE `User` (
@@ -184,59 +184,66 @@ CREATE TABLE `User` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Index för dumpade tabeller
+-- Dumping data for table `User`
+--
+
+INSERT INTO `User` (`UserId`, `Username`, `Password`) VALUES
+(1, 'Nickie', 'Blabla');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Index för tabell `Drinks`
+-- Indexes for table `Drinks`
 --
 ALTER TABLE `Drinks`
   ADD PRIMARY KEY (`DrinkId`);
 
 --
--- Index för tabell `DrinksIng`
+-- Indexes for table `DrinksIng`
 --
 ALTER TABLE `DrinksIng`
   ADD KEY `IngId` (`IngId`),
   ADD KEY `DrinkId` (`DrinkId`);
 
 --
--- Index för tabell `Ingredients`
+-- Indexes for table `Ingredients`
 --
 ALTER TABLE `Ingredients`
   ADD PRIMARY KEY (`IngId`);
 
 --
--- Index för tabell `User`
+-- Indexes for table `User`
 --
 ALTER TABLE `User`
   ADD PRIMARY KEY (`UserId`);
 
 --
--- AUTO_INCREMENT för dumpade tabeller
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT för tabell `Drinks`
+-- AUTO_INCREMENT for table `Drinks`
 --
 ALTER TABLE `Drinks`
-  MODIFY `DrinkId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `DrinkId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 --
--- AUTO_INCREMENT för tabell `Ingredients`
+-- AUTO_INCREMENT for table `Ingredients`
 --
 ALTER TABLE `Ingredients`
-  MODIFY `IngId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `IngId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 --
--- AUTO_INCREMENT för tabell `User`
+-- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `UserId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- Restriktioner för dumpade tabeller
+-- Constraints for dumped tables
 --
 
 --
--- Restriktioner för tabell `DrinksIng`
+-- Constraints for table `DrinksIng`
 --
 ALTER TABLE `DrinksIng`
   ADD CONSTRAINT `DrinkId` FOREIGN KEY (`DrinkId`) REFERENCES `Drinks` (`DrinkId`),
