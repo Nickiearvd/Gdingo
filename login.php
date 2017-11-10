@@ -84,7 +84,7 @@ require('layout/top.php');
 				<hr>
 				<div class="row">
 					<input type="submit" name="submit" value="Login" class="loginbtn" tabindex="5">
-					<a href="indexlogin.php"><input type="button" name="none" value="Register" class="loginbtn" tabindex="5"></a>
+					<a href="indexlogin.php"><input type="button" name="none" value="Login" class="loginbtn" tabindex="5"></a>
 				</div>
 			</form>
 		</div>

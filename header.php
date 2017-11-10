@@ -1,7 +1,7 @@
-<?php require('includes/config.php'); ?>
 
 <!DOCTYPE html >
 <html>
+
 	<head>
 		<title>Min sida</title>
 		<meta charset="utf-8" />
@@ -51,13 +51,7 @@
 					<li><a class="<?php echo $current_page == 'mydrinks.php' ? 'active' : NULL ?>" href="mydrinks.php">My favorites</a></li>
 					<li><a class="<?php echo $current_page == 'mypanel.php' ? 'active' : NULL ?>" href="mypanel.php">My Drinks</a></li>
 
-						<li><font color="#e72262"><?php 
-						$str = "<a href='logout.php'>Log out</a>";
-						$str2 = "<a href='login.php'>Log in</a>";
-						if($user->is_logged_in()){ echo $str;
-						}
-						else { echo $str2;
-						}?></font></li>
+					
 					
 				</ul>
 			</nav>
