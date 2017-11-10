@@ -12,7 +12,7 @@
 	}
 
 
-	$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkSaved, Drinks.DrinkPicture, Drinks.DrinkReceipt, Ingredients.IngId, Ingredients.NameIng
+	$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Drinks.DrinkReceipt, Ingredients.IngId, Ingredients.NameIng
 	FROM Drinks 
 	JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
 	JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId 
@@ -20,7 +20,7 @@
 
 	$result = $db->query($query);
 	$stmt = $db->prepare($query);
-	$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkSaved, $DrinkPicture, $DrinkReceipt, $IngId, $NameIng); // Same as the query. 
+	$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $DrinkReceipt, $IngId, $NameIng); // Same as the query. 
 	$stmt->execute();
 	$alling=array(); // Create an array in reason to store all the differents ingredients. 
 
