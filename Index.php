@@ -18,7 +18,7 @@
 
 			<div id="intro"> <!-- intro starts -->
 
-				<h1>Find your favourite drink!</h1>
+				<h1>Explore drinks!</h1>
 				<p class="introp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et maximus augue. Vivamus vel dolor nisi. Quisque molestie scelerisque diam nec semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br> Nunc ac mollis orci. Maecenas ac volutpat massa. Nunc et ligula accumsan, condimentum lectus nec, fringilla nisl.
 				Sed elit elit, auctor non sollicitudin ultrices, semper vitae nisi. Proin pharetra erat nisi, in tristique nisl sagittis et. Nullam iaculis imperdiet condimentum. Donec imperdiet commodo aliquam. Vestibulum eleifend est justo, quis lacinia libero blandit at. Aliquam vehicula nisl sed nulla gravida maximus. In suscipit a nulla et suscipit. </p>
 				<a href="finddrinks.php"><button class="introbtn"> SEARCH NOW</button></a>
@@ -72,7 +72,7 @@
 			<div id="gallery"> <!-- gallery div -->
 					<h2>About<br>us</h2>
 				<div id="about"> <!-- about us div -->
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et maximus augue. Vivamus vel dolor nisi. Quisque molestie scelerisque diam nec semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br> Nunc ac mollis orci. Maecenas ac volutpat massa. Nunc et ligula accumsan, condimentum lectus nec, fringilla nisl.
+					<p class="introp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et maximus augue. Vivamus vel dolor nisi. Quisque molestie scelerisque diam nec semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br> Nunc ac mollis orci. Maecenas ac volutpat massa. Nunc et ligula accumsan, condimentum lectus nec, fringilla nisl.
 					Sed elit elit, auctor non sollicitudin ultrices, semper vitae nisi. Proin pharetra erat nisi, in tristique nisl sagittis et. Nullam iaculis imperdiet condimentum. Donec imperdiet commodo aliquam. Vestibulum eleifend est justo, quis lacinia libero blandit at. Aliquam vehicula nisl sed nulla gravida maximus. In suscipit a nulla et suscipit.</p>
 				</div>
 			</div>

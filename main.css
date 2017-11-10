@@ -227,7 +227,7 @@ h1 {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 40px;
-
+	
 	text-align: center;
 	margin: auto;
 	padding-top: 30px;
@@ -251,6 +251,7 @@ h2 {
 	margin:auto;
 	font-size: 11px;
 	z-index: 1000;
+	color: #000;
 }
 
 @media (max-width: 1150px) {
