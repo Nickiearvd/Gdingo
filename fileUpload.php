@@ -73,6 +73,10 @@
                  </div>
 
                  <div>
+                  <div  class="back">
+
+                    <a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
+                  </div>
                   
                      <form action="" method="POST" enctype="multipart/form-data">
 
@@ -92,13 +96,6 @@
                 <img src="Images/tri.png" class="tri">
 
                  <?php echo '<a class="continue" href="createdrinks.php?DrinkPicture=' . urlencode($DrinkPicture) . '">Continue</a>';?>
-
-                  
-
-                 <div  class="back">
-
-                    <a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
-                  </div>
 
                    
            </body>
@@ -163,18 +160,29 @@
       display: none;
   }
    .back{
-      width: 20px;
-      height: 20px;
-      border-radius: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
       padding:8px;
-      position:absolute;
-      left:20px;
 
-      top:200px;
+      background-color: #fff;
+
     }
     .knapp{
       width: 40px;
     }
+
+
+    @media (min-width: 600px) {
+
+     #container{
+          
+          padding-top: 200px;
+        }
+    
+      
+    }
+
   </style>
     
     
