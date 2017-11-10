@@ -57,9 +57,11 @@
 
 						# Build the query. Users are allowed to search on title, author, or both
 						
-						$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkSaved, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng FROM Drinks 
+						$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng, Favo.DrinkSaved,members.username FROM Drinks 
 							JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
 							JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId 
+							JOIN Favo ON Favo.DrinkId= Drinks.DrinkId 
+							JOIN members ON Favo.username = members.username
 							WHERE Drinks.DrinkSaved=1"; // PROBLEME WHEN SEARCHING
 
 						if ($searchname1 && !$searching1) { // Name search only
@@ -97,7 +99,7 @@
 						 
 
 						$stmt = $db->prepare($query);
-						$stmt->bind_result($DrinkId, $DrinkName, $DrinkSaved, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng); // Same as the query. 
+						$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $DrinkSaved,); // Same as the query. 
 						$stmt->execute();
 
 

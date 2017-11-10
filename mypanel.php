@@ -52,7 +52,7 @@ $title = 'Members Page';
 
 					
 
-					$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng, members.Username FROM Drinks 
+					$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng, members.username FROM Drinks 
 					JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
 					JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId
 					JOIN members ON Drinks.DrinkAuthor = members.username
