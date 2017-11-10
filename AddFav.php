@@ -1,4 +1,5 @@
 <!Doctype html>
+<?php require ("includes/config.php"); ?>
 <html>
 
     <head>
@@ -10,7 +11,7 @@
             <script type="text/javascript" src="jquery.min.js"></script>
             <script>
 
-                $(document).ready( function() {
+                /*$(document).ready( function() {
                     
                     function redirect(){
                         window.location = "finddrinks.php";
@@ -18,7 +19,7 @@
 
                     setTimeout(redirect, 1000);
 
-                } );
+                } );*/
                
             </script>
     </head>
@@ -33,14 +34,17 @@
 
     
         <?php
-
 include("config.php");
+
+
 
 $DrinkId = trim($_GET['DrinkId']);
 echo '<INPUT type="hidden" name="drinkid" value=' . $DrinkId . '>';
 
 $DrinkId = trim($_GET['DrinkId']);      // From the hidden field
 $DrinkId = addslashes($DrinkId);
+$User=($_SESSION['username']);
+
 
 
 
@@ -51,10 +55,9 @@ $DrinkId = addslashes($DrinkId);
         printf("<br><a href=index.php>Return to home page </a>");
         exit();
     }
-    
-    // Prepare an update statement and execute it
-    $stmt = $db->prepare("UPDATE Favo SET DrinkSaved=1 WHERE DrinkId = $DrinkId");
-    $stmt->bind_param('i', $DrinkId);
+    // Prepare an insert statement with the current drinkID and userID and execute it
+    $stmt = $db->prepare("INSERT INTO Favo(DrinkId, username) VALUES (?,?)");
+    $stmt->bind_param('is', $DrinkId, $User);
     $stmt->execute();
     
     exit;

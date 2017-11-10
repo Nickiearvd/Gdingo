@@ -1,5 +1,5 @@
-
 <!Doctype html>
+<?php require ("includes/config.php"); ?>
 <html>
 
     <head>
@@ -11,15 +11,15 @@
             <script type="text/javascript" src="jquery.min.js"></script>
             <script>
 
-                $(document).ready( function() {
+                /*$(document).ready( function() {
                     
                     function redirect(){
-                        window.location = "mydrinks.php";
+                        window.location = "finddrinks.php";
                     }
 
                     setTimeout(redirect, 1000);
 
-                } );
+                } );*/
                
             </script>
     </head>
@@ -28,42 +28,46 @@
         <div id="main">
             <div class="animation-target">
                 <img id="img" src="Images/checked.png"/>
-                <h1>REMOVED</h1>
+                <h1>ADDED</h1>
             </div>
         </div>
 
     
         <?php
-
-            include("config.php");
-
-            $DrinkId = trim($_GET['DrinkId']);
-            echo '<INPUT type="hidden" name="drinkid" value=' . $DrinkId . '>';
-
-            $DrinkId = trim($_GET['DrinkId']);      // From the hidden field
-            $DrinkId = addslashes($DrinkId);
+include("config.php");
 
 
 
-            @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+$DrinkId = trim($_GET['DrinkId']);
+echo '<INPUT type="hidden" name="drinkid" value=' . $DrinkId . '>';
 
-                if ($db->connect_error) {
-                    echo "could not connect: " . $db->connect_error;
-                    printf("<br><a href=index.php>Return to home page </a>");
-                    exit();
-                }
-                
-                // Prepare an update statement and execute it
-                $stmt = $db->prepare("UPDATE Favo SET DrinkSaved=0 WHERE DrinkId = $DrinkId");
-                $stmt->bind_param('i', $DrinkId);
-                $stmt->execute();
-                exit;
+$DrinkId = trim($_GET['DrinkId']);      // From the hidden field
+$DrinkId = addslashes($DrinkId);
+$User=($_SESSION['username']);
 
-        ?>
+
+
+
+@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+    if ($db->connect_error) {
+        echo "could not connect: " . $db->connect_error;
+        printf("<br><a href=index.php>Return to home page </a>");
+        exit();
+    }
+    // Prepare an insert statement with the current drinkID and userID and execute it
+    $stmt = $db->prepare("DELETE FROM Favo WHERE DrinkId = $DrinkId AND username = $User");
+    $stmt->execute();
+    
+    exit;
+
+?>
+
 
         
     </body>
 </html>
+                
 
 
 

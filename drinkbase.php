@@ -1,4 +1,5 @@
 <?php include 'config.php';?>
+<?php include 'Includes/config.php';?>
 <?php 
 
 	$DrinkId = trim($_GET['DrinkId']); // Get the DrinkId from the finddrinks page the user clicked on.
@@ -10,22 +11,27 @@
 		exit();
 	}
 
-	$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng, Favo.DrinkSaved, members.username FROM Drinks 
+	$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Drinks.DrinkReceipt, Ingredients.IngId, Ingredients.NameIng FROM Drinks 
 		JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
-		JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId 
-		JOIN Favo ON Favo.DrinkId= Drinks.DrinkId 
-		JOIN members ON Favo.username = members.username
+		JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId
 		WHERE Drinks.DrinkId=$DrinkId"; 
+
 
 	$result = $db->query($query);
 	$stmt = $db->prepare($query);
-	$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $DrinkSaved, $username ); // Same as the query. 
+	$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $DrinkReceipt, $IngId, $NameIng); // Same as the query. 
 	$stmt->execute();
 	$alling=array(); // Create an array in reason to store all the differents ingredients. 
 
 	while ($stmt->fetch()) {
 		array_push($alling,$NameIng); // Put the ingredients in the array
-	}
+	};
+
+
+
+
+
+
 							
 ?>
 
@@ -45,6 +51,7 @@
 		<div class='container'>
 
 			<div class="drinkside">
+
 				<div class='side'>
 		    		<?php 
 		    			echo "<img class='drinkimage' src=Images/DrinkPictures/$DrinkPicture>";
@@ -55,13 +62,20 @@
 	    		</div>
 	    		<div class="heart">
 					<?php 
-						if ($DrinkSaved == 0){ // Show the heart to fav a drink. Heart deisgn depends on if it's already fav or not.
-							echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like.png"></a>';
+					$User=($_SESSION['username']);
+	
 
-						} 
-						else if ($DrinkSaved == 1){
-							echo '<a href="RemoveFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like2.png"></a>'; 
-						} 
+
+					
+
+						 // Show the heart to fav a drink. Heart deisgn depends on if it's already fav or not.
+						echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like2.png"></a>'; 
+							
+
+						
+						//else {
+						//	echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like.png"></a>';
+						//} 
 
 					?> 
 				</div>
@@ -92,6 +106,7 @@
 			</div>
 
 			<div class='maincontent'>
+
 				
 				<div class='ingrblack'>
 					<img src="Images/tri.png" class="tri1"> <!-- triangle -->
@@ -104,6 +119,7 @@
 		    		<img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
 			    	<h4>Wonder how to make it? </h4>
 		    		<?php echo "<p>" . $DrinkReceipt. "<p>"; ?>
+
 		    	</div>
     		</div>
 		

@@ -12,6 +12,7 @@
 
 		<div id="c"></div> <!-- For the menu -->
 		<div id="content">
+		<?php $User=($_SESSION['username']);?>
 
 	
 
@@ -24,7 +25,7 @@
 					<input type="text" class="ing" name="searching1" placeholder="Search after one ingrediens "></br>
 					<input class="button" type="submit" name="submit" value="Search">
 
-					<?php
+					<?php/*
 							$searchname1 = "";
 							$searching1 = "";
 
@@ -75,7 +76,7 @@
 						};
 						if (!$searchname1 && !$searching1) {
     						 $query = $query . " GROUP BY DrinkName";
-    					};
+    					};*/
 
 					?>
 				</form>
