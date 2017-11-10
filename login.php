@@ -3,7 +3,7 @@
 require_once('includes/config.php');
 
 //check if already logged in move to home page
-if( $user->is_logged_in() ){ header('Location: index.php'); exit(); }
+if( $user->is_logged_in() ){ header('Location: indexlogin.php'); exit(); }
 
 //process login form if submitted
 if(isset($_POST['submit'])){
@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
 $title = 'Login';
 
 //include header template
-require('layout/header.php'); 
+require('layout/top.php'); 
 ?>
 
 	
@@ -78,7 +78,7 @@ require('layout/header.php');
 				<hr>
 				<div class="row">
 					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Login" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
-					<div class="col-xs-6 col-md-6"><a href="index.php" class="btn btn-primary btn-block btn-lg">Register</a></div>
+					<div class="col-xs-6 col-md-6"><a href="indexlogin.php" class="btn btn-primary btn-block btn-lg">Register</a></div>
 				</div>
 			</form>
 		</div>
@@ -91,5 +91,5 @@ require('layout/header.php');
 
 <?php 
 //include header template
-require('layout/footer.php'); 
+require('layout/end.php'); 
 ?>
