@@ -99,9 +99,8 @@ if(isset($_POST['submit'])){
 $title = 'Demo';
 
 //include header template
-require('layout/header.php');
+require('layout/top.php');
 ?>
-
 
 <div class="container">
 
@@ -157,5 +156,5 @@ require('layout/header.php');
 
 <?php
 //include header template
-require('layout/footer2.php');
+require('layout/end.php');
 ?>
