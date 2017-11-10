@@ -28,17 +28,10 @@
 		array_push($alling,$NameIng); // Put the ingredients in the array
 	}
 
-	// Get all ingredients 
-			$getIng = "SELECT * FROM Ingredients";
-			
-			$stmt = $db->prepare($getIng);
-			$stmt->bind_result($IngId, $NameIng);
-			$stmt->execute();
-
 	// GET ALL THE INFORMATION TO DISPLAY THEM 
+	//Add one ingredient
 
-
-	if(isset($_POST['addIng'])){
+			if(isset($_POST['addIng'])){
 
 				@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -58,7 +51,17 @@
 				header('location:createdrinks.php');
 
 			}
+			// Get all ingredients 
+			$getIng = "SELECT * FROM Ingredients";
+			
+			$stmt = $db->prepare($getIng);
+			$stmt->bind_result($IngId, $NameIng);
+			$stmt->execute();
+
+
+
 			if(isset($_POST['updateDrink'])){ // If the form addDrink has been submitted
+				 echo"hao";
 
 				@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -70,16 +73,14 @@
 
 				$NewDrinkName = $_POST['DrinkName'];
 				$NewDrinkReceipt = $_POST['DrinkReceipt'];
-				$Ingredients = $_POST['Ingredients'];
 
 
-				$updateDrink = "UPDATE Drinks SET DrinkName=$NewDrinkName, DrinkReceipt=$NewDrinkReceipt WHERE Drinks.DrinkId=$DrinkId;"; // Insert the values into the database. 
-
+				$updateDrink = "UPDATE Drinks SET DrinkName='$NewDrinkName', DrinkReceipt='$NewDrinkReceipt' WHERE DrinkId=$DrinkId"; // Insert the values into the database. 
+		
 				$stmt = $db->prepare($updateDrink);
-				$stmt->bind_param('ss',$NewDrinkName, $NewDrinkReceipt);
+				$stmt->bind_param('ss',$DrinkName,$DrinkReceipt);
 				$stmt->execute(); 
-
-				header('location:update.php');
+				echo"<script>window.location = 'mypanel.php';</script>"; // Redirect to the panel after made changes. 
 			}
 
 ?>
@@ -93,7 +94,6 @@
 		<div class='c'>
 		<div class="drinkside">
 		<div  class="back">
-
 			<a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
 		</div>
 		<div class="allforms">
@@ -104,21 +104,19 @@
 				<div class="updateDrink">
 
 				</div>
+				<select class="select" id="Ingredients" name="addIng[]">
+					<?php 
+						while ($stmt->fetch()){
+							echo"<option value='".$IngId."'>".$NameIng."</option>";
+						}
+					?>
+					</select>
+					<button class='button' id="connectDrinkIng" for="addIng">Add Ingredient</button></br>
 				<input  class="receipt" type="text" required placeholder="Receipt" name="DrinkReceipt"></br>
-				<input class='button3' type="submit" name="addDrink">
+				
+				<input  class='button3' type="submit" name="updateDrink">
 			</form>
 
-
-			<form class="ingredientForm" method="post">
-				<img src="Images/tri-2svart.png" class="tri"> <!-- triangle -->
-				<div class="ingredientFromint">
-				<h3>Add Ingredient</h3>
-				<input class="fieldDrink" type="text" required placeholder="Name" name="NameIng"></br>
-				<input class='button3' type="submit" name="addIng">
-				</div>
-				<img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
-			</form>
-			</div>
 
 			<script type="text/javascript" src="addIng.js"></script>
 		</div>
