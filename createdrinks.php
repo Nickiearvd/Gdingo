@@ -83,6 +83,7 @@
 
 					$stmt = $db->prepare($addDrinksIng);
 					$stmt->execute();
+					echo"<script>window.location = 'mypanel.php';</script>"; // Redirect to the panel after made changes. 
 
 				}
 				header('location:createdrinks.php');
