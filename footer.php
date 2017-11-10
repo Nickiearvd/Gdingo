@@ -22,7 +22,7 @@
 	</div>
 
 	<div id="rightSide">
-		<a href="finddrinks.php"><button class="exitbtn"> SIGN UP!</button></a>
+		<a href="indexlogin.php"><button class="exitbtn"> SIGN UP!</button></a>
 	</div>
 	<div class="links">
 		
