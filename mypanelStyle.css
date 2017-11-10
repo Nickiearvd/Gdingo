@@ -89,17 +89,6 @@
 			padding:10px;
 			border-radius: 50px;
 		}
-		.knapp:hover, .knappedit:hover{
+		.knapp:hover{
 			background-color: black;
-		}
-
-		.knappedit{
-			width: 20px;
-			background-color: #e72262;
-			padding:10px;
-			border-radius: 1px;
-			position:absolute;
-			left:-5px;
-			top:10px;
-			z-index: 111111;
 		}

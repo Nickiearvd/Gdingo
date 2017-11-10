@@ -40,9 +40,9 @@
 				while ($stmt->fetch()) { // Show the 
 
 				echo "<div class='gridone'>
-				<a href='updatedrink.php?DrinkId=$DrinkId' ><img class='knappedit' src='Images/edit.png'></a>
+		
 
-				<a href='drinkbase.php?DrinkId=$DrinkId'>
+				<a href='updatedrink.php?DrinkId=$DrinkId'>
 				<div class='cut'>
 				<img class='DrinkPic' src=\"Images/DrinkPictures/" . $DrinkPicture . "\" GROUP BY DrinkPicture> </div></a>
 				<a class='DrinkName' href='drinkbase.php?DrinkId=$DrinkId'>" . $DrinkName . " </a>
