@@ -70,7 +70,10 @@
 
 
 			?>
+
 			</div>
+				<img src='Images/tri-3svart.png' class='tri2'>;
+
 			<?php include 'footer.php';?>
 		</div>
 	</body>
