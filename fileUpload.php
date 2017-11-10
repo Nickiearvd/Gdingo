@@ -45,10 +45,11 @@
         <title>Security - Upload</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
            </head>
-           
+           <?php include 'header.php';?>
            <body>
                <div id="container">
                  <div>
+                 
                     <?php
 
                     if(isset($error)){
@@ -89,11 +90,15 @@
                 </div>
 
                 <img src="Images/tri.png" class="tri">
+
                  <?php echo '<a class="continue" href="createdrinks.php?DrinkPicture=' . urlencode($DrinkPicture) . '">Continue</a>';?>
 
                   
 
-                 
+                 <div  class="back">
+
+                    <a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
+                  </div>
 
                    
            </body>
@@ -113,6 +118,7 @@
       width: 80%;
       margin: 0px auto 0 auto;
       max-width: 580px;
+      padding-top: 120px;
     }
 
     .tri{
@@ -127,7 +133,7 @@
       font-family: 'open sans',helvetica;
       font-weight: 800;
       text-transform: uppercase;
-      font-size: 40px;
+      font-size: 30px;
       padding: 20px;
     }
     .preView{
@@ -141,20 +147,34 @@
       color: white;
       padding: 16px 32px;
       text-decoration: none;
-      margin: 20px 7px;
+      margin: 10px auto;
       cursor: pointer;
       text-align: center;
       font-family: 'open sans',helvetica;
       font-weight: 400;
       text-transform: uppercase;
-      font-size: 15px;
+      font-size: 12px;
+      display: block;
+      width: 160px;
 
 
   }
   input[type="file"] {
       display: none;
   }
-   
+   .back{
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      padding:8px;
+      position:absolute;
+      left:20px;
+
+      top:200px;
+    }
+    .knapp{
+      width: 40px;
+    }
   </style>
     
     
