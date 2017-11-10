@@ -47,7 +47,12 @@
 		margin: 0 auto;
 
 	}
-
+	.tri {
+	width:100%;
+	background-size: 100%;
+	z-index: -1;
+	margin-bottom: 40px;
+}
 	#footer{
 	    clear: both;
 	    background:  #000;
