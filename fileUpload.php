@@ -74,6 +74,7 @@
                  <div>
                   
                      <form action="" method="POST" enctype="multipart/form-data">
+
                          <label class="custom-file-upload">
                             <input type="file" name="upload"/>
                               Choose file...
@@ -140,13 +141,14 @@
       color: white;
       padding: 16px 32px;
       text-decoration: none;
-      margin: 20px 2px;
+      margin: 20px 7px;
       cursor: pointer;
       text-align: center;
       font-family: 'open sans',helvetica;
       font-weight: 400;
       text-transform: uppercase;
       font-size: 15px;
+
 
   }
   input[type="file"] {
