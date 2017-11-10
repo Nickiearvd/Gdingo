@@ -1,14 +1,24 @@
 <?php require('includes/config.php'); 
 
 //if not logged in redirect to login page
-if(!$user->is_logged_in()){ header('Location: mypanel.php'); exit(); }
+if(!$user->is_logged_in()){ header('Location: login.php'); exit(); }
 
 //define page title
 $title = 'Members Page';
 
 //include header template
-require('layout/top.php'); 
+
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title><?php if(isset($title)){ echo $title; }?></title>
+    
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
 
 <div class="container">
 

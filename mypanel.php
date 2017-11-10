@@ -1,5 +1,18 @@
+<?php require('includes/config.php'); 
+
+//if not logged in redirect to login page
+if(!$user->is_logged_in()){ header('Location: login.php'); exit(); }
+
+//define page title
+$title = 'Members Page';
+
+//include header template
+
+?>
+
 <?php include "config.php"; ?>
 <?php include "header.php"; ?>
+
 <!Doctype html>
 <html>
 	<head>
@@ -23,13 +36,22 @@
 				<img src='Images/tri.png' class='tri0'>
 				<div id="gridsystem">
 				<?php 
+				
+
+
 
 					@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+
+
 					if ($db->connect_error) {
 						echo "could not connect: " . $db->connect_error;
 						print("<br><a href=index.php>Return to home page </a>");
 						exit();
 					}
+
+					
+
 					$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng, User.Username FROM Drinks 
 					JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
 					JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId
@@ -41,6 +63,8 @@
 					$stmt = $db->prepare($query);
 					$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $Username ); // Same as the query. 
 					$stmt->execute();
+
+
 					
 					
 					while ($stmt->fetch()) {
