@@ -43,45 +43,117 @@
 <html>
     <head>
         <title>Security - Upload</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
            </head>
            
            <body>
-               <div>
-                  <?php
+               <div id="container">
+                 <div>
+                    <?php
 
-                  if(isset($error)){
+                    if(isset($error)){
 
-                    if(empty($error)){
+                      if(empty($error)){
 
-                      echo '<a href="Images/DrinkPictures/' . $_FILES['upload']['name'] . '">Check file';
+                        echo '<a href="Images/DrinkPictures/' . $_FILES['upload']['name'] . '"><img class="preView" src="Images/DrinkPictures/'.$DrinkPicture.'">';
 
-                    } else {
-          
-                           foreach ($error as $err){
-                               echo $err;
-                               echo "</br>";
-                           }
-                           
-                       }
+                      } else {
+            
+                             foreach ($error as $err){
+                                 echo $err;
+                                 echo "</br>";
+                             }
+                             
+                         }
 
-                  }
-                  ?>
+                    }
+                    ?>
 
-               </div>
+                 </div>
 
-               <div>
+                 <div>
+                  
+                     <form action="" method="POST" enctype="multipart/form-data">
+                         <label class="custom-file-upload">
+                            <input type="file" name="upload"/>
+                              Choose file...
+                          </label>
+                         <input  type="submit" value="submit" />
+                     </form>                   
+                 </div>
+               
+               
+               
+
+                </div>
+
+                <img src="Images/tri.png" class="tri">
+                 <?php echo '<a class="continue" href="createdrinks.php?DrinkPicture=' . urlencode($DrinkPicture) . '">Continue</a>';?>
+
+                  
+
+                 
 
                    
-                   <form action="" method="POST" enctype="multipart/form-data">
-                       <input type="file" name="upload" /></br>
-                       <input  type="submit" value="submit" />
-                   </form>                   
-               </div>
-               <?php echo '<a class="button" href="createdrinks.php?DrinkPicture=' . urlencode($DrinkPicture) . '">Continue</a>';?>
-               
-<?php echo $DrinkPicture ; ?>
            </body>
     
+  <style>
+    
+    body{
+      margin: 0 auto;
+      background-color: #000;
+      text-align: center;
+
+    }
+
+    #container{
+      background-color: #fff;
+      color: #000;
+      width: 80%;
+      margin: 0px auto 0 auto;
+      max-width: 580px;
+    }
+
+    .tri{
+      width: 80%;
+      margin: -16px auto 20px auto;
+      display: block;
+      max-width: 580px;
+    }
+    .continue{
+      color: #fff;
+      text-align: center;
+      font-family: 'open sans',helvetica;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 40px;
+      padding: 20px;
+    }
+    .preView{
+      width: 90%;
+      margin: 20px auto;
+    }
+
+    input[type=submit], .custom-file-upload  {
+      background-color: #e72262;;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 20px 2px;
+      cursor: pointer;
+      text-align: center;
+      font-family: 'open sans',helvetica;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 15px;
+
+  }
+  input[type="file"] {
+      display: none;
+  }
+   
+  </style>
     
     
     
