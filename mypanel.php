@@ -1,5 +1,5 @@
-<?php include "config.php"; ?>
-<?php require('includes/config.php'); 
+<?php require('includes/config.php'); ?>
+<?php
 
 //if not logged in redirect to login page
 if(!$user->is_logged_in()){ header('Location: login.php'); exit(); }
@@ -12,6 +12,7 @@ $title = 'Members Page';
 ?>
 
 
+<?php include "config.php"; ?>
 <?php include "header.php"; ?>
 
 <!Doctype html>
