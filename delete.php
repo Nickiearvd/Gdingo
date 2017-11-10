@@ -29,7 +29,7 @@
         <div id="main">
             <div class="animation-target">
                 <img id="img" src="Images/checked.png"/>
-                <h1>Delete</h1>
+                <h1>Deleted</h1>
             </div>
         </div>
 
