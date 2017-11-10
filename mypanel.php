@@ -38,9 +38,6 @@ $title = 'Members Page';
 				<div id="gridsystem">
 				<?php 
 				
-
-
-
 					@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
 
@@ -50,7 +47,7 @@ $title = 'Members Page';
 						print("<br><a href=index.php>Return to home page </a>");
 						exit();
 					}
-					$User=($_SESSION['username']);
+	
 
 
 					
@@ -61,7 +58,6 @@ $title = 'Members Page';
 					JOIN members ON Drinks.DrinkAuthor = members.username
 					WHERE Drinks.DrinkAuthor=members.username" ;
 					$query = $query . " GROUP BY DrinkName"; // Only show one picture.
-					echo $User; 
 
 					$result = $db->query($query);
 					$stmt = $db->prepare($query);
