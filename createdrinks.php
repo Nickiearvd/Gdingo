@@ -232,6 +232,20 @@
 		.knapp{
 			width: 40px;
 		}
+		.btn{
+			background-color: #e72262;
+			border-radius: 50%;
+			border:none;
+			margin-left: 10px;
+
+			background-image: url(Images/error.png) center center  no-repeat;
+			background-size: 100%;
+			color:white;
+
+
+			height:20px;
+			width: 20px;
+		}
 
 		/***************TEXTFIELDS***************/
 		.select{
