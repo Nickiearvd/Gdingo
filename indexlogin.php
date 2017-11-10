@@ -107,6 +107,7 @@ require('layout/top.php');
 	<h2>SIGN UP</h2>
 	<img class="knapp" src="Images/arrow.png">
 </div>
+<div id="form">
 <img src="Images/tri.png" class="tri2">
 
 
@@ -152,13 +153,22 @@ require('layout/top.php');
 				</div>
 
 				<div class="row">
-					<div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
+					<input type="submit" name="submit" value="Register" class="loginbtn" tabindex="5">
 				</div>
 			</form>
 		</div>
 	</div>
 
+
+
 </div>
+
+<div id="vit">
+<img src="Images/tri-3svart.png" class="tri3">
+</div>
+</div>
+
+<div id="svart">
 
 <?php
 //include header template
