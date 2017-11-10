@@ -77,8 +77,8 @@
                        <input  type="submit" value="submit" />
                    </form>                   
                </div>
+               <?php echo '<a class="button" href="createdrinks.php?DrinkPicture=' . urlencode($DrinkPicture) . '">Continue</a>';?>
                
-               <a class="button" href='createdrinks.php?$DrinkPicture=DrinkPicture'>Continue </a>
 <?php echo $DrinkPicture ; ?>
            </body>
     
