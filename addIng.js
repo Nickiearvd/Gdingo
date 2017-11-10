@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		var ing = document.getElementById('Ingredients');
 		var newText = document.createElement("li");
 		ing.selectedIndex;
+
 		newText.innerText = ing[ing.selectedIndex].innerText;
 		div.appendChild(newText);
 		hiddenValue = ing[ing.selectedIndex].value;
@@ -15,9 +16,19 @@ document.addEventListener("DOMContentLoaded", function () {
 		newHidden.name = "Ingredients[]";
 		div.appendChild(newHidden);
 		ing.removeChild(ing[ing.selectedIndex]);
+		remove = document.createElement("button");
+		remove.innerText = "X";
+		remove.type = "button";
+		remove.setAttribute("class", "btn");
+		newText.appendChild(remove);
 
 	})
 })
+
+$(document).on("click", ".btn", function(){
+		   $(this).parent('li').remove();
+});
+
 
 $(document).ready( function() { // Add a open class, enable to show or not the navigation 
 	var button = $(".button2");
