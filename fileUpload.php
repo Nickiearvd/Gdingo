@@ -49,7 +49,10 @@
            <body>
                <div id="container">
                  <div>
-                 
+                  <div  class="back">
+
+                    <a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
+                  </div>
                     <?php
 
                     if(isset($error)){
@@ -73,10 +76,7 @@
                  </div>
 
                  <div>
-                  <div  class="back">
-
-                    <a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
-                  </div>
+                 
                   
                      <form action="" method="POST" enctype="multipart/form-data">
 

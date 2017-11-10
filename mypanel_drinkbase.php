@@ -38,12 +38,7 @@
 	</head>
 	<body>
 		<div class='c'>
-			<div  class="delete">
-				<?php echo '<a href="delete.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knappdelete" src="Images/delete.png"></a>'; ?>
-			</div>
-			<div  class="edit">
-				<?php echo '<a href="update.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knappdelete" src="Images/edit.png"></a>'; ?>
-			</div>
+			
 
 			<div class="drinkside">
 				<div class='side'>
@@ -62,6 +57,13 @@
 
 					?> 
 				</div>
+
+				<div  class="delete">
+				<?php echo '<a href="delete.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knappdelete" src="Images/delete.png"></a>'; ?>
+			</div>
+			<div  class="edit">
+				<?php echo '<a href="update.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knappdelete" src="Images/edit.png"></a>'; ?>
+			</div>
 				<div  class="back">
 
 					<a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
@@ -219,6 +221,7 @@
 			position:absolute;
 			right:40px;
 			top:0px;
+			margin: 0;
 
 		}
 		.back{
@@ -229,34 +232,35 @@
 			position:absolute;
 			left:20px;
 			top:0px;
+			margin: 0;
 		}
 		.knapp{
 			width: 40px;
 		}
 		.delete {
 			background: #E61262;
-			width: 25px;
-			height: 25px;
+			width: 20px;
+			height: 20px;
 			border-radius: 50%;
 			padding:10px;
 			position:absolute;
-			margin:0 auto ;
-			top:150px;
-			left:35%;
+			top:65px;
+			right: 28px;
+			margin: 0;
 		}
 		.knappdelete{
-			width: 25px;
+			width: 20px;
 		}
 		.edit {
 			background: #E61262;
-			width: 25px;
-			height: 25px;
+			width: 20px;
+			height: 20px;
 			border-radius: 50%;
 			padding:10px;
 			position:absolute;
-			margin:0 auto ;
-			top:150px;
-			left:55%;
+			margin:0;
+			top:120px;
+			right: 28px;
 		}
 		.delete:hover, .edit:hover{
 			background-color: black;
@@ -265,7 +269,7 @@
 		@media (min-width: 600px) {
 
 
-			.heart, .back, .side{
+			.heart, .back, .side, .edit, .delete{
 				margin-top: 60px;
 			}
 			.drinkside{
