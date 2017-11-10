@@ -67,6 +67,10 @@
 			z-index:1000000000;
 
 		}
+		p{
+			font-family: 'open-sans', helvetica;
+			font-size: 11px;
+		}
 		
 
 		/* LOGOTYPE */
