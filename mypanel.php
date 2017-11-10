@@ -1,3 +1,4 @@
+<?php include "config.php"; ?>
 <?php require('includes/config.php'); 
 
 //if not logged in redirect to login page
@@ -10,7 +11,7 @@ $title = 'Members Page';
 
 ?>
 
-<?php include "config.php"; ?>
+
 <?php include "header.php"; ?>
 
 <!Doctype html>
@@ -49,19 +50,22 @@ $title = 'Members Page';
 						print("<br><a href=index.php>Return to home page </a>");
 						exit();
 					}
+					$User=($_SESSION['username']);
+
 
 					
 
-					$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng, User.Username FROM Drinks 
+					$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng, members.Username FROM Drinks 
 					JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
 					JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId
-					JOIN User ON Drinks.DrinkAuthor = User.Username
-					WHERE User.Username='Nickie'" ;
-					$query = $query . " GROUP BY DrinkName"; // Only show one picture. 
+					JOIN members ON Drinks.DrinkAuthor = members.username
+					WHERE Drinks.DrinkAuthor=members.username" ;
+					$query = $query . " GROUP BY DrinkName"; // Only show one picture.
+					echo $User; 
 
 					$result = $db->query($query);
 					$stmt = $db->prepare($query);
-					$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $Username ); // Same as the query. 
+					$stmt->bind_result($DrinkId, $DrinkName, $DrinkAuthor, $DrinkPicture, $IngId, $NameIng, $username ); // Same as the query. 
 					$stmt->execute();
 
 
