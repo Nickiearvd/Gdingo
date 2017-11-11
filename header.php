@@ -38,6 +38,8 @@
 			});
 		</script>
 
+		
+
 
 	</head>
 	<body>
@@ -51,6 +53,12 @@
 					<li><a class="<?php echo $current_page == 'finddrinks.php' ? 'active' : NULL ?>" href="finddrinks.php">Find drinks</a></li>
 					<li><a class="<?php echo $current_page == 'mydrinks.php' ? 'active' : NULL ?>" href="mydrinks.php">My favorites</a></li>
 					<li><a class="<?php echo $current_page == 'mypanel.php' ? 'active' : NULL ?>" href="memberpage.php">My Drinks</a></li>
+					<li><a href="#"><font color="#e72262">
+						<?php if (isset($_COOKIE["Active"])) { echo $_COOKIE["Active"];} ?>
+							
+						</font></a></li>
+
+					
 
 					
 					

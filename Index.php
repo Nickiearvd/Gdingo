@@ -63,8 +63,19 @@
 						$str = "<a class='LogIn' href='logout.php'>Log out</a>";
 						$str2 = "<a class='LogIn' href='login.php'>Log in</a>";
 						if($user->is_logged_in())
-							{ echo $str;}
+							{ echo $str;
+								$cookie_name = "Active";
+								$cookie_value = "<a href='logout.php'>Log out</a>";
+								setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
+					
+							}
 						else { echo $str2;
+							$cookie_name = "Active";
+							$cookie_value = "<a href='login.php'>Log in</a>";
+							setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
+
 						}?></p>
 
 			</div> <!-- intro ends -->
