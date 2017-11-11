@@ -14,6 +14,10 @@
 		exit();
 	}
 
+	function test() {
+		echo "hej";
+	}
+
 	// GET ALL THE INFORMATION TO DISPLAY THEM 
 	$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Drinks.DrinkReceipt, Ingredients.IngId, Ingredients.NameIng
 	FROM Drinks 
@@ -139,7 +143,8 @@
 				<div class="updateDrink">
 				<div class='ingrblack'>
 					<ul ><?php foreach($alling as $value){
-		    			echo "<li id='existing'>" . $value . "<button type='button' class='btn' onclick='removedIng()'>X</button></li><br>";} ?> <!-- Print out each value that you can find into the ingredients array -->
+		    			$newI = "<li id='existing'>" . $value . "<button type='button' class='btn' onclick='<?php test(); ?>'>X</button></li><br>";
+		    			echo $newI; } ?> <!-- Print out each value that you can find into the ingredients array -->
 		    		</ul>
 		    	</div>
 					<ul id="IngToDrink">

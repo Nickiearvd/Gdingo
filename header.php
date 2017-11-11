@@ -54,6 +54,7 @@
 					<li><a class="<?php echo $current_page == 'mydrinks.php' ? 'active' : NULL ?>" href="mydrinks.php">My favorites</a></li>
 					<li><a class="<?php echo $current_page == 'mypanel.php' ? 'active' : NULL ?>" href="memberpage.php">My Drinks</a></li>
 
+
 					
 
 					
