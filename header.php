@@ -54,7 +54,12 @@
 					<li><a class="<?php echo $current_page == 'mydrinks.php' ? 'active' : NULL ?>" href="mydrinks.php">My favorites</a></li>
 					<li><a class="<?php echo $current_page == 'mypanel.php' ? 'active' : NULL ?>" href="memberpage.php">My Drinks</a></li>
 					<li><a href="#"><font color="#e72262">
-						<?php if (isset($_COOKIE["Active"])) { echo $_COOKIE["Active"];} ?>
+						<?php 
+						$str = "<a href='logout.php'>Log out</a>";
+						$str2 = "<a href='login.php'>Log in</a>";
+						if($user->is_logged_in())
+							{ echo $str; }
+						else { echo $str2; }?>
 							
 						</font></a></li>
 
