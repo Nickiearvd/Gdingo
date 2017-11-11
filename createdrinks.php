@@ -120,7 +120,7 @@
 					?>
 					</select>
 					<button class='button' id="connectDrinkIng" for="addIng"><img class="iconIMG" src="Images/checked.png" ></button></br>
-					<button class='button2'>You don't find your ingredient? Click here to add more</button></br>
+					<button class='button2'>You don't find your ingredient? </br>Click here to add more</button></br>
 				</div>
 				<input  class="receipt" type="text" required placeholder="Receipt" name="DrinkReceipt"></br>
 				<input class='button3' type="submit" name="addDrink">
@@ -201,6 +201,7 @@
 			height:25px;
 			font-size: 10px;
 			float:left;
+			cursor: pointer;
 		} 
 		.button2{
 			width:100%;
@@ -216,10 +217,12 @@
 			box-sizing: border-box;
 			-webkit-appearance: none;
 			float:right;
+			cursor: pointer;
 		} 
 
 		.button:focus, .button2:focus, .button3:focus { 
 			outline: none;
+			cursor: pointer;
 		}
 
 		.button3{
@@ -235,6 +238,7 @@
 			font-size: 10px;
 			box-sizing: border-box;
 			-webkit-appearance: none;
+			cursor: pointer;
 		}
 
 		.back{
@@ -248,6 +252,7 @@
 		}
 		.knapp{
 			width: 40px;
+			cursor: pointer;
 		}
 		.btn{
 			background-color: #e72262;
@@ -267,7 +272,7 @@
 		/***************TEXTFIELDS***************/
 		.select{
 			width:60%;
-			margin:0 10px 0 0;
+			margin:0  5px 0 12%;
 			box-sizing: border-box;
 			display: block;
 			height:30px;
@@ -303,11 +308,12 @@
 
 		.addDrink{
 			width:70%;
-			margin:0 auto;
+			margin:0px auto 0px auto;
 			box-sizing: border-box;
 			display: block;
 			overflow: hidden;
 			margin-bottom: 30px;
+			text-align: left;
 		}
 
 		/***************ADDINGR***************/
@@ -315,7 +321,7 @@
 		#IngToDrink{
 			margin:0;
 			padding:0;
-			padding-bottom: 10px;
+			padding-bottom: 40px;
 			font-family: 'open sans',helvetica;
 
 		}
