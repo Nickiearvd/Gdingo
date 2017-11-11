@@ -5,8 +5,24 @@ require ('layout/top.php');
 //check if already logged in move to home page
 if( $user->is_logged_in() ){ header('Location: indexlogin.php'); exit(); }
 
+	function cookieuser() {
+		if (isset($_COOKIE["user"])) {
+			 
+				echo $_COOKIE["user"];
+		}
+	}
+
+	function cookiepass() {
+		if (isset($_COOKIE["password"])) {
+			 
+				echo $_COOKIE["password"];
+		}
+	}
+
 //process login form if submitted
 if(isset($_POST['submit'])){
+
+	
 
 	if (!isset($_POST['username'])) $error[] = "Please fill out all fields";
 	if (!isset($_POST['password'])) $error[] = "Please fill out all fields";
@@ -18,8 +34,21 @@ if(isset($_POST['submit'])){
 		}
 		$password = $_POST['password'];
 
+			if(isset($_POST['_remember_me']))
+			{
+					$cookie_name = "user";
+					$cookie_value = $username;
+
+					$cookie_name1 = "password";
+					$cookie_value1 = $password;
+					setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+					setcookie($cookie_name1, $cookie_value1, time() + (86400 * 30), "/");  // 86400 = 1 day
+
+			}
+
 		if($user->login($username,$password)){
 			$_SESSION['username'] = $username;
+				
 			header('Location: mypanel.php');
 			exit;
 
@@ -72,20 +101,27 @@ $title = 'Login';
 				?>
 
 				<div class="form-group">
-					<input type="text" name="username" id="username" class="form-control input-lg" placeholder="User Name" value="<?php if(isset($error)){ echo htmlspecialchars($_POST['username'], ENT_QUOTES); } ?>" tabindex="1">
+					<input type="text" name="username" id="username" class="form-control input-lg" value="<?php cookieuser(); ?>" value="<?php if(isset($error)){ echo htmlspecialchars($_POST['username'], ENT_QUOTES); } ?>" tabindex="1">
 				</div>
 
 				<div class="form-group">
-					<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="3">
+					<input type="password" name="password" id="password" class="form-control input-lg" value="<?php cookiepass(); ?>" tabindex="3">
 				</div>
 				
-				
+				<div class="check">
+				<input type="checkbox" id="remember_me"  name="_remember_me" value="rem" />
+	    		<p class="check">Remember me</p>
+	    		</div>
 				
 				<hr>
 				<div class="row">
 					<input type="submit" name="submit" value="Login" class="loginbtn" tabindex="5">
 					<a href="indexlogin.php"><input type="button" name="none" value="Register" class="loginbtn" tabindex="5"></a>
+
 				</div>
+
+
+					
 			</form>
 		</div>
 	</div>

@@ -1,3 +1,26 @@
+input[type=checkbox] {
+	transform:scale(1.2, 1.2);
+}
+
+.check {
+	color:#fff;
+	padding-left: 10%;
+	padding-top:5px;
+	text-align: left;
+	font-size: 12px;
+	margin-top: 5px;
+	padding-bottom: 0px;
+}
+
+
+#remember_me {
+	width:5%;
+	float:left;
+}
+
+
+
+
 .bg-danger, .bg-success {
 	padding: 0 5px;
 }

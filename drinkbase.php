@@ -64,6 +64,7 @@
 		    		<div class="heart">
 						<?php 
 						$User=($_SESSION['username']);
+
 		
 
 
@@ -100,7 +101,10 @@
 	                        <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
 	 
 	                    </fieldset>
-						<?php include 'rating.php'; ?> 
+						<?php include 'rating.php'; 
+							
+
+						?> 
 					</div>
 
 				</div>
