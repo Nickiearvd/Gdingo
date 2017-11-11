@@ -49,80 +49,81 @@
 
 
 		<div class='container'>
+			<div id="white">
 
-			<div class="drinkside">
+				<div class="drinkside">
 
-				<div class='side'>
-		    		<?php 
-		    			echo "<img class='drinkimage' src=Images/DrinkPictures/$DrinkPicture>";
+					<div class='side'>
+			    		<?php 
+			    			echo "<img class='drinkimage' src=Images/DrinkPictures/$DrinkPicture>";
 
-		    		?>
-
-
-	    		</div>
-	    		<div class="heart">
-					<?php 
-					$User=($_SESSION['username']);
-	
+			    		?>
 
 
-					
+		    		</div>
+		    		<div class="heart">
+						<?php 
+						$User=($_SESSION['username']);
+		
 
-						 // Show the heart to fav a drink. Heart deisgn depends on if it's already fav or not.
-						echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like2.png"></a>'; 
-							
 
 						
-						//else {
-						//	echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like.png"></a>';
-						//} 
 
-					?> 
-				</div>
-				<div  class="back">
+							 // Show the heart to fav a drink. Heart deisgn depends on if it's already fav or not.
+							echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like2.png"></a>'; 
+								
 
-					<a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
-				</div>
-				<h3><?php echo $DrinkName; ?></h3> <!-- Print out the name of the drink-->
+							
+							//else {
+							//	echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like.png"></a>';
+							//} 
+
+						?> 
+					</div>
+					<div  class="back">
+
+						<a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
+					</div>
+					<h3><?php echo $DrinkName; ?></h3> <!-- Print out the name of the drink-->
 			
-			<div id="rating">
-				<fieldset id='demo1' class="rating">
-                        <input class="stars" type="radio" id="star5" name="rating" value="5" />
-                        <label class = "full" for="star5" title="Awesome - 5 stars"></label>
-                        <input class="stars" type="radio" id="star4" name="rating" value="4" />
-                        <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-                        <input class="stars" type="radio" id="star3" name="rating" value="3" />
-                        <label class = "full" for="star3" title="Meh - 3 stars"></label>
-                        <input class="stars" type="radio" id="star2" name="rating" value="2" />
-                        <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-                        <input class="stars" type="radio" id="star1" name="rating" value="1" />
-                        <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
- 
-                    </fieldset>
-				<?php include 'rating.php'; 
-				?> 
-			</div>
+					<div id="rating">
+						<fieldset id='demo1' class="rating">
+	                        <input class="stars" type="radio" id="star5" name="rating" value="5" />
+	                        <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+	                        <input class="stars" type="radio" id="star4" name="rating" value="4" />
+	                        <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+	                        <input class="stars" type="radio" id="star3" name="rating" value="3" />
+	                        <label class = "full" for="star3" title="Meh - 3 stars"></label>
+	                        <input class="stars" type="radio" id="star2" name="rating" value="2" />
+	                        <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+	                        <input class="stars" type="radio" id="star1" name="rating" value="1" />
+	                        <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+	 
+	                    </fieldset>
+						<?php include 'rating.php'; ?> 
+					</div>
 
-			</div>
+				</div>
 
-			<div class='maincontent'>
+				<div class='maincontent'>
 
-				
-				<div class='ingrblack'>
-					<img src="Images/tri.png" class="tri1"> <!-- triangle -->
-					<h4>What do you need? </h4>
-					<ul><?php foreach($alling as $value){
-		    			echo "<li>" . $value . "</li><br>";} ?> <!-- Print out each value that you can find into the ingredients array -->
-		    		</ul>
-		    	</div>
-		    	<div class='receipt'>
-		    		<img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
-			    	<h4>Wonder how to make it? </h4>
-		    		<?php echo "<p>" . $DrinkReceipt. "<p>"; ?>
+					
+					<div class='ingrblack'>
+						<img src="Images/tri.png" class="tri1"> <!-- triangle -->
+						<h4>What do you need? </h4>
+						<ul><?php foreach($alling as $value){
+			    			echo "<li>" . $value . "</li><br>";} ?> <!-- Print out each value that you can find into the ingredients array -->
+			    		</ul>
+			    	</div>
+			    	<div class='receipt'>
+			    		<img src="Images/tri-3svart.png" class="tri0"> <!-- triangle -->
+				    	<h4>Wonder how to make it? </h4>
+			    		<?php echo "<p>" . $DrinkReceipt. "<p>"; ?>
 
-		    	</div>
-    		</div>
+			    	</div>
+	    		</div>
 		
+			</div>
 		</div>
 	</div>
 	<?php include 'footer.php';?>
@@ -144,17 +145,23 @@
 
 	body{
 		margin: 0 auto;
+		background-color: #000;
 	}
 	#pageContainer{
 		background-color: #000;
 		margin: 0 auto;
+		width: 100%;
+
 	}
 
 		.container{
 			padding-top:150px;
 			margin: 0 auto;
 			text-align: center;
-			max-width: 900px;
+			
+			background-color: #fff;
+			width: 100%;
+
 
 		}
 		.drinkside{
@@ -163,18 +170,30 @@
 			width:100%;
 			text-align: center;
 			margin-bottom: 20px;
+			background-color: #fff;
+
 		}
-		
+		#white{
+			width:100%;
+			background-color: #fff;
+			overflow: hidden;
+			max-width: 1100px;
+			display: block;
+			margin: 0 auto;
+			
+
+		}
 		h3{
 			font-family: 'open sans',helvetica;
 			font-weight: 800;
 			text-transform: uppercase;
 			font-size: 40px;
 			color:black;
-			margin:0;
+			margin:0 auto;
 			line-height: 45px;
 			margin-bottom: 5px;
 			text-align: center;
+			width: 60%;
 
 
 		}
@@ -214,13 +233,15 @@
 			width:100%;
 			margin-left:20px; 
 			box-sizing: border-box;
+			background-color: #fff;
+
 		}
 		.side{
 			margin-top:15px;
 
 		}
 		.drinkimage{
-			width:50%;
+			width:60%;
 
 		}
 		li{
@@ -235,7 +256,7 @@
 			text-align:center;
 			padding:0;
 		}
-		.tri, .tri1{
+		.tri0, .tri1{
 			width:100%;
 			margin:0;
 			padding:0;
@@ -284,16 +305,50 @@
 				width:40%;
 				display: inline;
 				margin: 0 auto;
+				text-align: left;
 			
 			}
-			.tri1{
+			.tri1, .tri0{
 				display: none;
 			}
 			
 				h4{
-				padding-top:70px;
+				
+				text-align: left;
+				margin-left: 42.5px; 
 			}
+			.ingrblack ul{
+			border-left: 2.5px solid #e72262;
+			text-align:left;
+			margin-left: 20px;
+			padding: 10px 20px;
 			
+		}
+		.ingrblack{
+			background-color:white;
+			color: #000;
+			text-align: left;
+			margin-top:70px;
+			
+		}
+
+		.heart {
+			
+			left:10px;
+			top:70px;
+
+		}
+		.back{
+			
+			left:10px;
+		
+		}
+		.receipt {
+			border-left: 2.5px solid #e72262;
+			text-align:left;
+			margin: 70px 0 0 20px;
+			padding: -10px 20px;
+		}
 		}
 
 	</style>
