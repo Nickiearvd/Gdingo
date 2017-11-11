@@ -48,6 +48,10 @@ if(isset($_POST['submit'])){
 
 		if($user->login($username,$password)){
 			$_SESSION['username'] = $username;
+
+			$cookie_name2 = "currentuser";
+			$cookie_value2 = $username;
+			setcookie($cookie_name2, $cookie_value2, time() + (86400 * 30), "/");
 				
 			header('Location: mypanel.php');
 			exit;
