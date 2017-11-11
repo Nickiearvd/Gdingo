@@ -112,17 +112,18 @@ form{
 }
 
 .button{
-	width:80%;
-	margin:0 auto;
-	display: block;
-	margin:0 auto 20px auto;
+	margin: 10px auto 20px auto;
 	text-align: center;
+	font-family: 'open sans',helvetica;
+	font-weight: 800;
+	text-transform: uppercase;
+	font-size: 18px;
 	background-color: #e72262;
 	color: #fff;
 	border:none;
-	padding: 10px 25px 10px 25px;
-	font-size: 14px;
-	box-sizing: border-box;
+	width:80%;
+	padding: 5px;
+	max-width: 350px;
 	-webkit-appearance: none;
 
 }
@@ -328,6 +329,7 @@ h2 {
 
 }
 
+
 /* MEDIA MIN 600PX */
 
 @media (min-width: 600px) {
@@ -340,7 +342,7 @@ h2 {
 		width:90%;
 		overflow: hidden;
 		margin:auto;
-		margin-bottom: 50px;
+		margin-bottom: 0px;
 		position: relative;
 	}
 
@@ -350,7 +352,9 @@ h2 {
 	}
 
 	
-
+	.button{
+		margin-bottom:0;
+	}
 
 	
 

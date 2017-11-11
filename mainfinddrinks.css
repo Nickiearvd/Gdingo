@@ -80,18 +80,19 @@ h3{
 
 
 .button{
-	width:80%;
-	margin:0 auto;
-	display: block;
-	margin:auto;
+	margin: 10px auto 5px auto;
 	text-align: center;
+	font-family: 'open sans',helvetica;
+	font-weight: 800;
+	text-transform: uppercase;
+	font-size: 18px;
 	background-color: #e72262;
 	color: #fff;
 	border:none;
-	padding: 10px 25px 10px 25px;
-	font-size: 14px;
-	box-sizing: border-box;
-	-webkit-appearance: none;
+	width:80%;
+	padding: 5px;
+	max-width: 350px;
+}
 
 }
 

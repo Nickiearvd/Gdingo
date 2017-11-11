@@ -120,8 +120,8 @@
 							}
 						?>
 						</select>
-						<button class='button' id="connectDrinkIng" for="addIng"><img class="iconIMG" src="Images/checked.png" ></button></br>
-						<button class='button2'>You don't find your ingredient? </br>Click here to add more</button></br>
+						<button class='button' id="connectDrinkIng" for="addIng"><img class="iconIMG" src="Images/plus.png" ></button></br>
+						<button class='button2'>New Ingredient</button></br>
 					</div>
 					<input  class="receipt" type="text" required placeholder="Receipt" name="DrinkReceipt"></br>
 					<input class='button3' type="submit" name="addDrink">
@@ -226,20 +226,18 @@
 			cursor: pointer;
 		} 
 		.button2{
-			width:100%;
-			margin:0 auto;
-			display: block;
-			margin-top:10px;
+			margin: 10px auto 20px auto;
 			text-align: center;
+			font-family: 'open sans',helvetica;
+			font-weight: 800;
+			text-transform: uppercase;
+			font-size: 14px;
 			background-color: #e72262;
 			color: #fff;
 			border:none;
-			padding: 5px 15px 5px 15px;
-			font-size: 10px;
-			box-sizing: border-box;
+			width:200px;
+			padding: 5px;
 			-webkit-appearance: none;
-			float:right;
-			cursor: pointer;
 		} 
 
 		.button:focus, .button2:focus, .button3:focus { 

@@ -87,16 +87,7 @@ body {
 
 
 .introbtn {
-<<<<<<< HEAD
-	margin:auto;
-	margin-top: 20px;
-	text-align: center;
-	background-color: #e72262;
-	color: #fff;
-	border:none;
-	padding: 10px 25px 10px 25px;
-	font-size: 14px;
-=======
+
 		margin: 60px auto 5px auto;
 		text-align: center;
 		font-family: 'open sans',helvetica;
@@ -108,7 +99,6 @@ body {
 		border:none;
 		width: 160px;
 		padding: 10px;
->>>>>>> 190bd911120d69598114fe7065076467d85a1fc4
 }
 
 .tri {
