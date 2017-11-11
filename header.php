@@ -9,6 +9,7 @@
 		<script type="text/javascript" src="jquery.min.js"></script>
 		<script>
 
+
 			$(document).ready( function() { // Add a open class, enable to show or not the navigation 
 				var icon = $("#showmenu");
 				var menu = $(".nav");
@@ -40,7 +41,6 @@
 
 		
 
-
 	</head>
 	<body>
 		<header id= "header">
@@ -54,9 +54,7 @@
 					<li><a class="<?php echo $current_page == 'mydrinks.php' ? 'active' : NULL ?>" href="mydrinks.php">My favorites</a></li>
 					<li><a class="<?php echo $current_page == 'memberpage.php' ? 'active' : NULL ?>" href="memberpage.php">My Drinks</a></li>
 
-
 					
-
 					
 					
 				</ul>
