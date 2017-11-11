@@ -10,12 +10,16 @@
 	</head>
 	<body>
 	<div class='c'>
-	<div class="drinkside">
-		<div  class="back">
+	<h2>Create your special drink</h2>
+		<div id="pinkline"></div>
+		<div id="imageside">
+		
+		<div class="drinkside">
+			<div  class="back">
 
-			<a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
+				<a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
+			</div>
 		</div>
-	</div>
 		<?php
 
 			$DrinkPicture = trim($_GET['DrinkPicture']); // Get the DrinkId from the finddrinks page the user clicked on. 
@@ -98,10 +102,12 @@
 
 
 			?>
-			<div class="allforms">
+
+		</div>
+		<div class="allforms">
 			<form method="post">
-				<h2>Create your special drink</h2>
-				<input class="fieldDrink" type="text" required placeholder="Name" name="DrinkName"></br>
+				
+				<input class="fieldDrink" type="text" required placeholder="Name..." name="DrinkName"></br>
 				<div class="addDrink">
 					<ul id="IngToDrink">
 						
@@ -113,7 +119,7 @@
 						}
 					?>
 					</select>
-					<button class='button' id="connectDrinkIng" for="addIng">Add Ingredient</button></br>
+					<button class='button' id="connectDrinkIng" for="addIng"><img class="iconIMG" src="Images/checked.png" ></button></br>
 					<button class='button2'>You don't find your ingredient? Click here to add more</button></br>
 				</div>
 				<input  class="receipt" type="text" required placeholder="Receipt" name="DrinkReceipt"></br>
@@ -130,7 +136,9 @@
 				</div>
 				<img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
 			</form>
-			</div>
+
+		</div>
+		<?php include 'footer.php';?>
 
 			<script type="text/javascript" src="addIng.js"></script>
 
@@ -144,7 +152,8 @@
 
 		}
 		.drinkimagepreview{
-			width:200px;
+			width: 80%;
+			max-width: 500px;
 			margin:0 auto;
 			display:block;
 			margin-bottom:20px;		
@@ -168,23 +177,30 @@
 			margin-bottom: 30px;
 			text-align: center;
 		}
+		#pinkline{
+			height: 2.5px;
+			width: 280px;
+			margin: 10px auto 15px auto;
+			background-color: #e72262;
+			padding: 0;
+
+		}
 		/***************BUTTONS****************/
 
 		.button{
-			width:39%;
-			margin:0 auto;
+			width:25px;
+			margin:0px;
 			display: block;
 			margin:auto;
 			text-align: center;
 			background-color: #e72262;
 			color: #fff;
-			border:none;
-			padding: 5px 15px 5px 15px;
-			height:30px;
+			border:solid 2px #e72262;
+			border-radius: 50%;
+			padding: 0;
+			height:25px;
 			font-size: 10px;
-			box-sizing: border-box;
-			-webkit-appearance: none;
-			float:right;
+			float:left;
 		} 
 		.button2{
 			width:100%;
@@ -228,7 +244,7 @@
 			padding:8px;
 			position:absolute;
 			left:10px;
-			top:-50px;
+			top:-180px;
 		}
 		.knapp{
 			width: 40px;
@@ -251,11 +267,12 @@
 		/***************TEXTFIELDS***************/
 		.select{
 			width:60%;
-			margin:0 auto;
+			margin:0 10px 0 0;
 			box-sizing: border-box;
 			display: block;
 			height:30px;
 			float:left;
+			font-family: 'open sans',helvetica;
 			}
 
 		.fieldDrink{
@@ -263,8 +280,14 @@
 			margin:0 auto;
 			box-sizing: border-box;
 			display: block;
-			height:20px;
+			height:40px;
 			padding:15px;
+			font-size: 30px;
+			text-align: center;
+			font-family: 'open sans',helvetica;
+			font-weight: 800;
+			text-transform: uppercase;
+			color:black;
 		}
 		.receipt{
 			width:70%;
@@ -274,6 +297,8 @@
 			height:20px;
 			padding:15px;
 			padding-bottom:100px;
+			font-family: 'open sans',helvetica;
+
 		}
 
 		.addDrink{
@@ -291,6 +316,7 @@
 			margin:0;
 			padding:0;
 			padding-bottom: 10px;
+			font-family: 'open sans',helvetica;
 
 		}
 
@@ -334,6 +360,7 @@
 		}
 		.allforms{
 			position: relative;
+			max-width: 700px;
 		}
 		.tri{
 			width:100%;
@@ -342,9 +369,52 @@
 			position: relative;
 			float:left;
 			width:100%;
-			text-align: center;
+			text-align: left;
 			margin-bottom: 20px;
 		}
+		input{
+			border:none;
+		}
+		.iconIMG{
+			width: 15px;
+			margin: 3px auto;
+			text-align: center;
+		}
+		/* MEDIA MIN 600PX */
 
+@media (min-width: 600px) {
+		.c{
+			padding-top:250px;
+			position:relative;
+			max-width: 1100px;
+			margin: 0 auto;
+
+		}
+		.drinkside{
+			overflow: hidden;
+			float:left;
+			width:50%;
+			text-align: left;
+			margin:0 0 20px 10px;
+		}
+
+		#imageside{
+			width: 50%;
+			float: left; 
+			display: inline;
+		}
+		.drinkimagepreview{
+			width: 80%;
+			max-width: 460px;
+			margin:20px;
+			display:inline;
+			margin-bottom:20px;
+		}
+		.allforms{
+			width: 50%;
+			float: left;
+			display: inline;
+			margin-top: 30px;
+		}
 	</style>
 </html>
