@@ -1,5 +1,15 @@
 <!Doctype html>
 <?php require ("includes/config.php"); ?>
+<?php 
+
+    $DrinkId = trim($_GET['DrinkId']); // Get the DrinkId from the finddrinks page the user clicked on.
+    if( $user->is_logged_in() ) {
+        if (isset($_COOKIE["currentuser"])) {
+            $currentUser = $_COOKIE["currentuser"];
+        }
+    }
+    $Current = json_encode($currentUser);
+?>
 <html>
 
     <head>
@@ -11,15 +21,15 @@
             <script type="text/javascript" src="jquery.min.js"></script>
             <script>
 
-                /*$(document).ready( function() {
+                $(document).ready( function() {
                     
                     function redirect(){
-                        window.location = "finddrinks.php";
+                        history.back(); // History API 
                     }
 
                     setTimeout(redirect, 1000);
 
-                } );*/
+                } );
                
             </script>
     </head>
@@ -28,22 +38,21 @@
         <div id="main">
             <div class="animation-target">
                 <img id="img" src="Images/checked.png"/>
-                <h1>ADDED</h1>
+                <h1>Removed</h1>
             </div>
         </div>
 
     
         <?php
-include("config.php");
+            include("config.php");
 
 
 
-$DrinkId = trim($_GET['DrinkId']);
-echo '<INPUT type="hidden" name="drinkid" value=' . $DrinkId . '>';
+            $DrinkId = trim($_GET['DrinkId']);
+            echo '<INPUT type="hidden" name="drinkid" value=' . $DrinkId . '>';
 
-$DrinkId = trim($_GET['DrinkId']);      // From the hidden field
-$DrinkId = addslashes($DrinkId);
-$User=($_SESSION['username']);
+            $DrinkId = trim($_GET['DrinkId']);      // From the hidden field
+            $DrinkId = addslashes($DrinkId);
 
 
 
@@ -56,7 +65,7 @@ $User=($_SESSION['username']);
         exit();
     }
     // Prepare an insert statement with the current drinkID and userID and execute it
-    $stmt = $db->prepare("DELETE FROM Favo WHERE DrinkId = $DrinkId AND username = $User");
+    $stmt = $db->prepare("DELETE FROM Favo WHERE DrinkId = $DrinkId AND username =  $Current");
     $stmt->execute();
     
     exit;
