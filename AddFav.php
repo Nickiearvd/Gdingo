@@ -11,15 +11,15 @@
             <script type="text/javascript" src="jquery.min.js"></script>
             <script>
 
-                /*$(document).ready( function() {
+                $(document).ready( function() {
                     
                     function redirect(){
-                        window.location = "finddrinks.php";
+                        history.back();
                     }
 
                     setTimeout(redirect, 1000);
 
-                } );*/
+                } );
                
             </script>
     </head>

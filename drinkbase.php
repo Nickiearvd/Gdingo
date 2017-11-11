@@ -3,6 +3,12 @@
 <?php 
 
 	$DrinkId = trim($_GET['DrinkId']); // Get the DrinkId from the finddrinks page the user clicked on.
+	if( $user->is_logged_in() ) {
+		if (isset($_COOKIE["currentuser"])) {
+			$currentUser = $_COOKIE["currentuser"];
+		}
+	}
+	$Current = json_encode($currentUser);
 
 	@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname); // Connect to the database
 	if ($db->connect_error) {
@@ -63,21 +69,23 @@
 		    		</div>
 		    		<div class="heart">
 						<?php 
-						$User=($_SESSION['username']);
+							$query = ("SELECT * FROM Favo WHERE DrinkId = $DrinkId AND username = $Current");
+							$stmt = $db->prepare($query);
+	    					$stmt->bind_result($DrinkId2, $username);
+	   						$stmt->execute();
+
+							while($stmt->fetch()) {};
 
 		
-
-
-						
-
-							 // Show the heart to fav a drink. Heart deisgn depends on if it's already fav or not.
-							echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like2.png"></a>'; 
-								
+							if($DrinkId2 == $DrinkId){
+								// SHOW HEART IF THE DRINKID IS IN THE DATABASE IN FAVO TABLE.
+								echo '<a href="RemoveFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like2.png"></a>'; 
+							}
 
 							
-							//else {
-							//	echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like.png"></a>';
-							//} 
+							else {
+								echo '<a href="AddFav.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knapp" src="Images/like.png"></a>';
+							} 
 
 						?> 
 					</div>
