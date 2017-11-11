@@ -134,8 +134,8 @@
 		</div>
 		<div class="allforms">
 			<form method="post">
-				<h2>Update " <?php echo $DrinkName; ?> "</h2>
-				<input class="fieldDrink" type="text" placeholder="Name" name="DrinkName"></br>
+				<h2>Update your drink</h2>
+				<input class="fieldDrink" type="text" placeholder="<?php echo $DrinkName; ?> " name="DrinkName"></br>
 				<div class="updateDrink">
 				<div class='ingrblack'>
 					<ul ><?php foreach($alling as $value){
@@ -163,7 +163,7 @@
 				<img src="Images/tri-2svart.png" class="tri"> <!-- triangle -->
 				<div class="ingredientFromint">
 				<h3>Add Ingredient</h3>
-				<input class="fieldDrink" type="text" required placeholder="Name" name="NameIng"></br>
+				<input class="fieldDrink 2" type="text" required placeholder="Name" name="NameIng"></br>
 				<input class='button3' type="submit" name="addIng">
 				</div>
 				<img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
@@ -277,6 +277,18 @@
 		.ingredientFromint .fieldDrink{
 			margin-top:10px;
 		}
+		.fieldDrink{
+			margin-top:10px;
+			font-size: 30px;
+			text-align: center;
+			font-family: 'open sans',helvetica;
+			font-weight: 800;
+			text-transform: uppercase;
+			color:black;
+			border:none;
+
+		}
+
 		.allforms{
 			position: relative;
 		}
