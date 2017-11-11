@@ -76,9 +76,9 @@
 					<div class="icons">
 
 		
-						<div class="icon"><img class="iconIMG" src="Images/search.png" ></div>
-						<div class="icon"><img class="iconIMG" src="Images/like1.png" ></div>
-						<div class="icon"><img class="iconIMG" src="Images/plus.png" ></div>
+						<a href="finddrinks.php" class="icon"><img class="iconIMG"  src="Images/search.png" ></a>
+						<a href="mydrinks.php" class="icon"><img class="iconIMG" src="Images/like1.png" ></a>
+						<a href="memberpage.php" class="icon"><img class="iconIMG" src="Images/plus.png" ></a>
 						
 					</div>
 

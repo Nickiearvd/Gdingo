@@ -26,7 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 $(document).on("click", ".btn", function(){
+
 		   $(this).parent('li').remove();
+
 });
 
 
@@ -38,6 +40,7 @@ $(document).ready( function() { // Add a open class, enable to show or not the n
 		event.preventDefault();
 		form.toggleClass("open");
 		button.toggleClass("open");
+		
 	} );
 
 } );
