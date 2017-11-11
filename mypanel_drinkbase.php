@@ -39,7 +39,24 @@
 	<body>
 		<div class='c'>
 			
-
+		<div id="white">
+		<h3><?php echo $DrinkName; ?></h3> <!-- Print out the name of the drink-->
+				<div id="rating">
+						<fieldset id='demo1' class="rating">
+	                        <input class="stars" type="radio" id="star5" name="rating" value="5" />
+	                        <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+	                        <input class="stars" type="radio" id="star4" name="rating" value="4" />
+	                        <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+	                        <input class="stars" type="radio" id="star3" name="rating" value="3" />
+	                        <label class = "full" for="star3" title="Meh - 3 stars"></label>
+	                        <input class="stars" type="radio" id="star2" name="rating" value="2" />
+	                        <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+	                        <input class="stars" type="radio" id="star1" name="rating" value="1" />
+	                        <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+	 
+	                    </fieldset>
+						<?php include 'rating.php'; ?> 
+					</div>
 			<div class="drinkside">
 				<div class='side'>
 		    		<?php 
@@ -60,22 +77,23 @@
 
 				<div  class="delete">
 				<?php echo '<a href="delete.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knappdelete" src="Images/delete.png"></a>'; ?>
-			</div>
-			<div  class="edit">
-				<?php echo '<a href="update.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knappdelete" src="Images/edit.png"></a>'; ?>
-			</div>
+				</div>
+				<div  class="edit">
+					<?php echo '<a href="update.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knappdelete" src="Images/edit.png"></a>'; ?>
+				</div>
 				<div  class="back">
 
 					<a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
 				</div>
-				<h3><?php echo $DrinkName; ?></h3> <!-- Print out the name of the drink-->
+				
 			
 			</div>
 
-			</div>
+			
 
 			<div class='maincontent'>
 				
+
 				<div class='ingrblack'>
 					<img src="Images/tri.png" class="tri1"> <!-- triangle -->
 					<h4>What do you need? </h4>
@@ -84,19 +102,40 @@
 		    		</ul>
 		    	</div>
 		    	<div class='receipt'>
-		    		<img src="Images/tri-3svart.png" class="tri"> <!-- triangle -->
+		    		<img src="Images/tri-3svart.png" class="tri0"> <!-- triangle -->
 			    	<h4>Wonder how to make it? </h4>
 		    		<?php echo "<p>" . $DrinkReceipt. "<p>"; ?>
 		    	</div>
 		
+			</div>
 		</div>
 		</div>
+		<div id="footerINC">
 		<?php include 'footer.php';?>
+		</div>
 	</body>
 	<style>
 		.c{
-				padding-top: 200px;
+
+			width:100%;
+			background-color: #fff;
+			overflow: hidden;
+			max-width: 1100px;
+			display: block;
+			margin: 0 auto 200px auto;
+			padding-top: 140px;
+
+				
 			}
+			#white{
+			
+				
+				max-width: 1100px;
+				margin: 0 auto;
+				display: block;
+				text-align: center;
+
+		}
 			/***************TEXT STYLE****************/
 
 			h2{
@@ -105,7 +144,7 @@
 				text-transform: uppercase;
 				font-size: 40px;
 				color:black;
-				margin:0;
+				margin:0 auto;
 				line-height: 45px;
 				margin-bottom: 30px;
 				text-align: center;
@@ -128,7 +167,10 @@
 		margin: 0 auto;
 	}
 
-		
+		#footerINC{
+			background-color: #000;
+			width: 100%;
+		}
 		.drinkside{
 			position: relative;
 			float:left;
@@ -186,13 +228,15 @@
 			width:100%;
 			margin-left:20px; 
 			box-sizing: border-box;
+			background-color: #fff;
+
 		}
 		.side{
 			margin-top:15px;
 
 		}
 		.drinkimage{
-			width:50%;
+			width:60%;
 
 		}
 		li{
@@ -207,7 +251,7 @@
 			text-align:center;
 			padding:0;
 		}
-		.tri, .tri1{
+		.tri0, .tri1{
 			width:100%;
 			margin:0;
 			padding:0;
@@ -221,22 +265,20 @@
 			position:absolute;
 			right:40px;
 			top:0px;
-			margin: 0;
 
 		}
-		.back{
-			width: 20px;
+		.back{width: 20px;
 			height: 20px;
 			border-radius: 20px;
 			padding:8px;
 			position:absolute;
 			left:20px;
 			top:0px;
-			margin: 0;
 		}
 		.knapp{
 			width: 40px;
 		}
+
 		.delete {
 			background: #E61262;
 			width: 20px;
@@ -267,35 +309,98 @@
 		}
 
 		@media (min-width: 600px) {
-
-
-			.heart, .back, .side, .edit, .delete{
-				margin-top: 60px;
+			.c{
+				padding-top: 200px;
 			}
-			.drinkside{
+			h3{
+			margin-top: 45px;
+			margin-left:40px;
+			width: 100%;
+			text-align: center;
+
+
+		}
+		.side{
+			float: right;
+			text-align: right;
+			width: 100%;
+		}
+
+		#rating {
+		width: 180px;
+		text-align: center;
+		margin: 0 auto;
+		}
+		.drinkimage{
+			width:80%;
+
+		}
+		.heart, .back, .side, .edit, .delete{
+			margin-top: 60px;
+		}
+
+		.drinkside{
 			float:left;
-			width:60%;
+			width:50%;
 			text-align: center;
 			margin-bottom: 20px;
 			display: inline;
-			margin: 0 auto;
+			margin: 0px auto 0 auto;
 
-			}
+		}
+
+		.heart {
+			
+			left:20px;
+			top:80px;
+
+		}
+		.edit{
+			left:28px;
+			top:140px;
+		}
+
+		.delete{
+			top: 190px;
+			left:28px;
+		}
 			.maincontent{
 				float:left;
 				width:40%;
 				display: inline;
 				margin: 0 auto;
+				text-align: left;
 			
 			}
-			.tri1{
+			.tri1, .tri0{
 				display: none;
 			}
-			
-				h4{
-				padding-top:70px;
+			h4{
+				padding-top: 0;
+				text-align: left;
+				margin-left: 42.5px; 
 			}
-			
+				.ingrblack ul{
+				border-left: 2.5px solid #e72262;
+				text-align:left;
+				margin-left: 20px;
+				padding: 10px 20px;
+				
+			}
+			.ingrblack{
+				background-color:white;
+				color: #000;
+				text-align: left;
+				margin-top:50px;
+				
+			}
+			.receipt {
+			border-left: 2.5px solid #e72262;
+			text-align:left;
+			margin: 70px 0 0 20px;
+			padding: -10px 20px;
+		}
+
 		}
 	</style>
 </html>
