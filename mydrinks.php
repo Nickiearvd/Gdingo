@@ -1,5 +1,17 @@
 <?php include 'config.php';?>
-<?php include 'includes/config.php';?>
+<?php include 'includes/config.php';
+
+function redirect() {
+    echo'<script> window.location="login.php"; </script> ';
+
+}
+
+if(!$user->is_logged_in()){ 
+	redirect();
+	
+ }
+
+?>
 
 <!Doctype html>
 <html>
