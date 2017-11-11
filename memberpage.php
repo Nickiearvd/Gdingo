@@ -4,10 +4,7 @@
 require ('config.php');
 
 //if not logged in redirect to login page
-if(!$currentuser->is_logged_in()){ 
-	
-	echo'<script>window.location="login.php";</script>'
-	exit(); }
+if(!$user->is_logged_in()){ header('Location: login.php'); exit(); }
 
 //define page title
 $title = 'Members Page';
