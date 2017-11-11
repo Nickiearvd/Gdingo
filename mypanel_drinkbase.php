@@ -313,8 +313,8 @@
 				padding-top: 200px;
 			}
 			h3{
-			margin-top: 45px;
-			margin-left:40px;
+			
+			margin: 45px auto 0 auto;
 			width: 100%;
 			text-align: center;
 
