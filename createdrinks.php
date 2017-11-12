@@ -359,13 +359,16 @@
 			margin:0;
 
 		}
+		
+
+
 		.ingredientForm{
 			display: none;
 		}
 		.ingredientForm.open{
 			display: block;
 			position: absolute;
-			top:260px;
+			top:180px;
 			width:70%;
 			left:15%;
 		}
@@ -373,7 +376,7 @@
 			background-color:black;
 			height:150px;
 			padding-top: 0;
-			margin:0;
+			margin:-45px 0 0 0;
 			padding:0;
 		}
 		.ingredientFromint h3{
@@ -396,6 +399,11 @@
 			background-color: white;
 			margin: 0 auto;
 		}
+
+
+
+
+		
 		.tri{
 			width:100%;
 		}
