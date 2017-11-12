@@ -8,36 +8,36 @@
 
 	</head>
 	<body>
-	<div id="footer">
+		<div id="footer">
 
-	<div id="whiteDiv">
-		
-	</div>
-	<img src="Images/tri.png" class="tri"> <!-- triangle -->
-	<div id="line"></div>
+			<div id="whiteDiv">
+				
+			</div>
+			<img src="Images/tri.png" class="tri"> <!-- triangle -->
+			<div id="line"></div>
 
-	<div id="footerImg">
-		<img class="footerLogo" src="Images/logotext.png" >
-		<p class="footerP1">Thank you for visiting, welcome back!</p>
-	</div>
+			<div id="footerImg">
+				<img class="footerLogo" src="Images/logotext.png" >
+				<p class="footerP1">Thank you for visiting, welcome back!</p>
+			</div>
 
-	<div id="rightSide">
-		<a href="indexlogin.php"><button class="exitbtn"> SIGN UP!</button></a>
-	</div>
-	<div class="links">
-		
-		<img class="link" src="Images/facebook.png" >
-		<img class="link" src="Images/twitter.png" >
-		<img class="link" src="Images/instagram.png" >
-	</div>
+			<div id="rightSide">
+				<a href="indexlogin.php"><button class="exitbtn"> SIGN UP!</button></a>
+			</div>
+			<div class="links">
+				
+				<img class="link" src="Images/facebook.png" >
+				<img class="link" src="Images/twitter.png" >
+				<img class="link" src="Images/instagram.png" >
+			</div>
 
 
-	<div id="footerCopyrights">
-		
-		<p class="footerP">Copyright © 2017 All rights reserved by GDingo Company</p>
-	</div>
-		
-	</div>
+			<div id="footerCopyrights">
+				
+				<p class="footerP">Copyright © 2017 All rights reserved by GDingo Company</p>
+			</div>
+				
+		</div>
 		
 	</body>
 
@@ -52,7 +52,7 @@
 	background-size: 100%;
 	z-index: -1;
 	margin-bottom: 40px;
-}
+	}
 	#footer{
 	    clear: both;
 	    background:  #000;
@@ -79,7 +79,6 @@
 		margin: 27px auto -20px auto;
 	}
 	#footerImg{
-		/*border-bottom: solid #fff 2px;*/
 		padding-bottom: 15px;
 		width: 70%;
 		margin: 20px auto 0 auto;
