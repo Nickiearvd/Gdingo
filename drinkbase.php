@@ -178,64 +178,6 @@
 					<input type="submit" name="check" class="checksubmit" value="Submit">
 					</form>
 
-				<style>
-
-					input.checksubmit {
-						
-						height: 30px;
-						background: #e72262;
-						color:#fff;
-						padding:5px 10px 5px 10px;
-						text-transform: uppercase;
-						font-family: 'open sans', helvetica;
-						font-size: 14px;
-						font-weight: 600;
-						-webkit-appearance:none;
-						  -moz-appearance:none;
-						  -ms-appearance:none;
-						 box-shadow: none;
-						 border:none;
-						 display: block;
-						 margin: auto;
-						 margin-top: 10px;
-
-					}
-
-					
-					 input[type="checkbox"] {
-					    background-image: url("images/star.png"); 
-					    background-size: 30px;
-					    background-repeat: no-repeat;
-					    -webkit-appearance:none;
-						  -moz-appearance:none;
-						  -ms-appearance:none;   
-						width:30px;
-						height: 30px; 
-						opacity: 0.3;
-						
-
-
-					}
-
-					input[type="checkbox"]:hover {
-						opacity: 1.0;
-					}
-
-					input[type="checkbox"]:checked {
-						opacity: 1.0;
-						-webkit-appearance:none;
-						  -moz-appearance:none;
-						  -ms-appearance:none;
-						  
-					}
-
-					input:focus,
-					select:focus {
-					    outline: none;
-					}
-
-				</style>
-
 				</div>
 
 				<div class='maincontent'>
@@ -483,6 +425,65 @@
 			padding: -10px 20px;
 		}
 		}
+
+						
+
+					input.checksubmit {
+						
+						height: 30px;
+						background: #e72262;
+						color:#fff;
+						padding:5px 10px 5px 10px;
+						text-transform: uppercase;
+						font-family: 'open sans', helvetica;
+						font-size: 14px;
+						font-weight: 600;
+						-webkit-appearance:none;
+						  -moz-appearance:none;
+						  -ms-appearance:none;
+						 box-shadow: none;
+						 border:none;
+						 display: block;
+						 margin: auto;
+						 margin-top: 10px;
+
+					}
+
+					
+					 input[type="checkbox"] {
+					    background-image: url("images/star.png"); 
+					    background-size: 30px;
+					    background-repeat: no-repeat;
+					    -webkit-appearance:none;
+						  -moz-appearance:none;
+						  -ms-appearance:none;   
+						width:30px;
+						height: 30px; 
+						opacity: 0.3;
+						
+
+
+					}
+
+					input[type="checkbox"]:hover {
+						opacity: 1.0;
+					}
+
+					input[type="checkbox"]:checked {
+						opacity: 1.0;
+						-webkit-appearance:none;
+						  -moz-appearance:none;
+						  -ms-appearance:none;
+						  
+					}
+
+					input:focus,
+					select:focus {
+					    outline: none;
+					}
+
+				
+
 
 	</style>
 </html>
