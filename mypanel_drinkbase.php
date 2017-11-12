@@ -127,41 +127,40 @@
 			padding-top: 140px;
 
 				
-			}
-			#white{
-			
-				
-				max-width: 1100px;
-				margin: 0 auto;
-				display: block;
-				text-align: center;
+		}
+		#white{
+		
+			max-width: 1100px;
+			margin: 0 auto;
+			display: block;
+			text-align: center;
 
 		}
 			/***************TEXT STYLE****************/
 
-			h2{
-				font-family: 'open sans',helvetica;
-				font-weight: 800;
-				text-transform: uppercase;
-				font-size: 40px;
-				color:black;
-				margin:0 auto;
-				line-height: 45px;
-				margin-bottom: 30px;
-				text-align: center;
-			}
-			#demo1 {
-		text-align: center;
+		h2{
+			font-family: 'open sans',helvetica;
+			font-weight: 800;
+			text-transform: uppercase;
+			font-size: 40px;
+			color:black;
+			margin:0 auto;
+			line-height: 45px;
+			margin-bottom: 30px;
+			text-align: center;
+		}
+		#demo1 {
+			text-align: center;
 
-	}
+		}
 
-	body{
-		margin: 0 auto;
-	}
-	#pageContainer{
-		background-color: #000;
-		margin: 0 auto;
-	}
+		body{
+			margin: 0 auto;
+		}
+		#pageContainer{
+			background-color: #000;
+			margin: 0 auto;
+		}
 
 		#footerINC{
 			background-color: #000;
@@ -295,11 +294,11 @@
 		}
 
 		@media (min-width: 600px) {
-			.c{
-				padding-top: 200px;
-			}
-			h3{
-			
+		.c{
+			padding-top: 200px;
+		}
+		h3{
+		
 			margin: 45px auto 0 auto;
 			width: 100%;
 			text-align: center;
@@ -350,41 +349,41 @@
 			top: 140px;
 			left:28px;
 		}
-			.maincontent{
-				float:left;
-				width:40%;
-				display: inline;
-				margin: 0 auto;
-				text-align: left;
-			
-			}
-			.tri1, .tri0{
-				display: none;
-			}
-			h4{
-				padding-top: 0;
-				text-align: left;
-				margin-left: 42.5px; 
-			}
-				.ingrblack ul{
-				border-left: 2.5px solid #e72262;
-				text-align:left;
-				margin-left: 20px;
-				padding: 10px 20px;
-				
-			}
-			.ingrblack{
-				background-color:white;
-				color: #000;
-				text-align: left;
-				margin-top:50px;
-				
-			}
-			.receipt {
+		.maincontent{
+			float:left;
+			width:40%;
+			display: inline;
+			margin: 0 auto;
+			text-align: left;
+		
+		}
+		.tri1, .tri0{
+			display: none;
+		}
+		h4{
+			padding-top: 0;
+			text-align: left;
+			margin-left: 42.5px; 
+		}
+		.ingrblack ul{
 			border-left: 2.5px solid #e72262;
 			text-align:left;
-			margin: 70px 0 0 20px;
-			padding: -10px 20px;
+			margin-left: 20px;
+			padding: 10px 20px;
+			
+		}
+		.ingrblack{
+			background-color:white;
+			color: #000;
+			text-align: left;
+			margin-top:50px;
+			
+		}
+		.receipt {
+		border-left: 2.5px solid #e72262;
+		text-align:left;
+		margin: 70px 0 0 20px;
+		padding: -10px 20px;
 		}
 
 		}

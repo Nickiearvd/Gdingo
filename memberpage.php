@@ -264,19 +264,19 @@ h4 a{
 @media (min-width: 600px) {
 
 	.log {
-	display: block;
-	width: 150px;
-	height:50px;
-	font-size: 24px;
-	-ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-    transform: rotate(90deg);
-    position: fixed;
-    top:285px;
-    left:-50px;
-    z-index: 10;
-    padding-top: 10px;
-    background-color: #e72262;
+		display: block;
+		width: 150px;
+		height:50px;
+		font-size: 24px;
+		-ms-transform: rotate(90deg); /* IE 9 */
+	    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+	    transform: rotate(90deg);
+	    position: fixed;
+	    top:285px;
+	    left:-50px;
+	    z-index: 10;
+	    padding-top: 10px;
+	    background-color: #e72262;
 	}
 
 	.logText {
