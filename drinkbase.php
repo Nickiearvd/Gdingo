@@ -170,6 +170,7 @@
 						text-transform: uppercase;
 						font-family: 'open sans', helvetica;
 						font-size: 14px;
+						font-weight: 600;
 						-webkit-appearance:none;
 						  -moz-appearance:none;
 						  -ms-appearance:none;

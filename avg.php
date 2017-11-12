@@ -3,7 +3,6 @@
 
 <?php 
 
-
 @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname); // Connect to the database
 	if ($db->connect_error) {
 		echo "could not connect: " . $db->connect_error;
@@ -11,10 +10,8 @@
 		exit();
 	}
 
-$avg = "SELECT Rate
-	FROM Rating";
-	$stmt = $db->prepare($avg);
-	$stmt->bind_result($avg1);
-	$stmt->execute();
-	echo $avg1;
+$avg = SELECT avg(Rate) as average_rate FROM  Rating;
+
+echo $avg;
+	
 ?>
