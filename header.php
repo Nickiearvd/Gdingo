@@ -72,7 +72,7 @@
 			overflow: hidden;
 			position:fixed;
 			width:100%;
-			z-index:1000000000;
+			z-index:100;
 
 		}
 		p{
@@ -190,6 +190,11 @@
 			display: block;
 		}
 
+		.nav.shrink{
+			margin-top: -40px;
+			padding-bottom: 20px;
+		}
+
 		/************** SHRINK **************/
 
 		header.shrink {
@@ -259,6 +264,7 @@
 				float:right;
 				display:inline;
 				z-index:10;
+				
 			}
 
 			#showmenu {

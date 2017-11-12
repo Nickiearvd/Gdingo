@@ -11,13 +11,33 @@
 	</head>
 	<body>
 
+
+
 		<div id="c"></div> <!-- For the menu -->
+
 
 		<!-- https://www.w3schools.com/w3css/w3css_slideshow.asp 
 		The basic to the slideshow is taken from w3schools -->
 		<div id="content">
 
+
 			<div id="intro"> <!-- intro starts -->
+
+				<div class="log">
+
+					<?php 
+						$str = "<a class='logText' href='logout.php'>Log out</a>";
+						$str2 = "<a class='logText' href='login.php'>Log in</a>";
+						if($user->is_logged_in())
+							{ echo $str;
+
+							}
+						else { echo $str2;
+						
+						}?>
+					
+				</div>
+
 
 				<h1>Explore drinks!</h1>
 
@@ -56,27 +76,7 @@
 				<p class="introp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et maximus augue. Vivamus vel dolor nisi. Quisque molestie scelerisque diam nec semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br> Nunc ac mollis orci. Maecenas ac volutpat massa. Nunc et ligula accumsan, condimentum lectus nec, fringilla nisl.
 				Sed elit elit, auctor non sollicitudin ultrices, semper vitae nisi. Proin pharetra erat nisi, in tristique nisl sagittis et. Nullam iaculis imperdiet condimentum. Donec imperdiet commodo aliquam. Vestibulum eleifend est justo, quis lacinia libero blandit at. Aliquam vehicula nisl sed nulla gravida maximus. In suscipit a nulla et suscipit. </p>
 				<a href="finddrinks.php"><button class="introbtn"> SEARCH NOW</button></a>
-				<p>or</p>
 				
-
-				<p ><?php 
-						$str = "<a class='LogIn' href='logout.php'>Log out</a>";
-						$str2 = "<a class='LogIn' href='login.php'>Log in</a>";
-						if($user->is_logged_in())
-							{ echo $str;
-								$cookie_name = "Active";
-								$cookie_value = "<a href='logout.php'>Log out</a>";
-								setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-
-					
-							}
-						else { echo $str2;
-							$cookie_name = "Active";
-							$cookie_value = "<a href='login.php'>Log in</a>";
-							setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-
-
-						}?></p>
 
 			</div> <!-- intro ends -->
 
