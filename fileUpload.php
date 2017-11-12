@@ -1,3 +1,5 @@
+<?php include 'header.php';?>
+
 <?php
 
   if (isset($_FILES['upload'])){
@@ -45,7 +47,7 @@
         <title>Security - Upload</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
            </head>
-           <?php include 'header.php';?>
+           
            <body>
                <div id="container">
                  <div>
