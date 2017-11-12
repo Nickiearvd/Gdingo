@@ -55,7 +55,7 @@
 				$stmt = $db->prepare($addIng);
 				$stmt->bind_param('s',$NewNameIng);
 				$stmt->execute(); 
-				header('location:createdrinks.php');
+				header('location:update.php');
 
 			}
 			// Get all ingredients 
@@ -157,8 +157,8 @@
 						}
 					?>
 					</select>
-					<button class='button' id="connectDrinkIng" for="addIng">Add Ingredient</button></br>
-					<button class='button2'>You don't find your ingredient? Click here to add more</button></br>
+					<button class='button' id="connectDrinkIng" for="addIng"><img class="iconIMG" src="Images/plus.png" ></button></br>
+					<button class='button2'>New Ingredient</button></br>
 				</div>
 				<input  class="receipt" type="text" placeholder="Receipt" name="DrinkReceipt"></br>
 				<input class='button3' type="submit" name="updateDrink">
@@ -183,8 +183,41 @@
 		</div>
 	</body>
 	<style>
+	html{
+		background-color: white;
+	}
+	body{
+		background-color: white;
+	}
+	#white{
+		background-color: white;
+		width: 100%;
+		display: block;
+		overflow: hidden;
+
+	}
 		.c{
-			padding-top: 150px;
+			padding-top:150px;
+			position:relative;
+			background-color: white;
+
+		}
+		.drinkimagepreview{
+			width: 80%;
+			max-width: 500px;
+			margin:0 auto;
+			display:block;
+			margin-bottom:20px;		
+
+
+		}
+		#footerINC{
+			background-color: #000;
+			width: 100%;
+		}
+		p{
+			font-family: 'open sans',helvetica;
+			text-align: center;
 		}
 		/***************TEXT STYLE****************/
 
@@ -199,29 +232,71 @@
 			margin-bottom: 30px;
 			text-align: center;
 		}
+		#pinkline{
+			height: 2.5px;
+			width: 280px;
+			margin: 10px auto 15px auto;
+			background-color: #e72262;
+			padding: 0;
 
-		h3{
+		}
+		/***************BUTTONS****************/
+
+		.button{
+			width:25px;
+			margin:0px;
+			display: block;
+			margin:auto;
+			text-align: center;
+			background-color: #e72262;
+			color: #fff;
+			border:solid 2px #e72262;
+			border-radius: 50%;
+			padding: 0;
+			height:25px;
+			font-size: 10px;
+			float:left;
+			cursor: pointer;
+		} 
+		.button2{
+			margin: 30px auto 20px auto;
+			text-align: center;
 			font-family: 'open sans',helvetica;
 			font-weight: 800;
 			text-transform: uppercase;
-			font-size: 40px;
-			color:black;
-			margin:0;
-			line-height: 45px;
-			margin-bottom: 5px;
-			text-align: center;
+			font-size: 14px;
+			background-color: #e72262;
+			color: #fff;
+			border:none;
+			width:200px;
+			padding: 5px;
+			-webkit-appearance: none;
+			display: block;
+			border-radius: 5px;
+		} 
 
-
+		.button:focus, .button2:focus, .button3:focus { 
+			outline: none;
+			cursor: pointer;
 		}
 
-		/***************Buttons***************/
-		.drinkside{
-			position: relative;
-			float:left;
-			width:100%;
+		.button3{
+			margin: 10px auto 20px auto;
 			text-align: center;
-			margin-bottom: 20px;
+			font-family: 'open sans',helvetica;
+			font-weight: 800;
+			text-transform: uppercase;
+			font-size: 14px;
+			background-color: #e72262;
+			color: #fff;
+			border:none;
+			width:200px;
+			padding: 5px;
+			-webkit-appearance: none;
+			border-radius: 5px;
+			display: block;
 		}
+
 		.back{
 			width: 20px;
 			height: 20px;
@@ -229,10 +304,73 @@
 			padding:8px;
 			position:absolute;
 			left:10px;
-			top:-50px;
+			top:-180px;
 		}
 		.knapp{
 			width: 40px;
+			cursor: pointer;
+		}
+		.btn{
+			background-color: #e72262;
+			border-radius: 50%;
+			border:none;
+			margin-left: 10px;
+			background-image: url(Images/error.png) center center  no-repeat;
+			background-size: 100%;
+			color:white;
+			height:20px;
+			width: 20px;
+		}
+
+		/***************TEXTFIELDS***************/
+		.select{
+			width:82%;
+			margin:0  5px 0 2px;
+			box-sizing: border-box;
+			display: block;
+			height:30px;
+			float:left;
+			font-family: 'open sans',helvetica;
+			}
+
+		.fieldDrink{
+			width:70%;
+			margin:0 auto;
+			box-sizing: border-box;
+			display: block;
+			height:40px;
+			padding:15px;
+			font-size: 30px;
+			text-align: center;
+			font-family: 'open sans',helvetica;
+			font-weight: 800;
+			text-transform: uppercase;
+			color:black;
+			border:none;
+		}
+		.receipt{
+			width:100%;
+			max-width: 350px;
+			margin:0 auto;
+			box-sizing: border-box;
+			display: block;
+			height:20px;
+			padding:15px;
+			padding-bottom:100px;
+			font-family: 'open sans',helvetica;
+			border-color:#e72262;
+			border-style: solid;
+
+		}
+
+		.addDrink{
+			width:200px;
+			margin:0px auto 0px auto;
+			box-sizing: border-box;
+			display: block;
+			overflow: hidden;
+			margin-bottom: -10px;
+			text-align: left;
 		}
 
 		/***************ADDINGR***************/
@@ -240,7 +378,8 @@
 		#IngToDrink{
 			margin:0;
 			padding:0;
-			padding-bottom: 10px;
+			padding-bottom: 40px;
+			font-family: 'open sans',helvetica;
 
 		}
 
@@ -282,38 +421,76 @@
 		.ingredientFromint .fieldDrink{
 			margin-top:10px;
 		}
-		.fieldDrink{
-			margin-top:10px;
-			font-size: 30px;
-			text-align: center;
-			font-family: 'open sans',helvetica;
-			font-weight: 800;
-			text-transform: uppercase;
-			color:black;
-			border:none;
-
-		}
-
 		.allforms{
 			position: relative;
-		}
-		.ingrblack{
-			padding-top: 10px;
-		}
-		li{
-			font-family: 'open sans',helvetica;
-			font-weight: 300;
-			list-style: none;
-			padding:0;
-		}
-		ul{
-			text-decoration: none;
-			margin:0;
-			text-align:center;
-			padding:0;
+			max-width: 350px;
+			background-color: white;
+			margin: 0 auto;
 		}
 		.tri{
 			width:100%;
+		}
+		.drinkside{
+			position: relative;
+			float:left;
+			width:100%;
+			text-align: left;
+			margin-bottom: 20px;
+		}
+		
+		.iconIMG{
+			width: 15px;
+			margin: 3px auto;
+			text-align: center;
+		}
+		/* MEDIA MIN 600PX */
+
+@media (min-width: 600px) {
+		.c{
+			padding-top:250px;
+			position:relative;
+			max-width: 1100px;
+			margin: 0 auto;
+
+		}
+		.drinkside{
+			overflow: hidden;
+			float:left;
+			width:50%;
+			text-align: left;
+			background-color: white;
+			margin:0 0 20px 10px;
+		}
+
+		#imageside{
+			height: 60vh;
+			width: 50%;
+			float: left; 
+			display: inline;
+			background-color: white;
+			text-align: right;
+			margin-bottom: 30px;
+		}
+		.drinkimagepreview{
+			width: 80%;
+			max-width: 300px;
+			margin:0px auto 20px auto;
+			display:inline;
+			border: solid 2.5px #e72262 ;
+			padding: 10px;
+		}
+		.allforms{
+			width: 40%;
+			float: left;
+			display: inline;
+			margin-top: 30px;
+			margin-left: 20px;
+			overflow: hidden;
+			text-align: left;
+			max-width: 500px;
+		}
+		#white{
+			margin-bottom: 40px;
 		}
 	</style>
 </html>
