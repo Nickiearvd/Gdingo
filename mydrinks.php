@@ -30,10 +30,10 @@ if(!$user->is_logged_in()){
 
 			
 			<div id="firstc"> <!-- black container starts -->	
-				<h1>my favourites</h1>
+				<h1>my favorites</h1>
 				<form action="mydrinks.php" method="POST">
 					<input type="text" id="name" name="searchname1" placeholder="Search after a drink name"></br>
-					<input type="text" class="ing" name="searching1" placeholder="Search after one ingrediens "></br>
+					<input type="text" class="ing" name="searching1" placeholder="Search after one ingredient "></br>
 					<input class="button" type="submit" name="submit" value="Search">
 
 				</form>
