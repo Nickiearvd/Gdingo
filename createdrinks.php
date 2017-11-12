@@ -226,6 +226,28 @@
 			cursor: pointer;
 		} 
 		.button2{
+			margin: 30px auto 20px auto;
+			text-align: center;
+			font-family: 'open sans',helvetica;
+			font-weight: 800;
+			text-transform: uppercase;
+			font-size: 14px;
+			background-color: #e72262;
+			color: #fff;
+			border:none;
+			width:200px;
+			padding: 5px;
+			-webkit-appearance: none;
+			display: block;
+			border-radius: 5px;
+		} 
+
+		.button:focus, .button2:focus, .button3:focus { 
+			outline: none;
+			cursor: pointer;
+		}
+
+		.button3{
 			margin: 10px auto 20px auto;
 			text-align: center;
 			font-family: 'open sans',helvetica;
@@ -238,27 +260,8 @@
 			width:200px;
 			padding: 5px;
 			-webkit-appearance: none;
-		} 
-
-		.button:focus, .button2:focus, .button3:focus { 
-			outline: none;
-			cursor: pointer;
-		}
-
-		.button3{
-			width:70%;
-			margin:0 auto;
+			border-radius: 5px;
 			display: block;
-			margin-top:5px;
-			text-align: center;
-			background-color: #e72262;
-			color: #fff;
-			border:none;
-			padding: 5px 15px 5px 15px;
-			font-size: 10px;
-			box-sizing: border-box;
-			-webkit-appearance: none;
-			cursor: pointer;
 		}
 
 		.back{
@@ -279,12 +282,9 @@
 			border-radius: 50%;
 			border:none;
 			margin-left: 10px;
-
 			background-image: url(Images/error.png) center center  no-repeat;
 			background-size: 100%;
 			color:white;
-
-
 			height:20px;
 			width: 20px;
 		}
@@ -292,7 +292,7 @@
 		/***************TEXTFIELDS***************/
 		.select{
 			width:60%;
-			margin:0  5px 0 12%;
+			margin:0  5px 0 15%;
 			box-sizing: border-box;
 			display: block;
 			height:30px;
@@ -313,6 +313,7 @@
 			font-weight: 800;
 			text-transform: uppercase;
 			color:black;
+			border:none;
 		}
 		.receipt{
 			width:70%;
@@ -323,6 +324,8 @@
 			padding:15px;
 			padding-bottom:100px;
 			font-family: 'open sans',helvetica;
+			border-color:#e72262;
+			border-style: solid;
 
 		}
 
@@ -332,7 +335,7 @@
 			box-sizing: border-box;
 			display: block;
 			overflow: hidden;
-			margin-bottom: 30px;
+			margin-bottom: -10px;
 			text-align: left;
 		}
 
@@ -399,9 +402,7 @@
 			text-align: left;
 			margin-bottom: 20px;
 		}
-		input{
-			border:none;
-		}
+		
 		.iconIMG{
 			width: 15px;
 			margin: 3px auto;
