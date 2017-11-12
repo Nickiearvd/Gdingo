@@ -21,6 +21,12 @@ if(!$user->is_logged_in()){
 	redirect();
 	
  }
+ if( $user->is_logged_in() ) {
+		if (isset($_COOKIE["currentuser"])) {
+			$currentUser = $_COOKIE["currentuser"];
+		}
+	}
+	$Current = json_encode($currentUser);
 ?>
 
 
@@ -71,7 +77,7 @@ if(!$user->is_logged_in()){
 					JOIN DrinksIng ON Drinks.DrinkId = DrinksIng.DrinkId
 					JOIN Ingredients ON Ingredients.IngId = DrinksIng.IngId
 					JOIN members ON Drinks.DrinkAuthor = members.username
-					WHERE Drinks.DrinkAuthor=members.username" ;
+					WHERE Drinks.DrinkAuthor = $Current" ;
 					$query = $query . " GROUP BY DrinkName"; // Only show one picture.
 
 					$result = $db->query($query);
@@ -185,6 +191,7 @@ if(!$user->is_logged_in()){
 			background-color: #e72262;
 			padding:10px;
 			border-radius: 50px;
+			z-index: 1;
 		}
 		.knapp:hover{
 			background-color: black;
