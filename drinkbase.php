@@ -4,8 +4,6 @@
        
 <?php 
 
-
-
 	$DrinkId = trim($_GET['DrinkId']); // Get the DrinkId from the finddrinks page the user clicked on.
 	if( $user->is_logged_in() ) {
 		if (isset($_COOKIE["currentuser"])) {
@@ -42,7 +40,6 @@
 
 <!Doctype html>
 <html>
-
 	<head>
 		<title>DrinkBase</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
@@ -51,20 +48,13 @@
 	<body>
 	<div id="pageContainer">
 	<?php include 'header.php';?>
-
-
 		<div class='container'>
 			<div id="white">
-
 				<div class="drinkside">
-
 					<div class='side'>
 			    		<?php 
 			    			echo "<img class='drinkimage' src=Images/DrinkPictures/$DrinkPicture>";
-
-			    		?>
-
-
+			    			?>
 		    		</div>
 		    		<div class="heart">
 						<?php 
@@ -95,14 +85,14 @@
 					<h3><?php echo $DrinkName; ?></h3> <!-- Print out the name of the drink-->
 			
 
-	<form name="form" action="" method="post">
-  		<input type="checkbox" name="subject1" value="1" class="checkbox">
-  		<input type="checkbox" name="subject2" value="2">
-  		<input type="checkbox" name="subject3" value="3">
-  		<input type="checkbox" name="subject4" value="4">
-  		<input type="checkbox" name="subject5" value="5"><br>
+					<form name="form" action="" method="post">
+				  		<input type="checkbox" name="subject1" value="1" class="checkbox">
+				  		<input type="checkbox" name="subject2" value="2">
+				  		<input type="checkbox" name="subject3" value="3">
+				  		<input type="checkbox" name="subject4" value="4">
+				  		<input type="checkbox" name="subject5" value="5"><br>
 
-  						<?php 
+						<?php 
 						$query = "SELECT Rate FROM Rating WHERE DrinkId = $DrinkId"; 
 						$stmt = $db->prepare($query);
 							$stmt->bind_result($number); // Same as the query. 
@@ -118,71 +108,66 @@
 							echo '<p>The average rate is ' . $average . ' stars</p>';
 						?>
 
-  		
-					<?php 
-						if(isset($_POST['subject1']) ) {
-							$rate=1;
-						}
-						if(isset($_POST['subject2'])) {
-							$rate=2;
-						}
-						if(isset($_POST['subject3'])) {
-							$rate=3;
-						}
-						if(isset($_POST['subject4'])) {
-							$rate=4;
-						}
-						if(isset($_POST['subject5'])) {
-							$rate=5;
-						}
+				  		
+						<?php 
+							if(isset($_POST['subject1']) ) {
+								$rate=1;
+							}
+							if(isset($_POST['subject2'])) {
+								$rate=2;
+							}
+							if(isset($_POST['subject3'])) {
+								$rate=3;
+							}
+							if(isset($_POST['subject4'])) {
+								$rate=4;
+							}
+							if(isset($_POST['subject5'])) {
+								$rate=5;
+							}
 
-						
-						
-				
+							
+							
 					
-					if (isset($_POST['check']) && !empty($_POST['check'])) {
-						$NewRate = $rate;
+						
+						if (isset($_POST['check']) && !empty($_POST['check'])) {
+							$NewRate = $rate;
 
-						 $User=($_SESSION['username']);
-						 
-							$query = ("SELECT Rating.DrinkId, Rating.username, Rating.Rate FROM Rating WHERE DrinkId = $DrinkId AND username = $Current");
-								$stmt = $db->prepare($query);
-		    					$stmt->bind_result($DrinkId3, $username, $Rate);
-		   						$stmt->execute();
+							 $User=($_SESSION['username']);
+							 
+								$query = ("SELECT Rating.DrinkId, Rating.username, Rating.Rate FROM Rating WHERE DrinkId = $DrinkId AND username = $Current");
+									$stmt = $db->prepare($query);
+									$stmt->bind_result($DrinkId3, $username, $Rate);
+										$stmt->execute();
 
 
-								while($stmt->fetch()) {};
+									while($stmt->fetch()) {};
 
-								if($DrinkId3 == $DrinkId){
-									
-									$updateRate = "UPDATE Rating SET Rate='$NewRate' WHERE DrinkId=$DrinkId"; // Insert the values into the database. 
-									$stmt = $db->prepare($updateRate);
-									$stmt->bind_param('i',$NewRate);
-									$stmt->execute(); 
-									echo '<p>You rated ' . $DrinkName . ' with ' . $NewRate . '!</p>';
+									if($DrinkId3 == $DrinkId){
+										
+										$updateRate = "UPDATE Rating SET Rate='$NewRate' WHERE DrinkId=$DrinkId"; // Insert the values into the database. 
+										$stmt = $db->prepare($updateRate);
+										$stmt->bind_param('i',$NewRate);
+										$stmt->execute(); 
+										echo '<p>You rated ' . $DrinkName . ' with ' . $NewRate . '!</p>';
 
-								} else {
-									$stmt = $db->prepare("INSERT INTO Rating(DrinkId, username, Rate) VALUES (?,?,?)");
-								    $stmt->bind_param('isi', $DrinkId, $User, $rate );
-								    $stmt->execute();
-								    echo '<p>You rated ' . $DrinkName . ' with ' . $NewRate . '!</p>';
-								    
-								   
-								}
+									} else {
+										$stmt = $db->prepare("INSERT INTO Rating(DrinkId, username, Rate) VALUES (?,?,?)");
+									    $stmt->bind_param('isi', $DrinkId, $User, $rate );
+									    $stmt->execute();
+									    echo '<p>You rated ' . $DrinkName . ' with ' . $NewRate . '!</p>';
+									       
+									}
+							}
 
-						}
+						?>
 
-				
-					?>
-
-					<input type="submit" name="check" class="checksubmit" value="Submit">
+						<input type="submit" name="check" class="checksubmit" value="Submit">
 					</form>
 
 				</div>
 
 				<div class='maincontent'>
-
-					
 					<div class='ingrblack'>
 						<img src="Images/tri.png" class="tri1"> <!-- triangle -->
 						<h4>What do you need? </h4>
@@ -203,42 +188,40 @@
 	</div>
 	<?php include 'footer.php';?>
 	</body>
-
-
-
 	<style>
 
-	#demo1 {
-		text-align: center;
+		#demo1 {
+			text-align: center;
 
-	}
+		}
 
-	#rating {
-		width: 65%;
-		overflow: hidden;
-	}
+		#rating {
+			width: 65%;
+			overflow: hidden;
+		}
 
-	body{
-		margin: 0 auto;
-		background-color: #000;
-	}
-	#pageContainer{
-		background-color: #000;
-		margin: 0 auto;
-		width: 100%;
+		body{
+			margin: 0 auto;
+			background-color: #000;
+		}
 
-	}
+		#pageContainer{
+			background-color: #000;
+			margin: 0 auto;
+			width: 100%;
+
+		}
 
 		.container{
 			padding-top:150px;
 			margin: 0 auto;
 			text-align: center;
-			
 			background-color: #fff;
 			width: 100%;
 
 
 		}
+
 		.drinkside{
 			position: relative;
 			float:left;
@@ -248,6 +231,7 @@
 			background-color: #fff;
 
 		}
+
 		#white{
 			width:100%;
 			background-color: #fff;
@@ -258,6 +242,7 @@
 			
 
 		}
+
 		h3{
 			font-family: 'open sans',helvetica;
 			font-weight: 800;
@@ -272,6 +257,7 @@
 
 
 		}
+
 		h4{
 			padding-top:20px;
 			font-family: 'open sans',helvetica;
@@ -311,31 +297,37 @@
 			background-color: #fff;
 
 		}
+
 		.side{
 			margin-top:15px;
 
 		}
+
 		.drinkimage{
 			width:60%;
 
 		}
+
 		li{
 			font-family: 'open sans',helvetica;
 			font-weight: 300;
 			list-style: none;
 			padding:0;
 		}
+
 		ul{
 			text-decoration: none;
 			margin:0;
 			text-align:center;
 			padding:0;
 		}
+
 		.tri0, .tri1{
 			width:100%;
 			margin:0;
 			padding:0;
 		}
+
 		.heart {
 			background: white;
 			width: 20px;
@@ -347,6 +339,7 @@
 			top:0px;
 
 		}
+
 		.back{
 			width: 20px;
 			height: 20px;
@@ -356,15 +349,16 @@
 			left:20px;
 			top:0px;
 		}
+
 		.knapp{
 			width: 40px;
 		}
 
 		@media (min-width: 600px) {
 
-
 			.heart, .back, .side{
-				margin-top: 60px;
+				ma
+				rgin-top: 60px;
 			}
 			.drinkside{
 			float:left;
@@ -375,6 +369,7 @@
 			margin: 0 auto;
 
 			}
+
 			.maincontent{
 				float:left;
 				width:40%;
@@ -383,107 +378,102 @@
 				text-align: left;
 			
 			}
+
 			.tri1, .tri0{
 				display: none;
 			}
 			
-				h4{
-				
+			h4{
+			
 				text-align: left;
 				margin-left: 42.5px; 
 			}
+
 			.ingrblack ul{
 			border-left: 2.5px solid #e72262;
 			text-align:left;
 			margin-left: 20px;
 			padding: 10px 20px;
 			
-		}
-		.ingrblack{
-			background-color:white;
-			color: #000;
-			text-align: left;
-			margin-top:70px;
+			}
+			.ingrblack{
+				background-color:white;
+				color: #000;
+				text-align: left;
+				margin-top:70px;
+				
+			}
+
+			.heart {
+				
+				left:10px;
+				top:70px;
+
+			}
+
+			.back{
+				
+				left:10px;
 			
-		}
+			}
 
-		.heart {
+			.receipt {
+				border-left: 2.5px solid #e72262;
+				text-align:left;
+				margin: 70px 0 0 20px;
+				padding: -10px 20px;
+			}
 			
-			left:10px;
-			top:70px;
+			input.checksubmit {
+				
+				height: 30px;
+				background: #e72262;
+				color:#fff;
+				padding:5px 10px 5px 10px;
+				text-transform: uppercase;
+				font-family: 'open sans', helvetica;
+				font-size: 14px;
+				font-weight: 600;
+				-webkit-appearance:none;
+				-moz-appearance:none;
+				-ms-appearance:none;
+				 box-shadow: none;
+				 border:none;
+				 display: block;
+				 margin: auto;
+				 margin-top: 10px;
 
-		}
-		.back{
-			
-			left:10px;
-		
-		}
-		.receipt {
-			border-left: 2.5px solid #e72262;
-			text-align:left;
-			margin: 70px 0 0 20px;
-			padding: -10px 20px;
-		}
-		}
-
-						
-
-					input.checksubmit {
-						
-						height: 30px;
-						background: #e72262;
-						color:#fff;
-						padding:5px 10px 5px 10px;
-						text-transform: uppercase;
-						font-family: 'open sans', helvetica;
-						font-size: 14px;
-						font-weight: 600;
-						-webkit-appearance:none;
-						  -moz-appearance:none;
-						  -ms-appearance:none;
-						 box-shadow: none;
-						 border:none;
-						 display: block;
-						 margin: auto;
-						 margin-top: 10px;
-
-					}
-
-					
-					 input[type="checkbox"] {
-					    background-image: url("images/star.png"); 
-					    background-size: 30px;
-					    background-repeat: no-repeat;
-					    -webkit-appearance:none;
-						  -moz-appearance:none;
-						  -ms-appearance:none;   
-						width:30px;
-						height: 30px; 
-						opacity: 0.3;
-						
-
-
-					}
-
-					input[type="checkbox"]:hover {
-						opacity: 1.0;
-					}
-
-					input[type="checkbox"]:checked {
-						opacity: 1.0;
-						-webkit-appearance:none;
-						  -moz-appearance:none;
-						  -ms-appearance:none;
-						  
-					}
-
-					input:focus,
-					select:focus {
-					    outline: none;
-					}
-
+			}
+			 input[type="checkbox"] {
+			    background-image: url("images/star.png"); 
+			    background-size: 30px;
+			    background-repeat: no-repeat;
+			    -webkit-appearance:none;
+				-moz-appearance:none;
+				-ms-appearance:none;   
+				width:30px;
+				height: 30px; 
+				opacity: 0.3;
 				
 
+
+			}
+
+			input[type="checkbox"]:hover {
+				opacity: 1.0;
+			}
+
+			input[type="checkbox"]:checked {
+				opacity: 1.0;
+				-webkit-appearance:none;
+				-moz-appearance:none;
+				-ms-appearance:none;
+				  
+			}
+
+			input:focus, select:focus {
+			    outline: none;
+			}
 
 	</style>
 </html>

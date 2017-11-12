@@ -3,20 +3,21 @@
 <html>
     <head>
         <title>Index</title>
-            <Meta name="description" content="my page"/>
-            <Meta charset="utf-8"/>
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
-            <script type="text/javascript" src="jquery.min.js"></script>
-             <link rel="stylesheet" href="removeFavorite.css" type="text/css" />
-             <script>
-                $(document).ready( function() {
-                    function redirect(){
-                        window.location = "memberpage.php";
-                    }
-                    setTimeout(redirect, 1000);
-                } );
-            </script>
+        <Meta name="description" content="my page"/>
+        <Meta charset="utf-8"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+        <script type="text/javascript" src="jquery.min.js"></script>
+         <link rel="stylesheet" href="removeFavorite.css" type="text/css" />
+         <script>
+            $(document).ready( function() {
+                function redirect(){
+                    window.location = "memberpage.php";
+                }
+                setTimeout(redirect, 1000);
+            } );
+        </script>
     </head>
+    
     <body>
         <div id="main">
             <div class="animation-target">
