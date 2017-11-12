@@ -1,5 +1,7 @@
 <?php include 'config.php';?>
 <?php include 'Includes/config.php';?>
+
+       
 <?php 
 
 	$DrinkId = trim($_GET['DrinkId']); // Get the DrinkId from the finddrinks page the user clicked on.
@@ -32,9 +34,6 @@
 	while ($stmt->fetch()) {
 		array_push($alling,$NameIng); // Put the ingredients in the array
 	};
-
-
-
 
 
 
@@ -95,25 +94,64 @@
 					</div>
 					<h3><?php echo $DrinkName; ?></h3> <!-- Print out the name of the drink-->
 			
-					<div id="rating">
-						<fieldset id='demo1' class="rating">
-	                        <input class="stars" type="radio" id="star5" name="rating" value="5" />
-	                        <label class = "full" for="star5" title="Awesome - 5 stars"></label>
-	                        <input class="stars" type="radio" id="star4" name="rating" value="4" />
-	                        <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-	                        <input class="stars" type="radio" id="star3" name="rating" value="3" />
-	                        <label class = "full" for="star3" title="Meh - 3 stars"></label>
-	                        <input class="stars" type="radio" id="star2" name="rating" value="2" />
-	                        <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-	                        <input class="stars" type="radio" id="star1" name="rating" value="1" />
-	                        <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-	 
-	                    </fieldset>
-						<?php include 'rating.php'; 
-							
 
-						?> 
-					</div>
+	<form name="form" action="" method="post">
+  		<input type="checkbox" name="subject1" value="1">
+  		<input type="checkbox" name="subject2" value="2">
+  		<input type="checkbox" name="subject3" value="3">
+  		<input type="checkbox" name="subject4" value="4">
+  		<input type="checkbox" name="subject5" value="5">
+  		<input type="submit" name="check" >
+	</form>
+					<?php 
+						if(isset($_POST['subject1']) ) {
+							$rate=1;
+						}
+						if(isset($_POST['subject2'])) {
+							$rate=2;
+						}
+						if(isset($_POST['subject3'])) {
+							$rate=3;
+						}
+						if(isset($_POST['subject4'])) {
+							$rate=4;
+						}
+						if(isset($_POST['subject5'])) {
+							$rate=5;
+						}
+
+
+				
+					
+					if (isset($_POST['check']) && !empty($_POST['check'])) {
+						$NewRate = $rate;
+
+						 $User=($_SESSION['username']);
+						 
+							$query = ("SELECT Rating.DrinkId, Rating.username, Rating.Rate FROM Rating WHERE DrinkId = $DrinkId AND username = $Current");
+								$stmt = $db->prepare($query);
+		    					$stmt->bind_result($DrinkId3, $username, $Rate);
+		   						$stmt->execute();
+
+								while($stmt->fetch()) {};
+
+								if($DrinkId3 == $DrinkId){
+									echo $NewRate;
+									$updateRate = "UPDATE Rating SET Rate='$NewRate' WHERE DrinkId=$DrinkId"; // Insert the values into the database. 
+									$stmt = $db->prepare($updateRate);
+									$stmt->bind_param('i',$NewRate);
+									$stmt->execute(); 
+
+								} else {
+									$stmt = $db->prepare("INSERT INTO Rating(DrinkId, username, Rate) VALUES (?,?,?)");
+								    $stmt->bind_param('isi', $DrinkId, $User, $rate );
+								    $stmt->execute();
+								    
+								   
+								}
+
+						}
+					?>
 
 				</div>
 
