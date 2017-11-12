@@ -29,7 +29,7 @@
             $DrinkId = trim($_GET['DrinkId']);
             echo '<INPUT type="hidden" name="drinkid" value=' . $DrinkId . '>';
 
-            $DrinkId = trim($_GET['DrinkId']);      // From the hidden field
+            $DrinkId = trim($_GET['DrinkId']);
             $DrinkId = addslashes($DrinkId);
             $User=($_SESSION['username']);
 
@@ -40,8 +40,6 @@
                 printf("<br><a href=index.php>Return to home page </a>");
                 exit();
             }
-
-            // Prepare an insert statement with the current drinkID and userID and execute it
             $stmt = $db->prepare("INSERT INTO Favo(DrinkId, username) VALUES (?,?)");
             $stmt->bind_param('is', $DrinkId, $User);
             $stmt->execute();

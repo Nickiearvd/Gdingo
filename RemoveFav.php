@@ -1,7 +1,7 @@
 <!Doctype html>
 <?php require ("includes/config.php"); ?>
 <?php 
-    $DrinkId = trim($_GET['DrinkId']); // Get the DrinkId from the finddrinks page the user clicked on.
+    $DrinkId = trim($_GET['DrinkId']);
     if( $user->is_logged_in() ) {
         if (isset($_COOKIE["currentuser"])) {
             $currentUser = $_COOKIE["currentuser"];
@@ -37,7 +37,7 @@
             $DrinkId = trim($_GET['DrinkId']);
             echo '<INPUT type="hidden" name="drinkid" value=' . $DrinkId . '>';
 
-            $DrinkId = trim($_GET['DrinkId']);      // From the hidden field
+            $DrinkId = trim($_GET['DrinkId']);  
             $DrinkId = addslashes($DrinkId);
 
             @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -47,7 +47,6 @@
                 printf("<br><a href=index.php>Return to home page </a>");
                 exit();
             }
-            // Prepare an insert statement with the current drinkID and userID and execute it
             $stmt = $db->prepare("DELETE FROM Favo WHERE DrinkId = $DrinkId AND username =  $Current");
             $stmt->execute();
             

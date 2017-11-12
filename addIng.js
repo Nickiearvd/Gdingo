@@ -1,3 +1,6 @@
+// SOME OF THE CODES ARE BORROWED FROM MAXT ( VIDEO )
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
 	document.getElementById('connectDrinkIng').addEventListener('click', function (e) {
