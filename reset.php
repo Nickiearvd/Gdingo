@@ -1,5 +1,11 @@
 <?php require('includes/config.php');
 
+
+
+// IMPORTANT: Some of the code used for the login is taken from https://daveismyname.blog/login-and-registration-system-with-php
+
+
+
 //if logged in redirect to members page
 if( $user->is_logged_in() ){ header('Location: memberpage.php'); exit(); }
 

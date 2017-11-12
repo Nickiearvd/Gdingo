@@ -1,6 +1,11 @@
 <?php
 include('password.php');
+
+// IMPORTANT: Some of the code used for the login is taken from https://daveismyname.blog/login-and-registration-system-with-php
+
+
 class User extends Password{
+
 
     private $_db;
 

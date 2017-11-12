@@ -4,6 +4,12 @@ if (!defined('PASSWORD_BCRYPT')) {
         define('PASSWORD_DEFAULT', PASSWORD_BCRYPT);
 }
 
+
+
+// IMPORTANT: Some of the code used for the login is taken from https://daveismyname.blog/login-and-registration-system-with-php
+
+
+
 Class Password {
 
     public function __construct() {}
