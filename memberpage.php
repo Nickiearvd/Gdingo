@@ -20,8 +20,6 @@ function redirect() {
 if(!$user->is_logged_in()){ 
 	redirect();
 	
-
-
  }
 ?>
 
