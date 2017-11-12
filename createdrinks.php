@@ -23,8 +23,9 @@
 				</div>
 				<?php
 
-					$DrinkPicture = trim($_GET['DrinkPicture']); // Get the DrinkId from the finddrinks page the user clicked on. 
+					$DrinkPicture = trim($_GET['DrinkPicture']); // Get the DrinkId from the finddrinks page the user clicked on.
 
+				
 				    echo "<img class='drinkimagepreview' src=Images/DrinkPictures/$DrinkPicture>"; // Shows the image the user uploaded the page before. 
 
 
@@ -88,7 +89,7 @@
 
 							$stmt = $db->prepare($addDrinksIng);
 							$stmt->execute();
-							echo"<script>window.location = 'mypanel.php';</script>"; // Redirect to the panel after made changes. 
+							echo"<script>window.location = 'memberpage.php';</script>"; // Redirect to the panel after made changes. 
 
 						}
 						header('location:createdrinks.php');
@@ -124,7 +125,9 @@
 						<button class='button2'>New Ingredient</button></br>
 					</div>
 					<input  class="receipt" type="text" required placeholder="Receipt" name="DrinkReceipt"></br>
-					<input class='button3' type="submit" name="addDrink">
+					
+
+					<button class='button3' type="submit"  name="addDrink">DONE</button>
 				</form>
 
 
@@ -291,8 +294,8 @@
 
 		/***************TEXTFIELDS***************/
 		.select{
-			width:60%;
-			margin:0  5px 0 15%;
+			width:82%;
+			margin:0  5px 0 2px;
 			box-sizing: border-box;
 			display: block;
 			height:30px;
@@ -316,7 +319,8 @@
 			border:none;
 		}
 		.receipt{
-			width:70%;
+			width:100%;
+			max-width: 350px;
 			margin:0 auto;
 			box-sizing: border-box;
 			display: block;
@@ -330,7 +334,7 @@
 		}
 
 		.addDrink{
-			width:70%;
+			width:200px;
 			margin:0px auto 0px auto;
 			box-sizing: border-box;
 			display: block;
@@ -389,8 +393,9 @@
 		}
 		.allforms{
 			position: relative;
-			max-width: 700px;
+			max-width: 350px;
 			background-color: white;
+			margin: 0 auto;
 		}
 		.tri{
 			width:100%;
@@ -428,23 +433,34 @@
 		}
 
 		#imageside{
+			height: 60vh;
 			width: 50%;
 			float: left; 
 			display: inline;
 			background-color: white;
+			text-align: right;
+			margin-bottom: 30px;
 		}
 		.drinkimagepreview{
 			width: 80%;
-			max-width: 460px;
-			margin:20px;
+			max-width: 300px;
+			margin:0px auto 20px auto;
 			display:inline;
-			margin-bottom:20px;
+			border: solid 2.5px #e72262 ;
+			padding: 10px;
 		}
 		.allforms{
-			width: 50%;
+			width: 40%;
 			float: left;
 			display: inline;
 			margin-top: 30px;
+			margin-left: 20px;
+			overflow: hidden;
+			text-align: left;
+			max-width: 500px;
+		}
+		#white{
+			margin-bottom: 40px;
 		}
 	</style>
 </html>

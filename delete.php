@@ -14,7 +14,7 @@
                 $(document).ready( function() {
                     
                     function redirect(){
-                        window.location = "mypanel.php";
+                        window.location = "memberpage.php";
                     }
 
                     setTimeout(redirect, 1000);
