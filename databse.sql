@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 12, 2017 at 04:09 PM
+-- Generation Time: Nov 12, 2017 at 08:27 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.6
 
@@ -34,7 +34,6 @@ CREATE TABLE `Drinks` (
 
 INSERT INTO `Drinks` (`DrinkId`, `DrinkName`, `DrinkAuthor`, `DrinkPicture`, `DrinkReceipt`) VALUES
 (1, 'Mojito', 'Nickie', 'mojitop.jpg', 'In a tall thin glass, crush some mint with a fork to coat the inside. Add 2 tsp sugar and 3 tbsp lemon juice and stir thoroughly. Top with ice. Add 1 1/2 oz rum and mix. Top off with *chilled* club soda (or seltzer). Add a lemon slice and the remaining mint, and serve. \r\nServe in \"Parfait Glass\"'),
-(2, 'Nickiedrink', 'Nickie', 'mojitorp.jpg', ''),
 (3, 'Adios Motherfucker', 'Julia', 'adiosMotherfucker.jpg', '\r\n\r\n- 1/2 oz vodka\r\n- 1/2 oz rum\r\n- 1/2 oz tequila\r\n- 1/2 oz gin\r\n- 1/2 oz blue curacao liqueur\r\n- 2 oz sweet and sour mix\r\n- 2 oz soda (7-up, sprite)\r\n\r\nPour all ingredients except the 7-Up into a chilled glass filled with ice cubes. Top with 7-Up and stir gently. \r\nServe in \"Highball Glass\". '),
 (4, 'French Kiss', 'Julia', 'FrenchKissP.jpg', '- 1 oz vodka\r\n- 1 oz raspberry liqueur\r\n- 1/2 oz orange liqueur (cointreau, grand marnier...)\r\n- 1 oz whipping cream\r\n\r\nShake and strain into a champagne flute. Garnish with a speared cherry or raspberry, and serve. \r\nServe in \"Champagne Flute\"'),
 (5, 'Sex Appeal', 'Julia', 'SexAppealP.jpg', '- 1/2 oz rum (white)\r\n- 1/2 oz coconut rum (malibu)\r\n- 1/2 oz melon liqueur\r\n- 1/2 oz peach schnapps\r\n- 1/2 oz blue curacao liqueur\r\n- fill with sweet and sour mix\r\n- 1 splash lemonade\r\n- 1 lemon\r\n\r\nMix two rums, melon, peach and blue curacao in a mixing tin with the sour mix. Pour into a collins glass with ice and add a dash of lemonade. Garnish with lemon squeeze. '),
@@ -64,9 +63,6 @@ INSERT INTO `DrinksIng` (`DrinkId`, `IngId`) VALUES
 (1, 3),
 (1, 6),
 (1, 7),
-(2, 1),
-(2, 6),
-(2, 10),
 (3, 1),
 (3, 3),
 (3, 2),
@@ -96,9 +92,6 @@ INSERT INTO `DrinksIng` (`DrinkId`, `IngId`) VALUES
 (7, 19),
 (7, 1),
 (7, 3),
-(2, 6),
-(2, 1),
-(2, 10),
 (8, 29),
 (8, 28),
 (8, 27),
@@ -142,7 +135,7 @@ INSERT INTO `Favo` (`DrinkId`, `username`) VALUES
 (1, 'Nickie'),
 (9, 'Nickie'),
 (4, 'Nickie'),
-(7, 'Nickie');
+(3, 'Nickie');
 
 -- --------------------------------------------------------
 
@@ -243,7 +236,8 @@ INSERT INTO `Rating` (`RateId`, `DrinkId`, `username`, `Rate`) VALUES
 (2, 3, 'Nickie', 4),
 (3, 8, 'Nickie', 4),
 (4, 4, 'anna', 4),
-(5, 3, 'anna', 4);
+(5, 3, 'anna', 4),
+(6, 1, 'Nickie', 5);
 
 --
 -- Indexes for dumped tables
@@ -288,7 +282,7 @@ ALTER TABLE `Rating`
 -- AUTO_INCREMENT for table `Drinks`
 --
 ALTER TABLE `Drinks`
-  MODIFY `DrinkId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `DrinkId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `Ingredients`
 --
@@ -303,7 +297,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `Rating`
 --
 ALTER TABLE `Rating`
-  MODIFY `RateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `RateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
