@@ -122,7 +122,7 @@
 						<button class='button' id="connectDrinkIng" for="addIng"><img class="iconIMG" src="Images/plus.png" ></button></br>
 						<button class='button2'>New Ingredient</button></br>
 					</div>
-					<input  class="receipt" type="text" required placeholder="Receipt" name="DrinkReceipt"></br>
+					<input  class="receipt" type="text" required placeholder="Recipe" name="DrinkReceipt"></br>
 					
 
 					<button class='button3' type="submit"  name="addDrink">DONE</button>
