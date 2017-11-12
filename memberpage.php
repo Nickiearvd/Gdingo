@@ -133,7 +133,7 @@ if(!$user->is_logged_in()){
 			color:black;
 			margin:0;
 			line-height: 45px;
-			margin-bottom: 30px;
+			margin-bottom: 60px;
 			text-align: center;
 		}
 
@@ -162,6 +162,7 @@ if(!$user->is_logged_in()){
 			width: 35px;
 			margin:0 auto;
 			display: block;
+			margin-top: -40px;
 			margin-bottom: 25px;
 			background-color: #e72262;
 			padding:10px;
@@ -299,7 +300,6 @@ if(!$user->is_logged_in()){
 		font-weight: 800;
 		text-transform: uppercase;
 		text-decoration: none;
-
 		float:left;
 	 	position:absolute;
 	 	left:0;
@@ -324,28 +324,19 @@ if(!$user->is_logged_in()){
 @media (min-width: 600px) {
 
 	
-#firstc{
-
-	margin: 90px auto 0 auto;
-
-
-}
-
-	
-	
-
+	#firstc{
+		margin: 90px auto 0 auto;
+	}
 	
 	h3 {
 		font-size: 24px;
 	}
-
-	
-
-
-	
-
-
+	h2{
+		margin-bottom: 0px;
+	}
+	.knapp{
+		margin-top: 10px;
+	}
 }
-
 		</style>
 		<?php include "footer.php"; ?>
