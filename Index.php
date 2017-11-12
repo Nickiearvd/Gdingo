@@ -42,39 +42,16 @@
 				<h1>Explore drinks!</h1>
 
 				<div id="pinkline"></div>
-				<!--<div id="slideshow"> <!-- slideshow -->
-					<!--<div class="mySlides"> <!-- first slide -->
-						<!--<h3>TOP 10</h3>
-						<img class="slideimg" src="Images/raspberry-mojito.jpg">
-						<h5>Raspberry fruit Mojito</h5>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare dignissim nisl a convallis. Fusce ac purus quis sapien mollis blandit vel id velit. Duis eget maximus purus. </p>
-					</div>
 
-					<div class="mySlides"> <!-- second slide -->
-					<!--<h3>TOP 10</h3>
-					<img class="slideimg" src="Images/cheescake-smoothie.jpg">
-					<h5>Cheescake smoothie drink</h5>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare dignissim nisl a convallis. Fusce ac purus quis sapien mollis blandit vel id velit. Duis eget maximus purus.</p>
-					</div>
+				<p class="introp">
+					
+					Welcome to our page, G'dingo! Here you can look for drinks and recipies, or get inspired to try something new. Our goal is to create a website where you can customise your own library of drinks.
 
-					<div class="mySlides"> <!-- third slide -->
-					<!--<h3>TOP 10</h3>
-					<img class="slideimg" src="Images/passion-mojito.jpg">
-					<h5>Passion fruit Mojito</h5>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare dignissim nisl a convallis. Fusce ac purus quis sapien mollis blandit vel id velit. Duis eget maximus purus. </p>
-					</div>
+					<br><br>You can save your favorites and create your own drinks. All you have to do is sign up and you will get access to these features. Otherwise you can just scroll through the library!
 
-						<button class="slidebtn1" onclick="plusDivs(-1)">&#10094;</button> <!-- buttons for the slide -->
-					<!--<button class="slidebtn2" onclick="plusDivs(+1)">&#10095;</button>
+				
 
-				</div>
-				<div id="test"></div> <!-- the green border -->
-
-
-
-
-				<p class="introp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et maximus augue. Vivamus vel dolor nisi. Quisque molestie scelerisque diam nec semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br><br> Nunc ac mollis orci. Maecenas ac volutpat massa. Nunc et ligula accumsan, condimentum lectus nec, fringilla nisl.
-				Sed elit elit, auctor non sollicitudin ultrices, semper vitae nisi. Proin pharetra erat nisi, in tristique nisl sagittis et. Nullam iaculis imperdiet condimentum. Donec imperdiet commodo aliquam. Vestibulum eleifend est justo, quis lacinia libero blandit at. Aliquam vehicula nisl sed nulla gravida maximus. In suscipit a nulla et suscipit. </p>
+				</p>
 				<a href="finddrinks.php"><button class="introbtn"> SEARCH NOW</button></a>
 				
 
