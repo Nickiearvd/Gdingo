@@ -100,9 +100,25 @@
   		<input type="checkbox" name="subject2" value="2">
   		<input type="checkbox" name="subject3" value="3">
   		<input type="checkbox" name="subject4" value="4">
-  		<input type="checkbox" name="subject5" value="5">
-  		<input type="submit" name="check" class="checksubmit" value="Submit">
-	</form>
+  		<input type="checkbox" name="subject5" value="5"><br>
+
+  						<?php 
+						$query = "SELECT Rate FROM Rating WHERE DrinkId = $DrinkId"; 
+						$stmt = $db->prepare($query);
+							$stmt->bind_result($number); // Same as the query. 
+							$stmt->execute();
+							$numbers=array(); // Create an array in reason to store all the differents ingredients. 
+
+							while ($stmt->fetch()) {
+								array_push($numbers,$number); // Put the ingredients in the array
+							};
+
+
+							$average = array_sum($numbers) / count($numbers);
+							echo '<p>The average rate is ' . $average . ' stars</p>';
+						?>
+
+  		
 					<?php 
 						if(isset($_POST['subject1']) ) {
 							$rate=1;
@@ -121,7 +137,7 @@
 						}
 
 						
-
+						
 				
 					
 					if (isset($_POST['check']) && !empty($_POST['check'])) {
@@ -158,6 +174,9 @@
 
 				
 					?>
+
+					<input type="submit" name="check" class="checksubmit" value="Submit">
+					</form>
 
 				<style>
 

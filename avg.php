@@ -10,8 +10,23 @@
 		exit();
 	}
 
-$avg = SELECT avg(Rate) as average_rate FROM  Rating;
+$query = "SELECT Rate FROM Rating WHERE DrinkId = 11"; 
+$stmt = $db->prepare($query);
+	$stmt->bind_result($number); // Same as the query. 
+	$stmt->execute();
+	$numbers=array(); // Create an array in reason to store all the differents ingredients. 
 
-echo $avg;
-	
+	while ($stmt->fetch()) {
+		array_push($numbers,$number); // Put the ingredients in the array
+	};
+
+	//print_r(array_values($numbers));
+
+	foreach ($numbers as $value){
+		echo $value. "</br>";
+	} 
+
+	$average = array_sum($numbers) / count($numbers);
+	echo $average;
 ?>
+
