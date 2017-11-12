@@ -78,8 +78,6 @@
 					        $NewDrinkReceipt = mysqli_real_escape_string($db, $NewDrinkReceipt);
 					        $NewDrinkReceipt = htmlentities($NewDrinkReceipt);
 
-					        $Ingredients = mysqli_real_escape_string($db, $Ingredients);
-					        $Ingredients = htmlentities($Ingredients);
 
 							$User=($_SESSION['username']);
 							$addDrink = "INSERT INTO Drinks(DrinkName, DrinkReceipt, DrinkPicture, DrinkAuthor) VALUES(?,?,?,?);"; // Insert the values into the database. 
