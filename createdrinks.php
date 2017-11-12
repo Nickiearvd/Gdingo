@@ -22,7 +22,7 @@
 					</div>
 					<?php
 
-						$DrinkPicture = trim($_GET['DrinkPicture']); // Get the DrinkId from the finddrinks page the user clicked on.
+						$DrinkPicture = trim($_GET['DrinkPicture']); // Gets the prev. uploaded picture from "uploadfile page"
 
 					
 					    echo "<img class='drinkimagepreview' src=Images/DrinkPictures/$DrinkPicture>"; // Shows the image the user uploaded the page before. 
@@ -35,9 +35,8 @@
 							print("<br><a href=index.php>Return to home page </a>");
 							exit();
 						}
-						 //Add one ingredient
 
-						if(isset($_POST['addIng'])){
+						if(isset($_POST['addIng'])){ //add ingredient
 
 							@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -152,19 +151,19 @@
 	
 	</body>
 	<style>
-	html{
-		background-color: white;
-	}
-	body{
-		background-color: white;
-	}
-	#white{
-		background-color: white;
-		width: 100%;
-		display: block;
-		overflow: hidden;
+		html{
+			background-color: white;
+		}
+		body{
+			background-color: white;
+		}
+		#white{
+			background-color: white;
+			width: 100%;
+			display: block;
+			overflow: hidden;
 
-	}
+		}
 		.c{
 			padding-top:150px;
 			position:relative;
@@ -183,11 +182,9 @@
 		#footerINC{
 			background-color: #000;
 			width: 100%;
+
 		}
-		p{
-			font-family: 'open sans',helvetica;
-			text-align: center;
-		}
+
 		/***************TEXT STYLE****************/
 
 		h2{
@@ -208,6 +205,11 @@
 			background-color: #e72262;
 			padding: 0;
 
+		}
+		p{
+			font-family: 'open sans',helvetica;
+			text-align: center;
+			
 		}
 		/***************BUTTONS****************/
 
@@ -290,6 +292,23 @@
 			height:20px;
 			width: 20px;
 		}
+		.tri{
+			width:100%;
+		}
+		
+		.drinkside{
+			position: relative;
+			float:left;
+			width:100%;
+			text-align: left;
+			margin-bottom: 20px;
+		}
+		
+		.iconIMG{
+			width: 15px;
+			margin: 3px auto;
+			text-align: center;
+		}
 
 		/***************TEXTFIELDS***************/
 		.select{
@@ -359,12 +378,11 @@
 			margin:0;
 
 		}
-		
-
 
 		.ingredientForm{
 			display: none;
 		}
+
 		.ingredientForm.open{
 			display: block;
 			position: absolute;
@@ -372,6 +390,7 @@
 			width:70%;
 			left:15%;
 		}
+
 		.ingredientFromint{
 			background-color:black;
 			height:150px;
@@ -379,6 +398,7 @@
 			margin:-45px 0 0 0;
 			padding:0;
 		}
+
 		.ingredientFromint h3{
 			font-family: 'open sans',helvetica;
 			font-weight: 800;
@@ -393,6 +413,7 @@
 		.ingredientFromint .fieldDrink{
 			margin-top:10px;
 		}
+
 		.allforms{
 			position: relative;
 			max-width: 350px;
@@ -401,28 +422,9 @@
 		}
 
 
-
-
-		
-		.tri{
-			width:100%;
-		}
-		.drinkside{
-			position: relative;
-			float:left;
-			width:100%;
-			text-align: left;
-			margin-bottom: 20px;
-		}
-		
-		.iconIMG{
-			width: 15px;
-			margin: 3px auto;
-			text-align: center;
-		}
 		/* MEDIA MIN 600PX */
 
-@media (min-width: 600px) {
+	@media (min-width: 600px) {
 		.c{
 			padding-top:250px;
 			position:relative;
@@ -448,6 +450,7 @@
 			text-align: right;
 			margin-bottom: 30px;
 		}
+
 		.drinkimagepreview{
 			width: 80%;
 			max-width: 300px;
@@ -456,6 +459,7 @@
 			border: solid 2.5px #e72262 ;
 			padding: 10px;
 		}
+
 		.allforms{
 			width: 40%;
 			float: left;
@@ -466,6 +470,7 @@
 			text-align: left;
 			max-width: 500px;
 		}
+
 		#white{
 			margin-bottom: 40px;
 		}
