@@ -1,8 +1,9 @@
 <?php
-//include config
+
+// Some of the code used for the login is taken from https://daveismyname.blog/login-and-registration-system-with-php
+
 require('includes/config.php'); 
 require ('layout/top.php');
-//check if already logged in move to home page
 if( $user->is_logged_in() ){ header('Location: indexlogin.php'); exit(); }
 
 	function cookieuser() {
@@ -19,7 +20,6 @@ if( $user->is_logged_in() ){ header('Location: indexlogin.php'); exit(); }
 		}
 	}
 
-//process login form if submitted
 if(isset($_POST['submit'])){
 
 	
@@ -65,12 +65,10 @@ if(isset($_POST['submit'])){
 
 
 
-}//end if submit
+}
 
-//define page title
 $title = 'Login';
 
-//include header template
 ?>
 
 <div class="container">
@@ -92,7 +90,7 @@ $title = 'Login';
 				<hr>
 
 				<?php
-				//check for any errors
+				
 				if(isset($error)){
 					foreach($error as $error){
 						echo '<p class="bg-danger">'.$error.'</p>';
@@ -136,8 +134,5 @@ $title = 'Login';
 </div>
 
 <div id="svart">
-<?php 
-//include header template
-require('layout/end.php'); 
-?>
+<?php require('layout/end.php'); ?>
 </div>
