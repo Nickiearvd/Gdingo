@@ -28,14 +28,8 @@
     if(empty($error)){
 
       move_uploaded_file($_FILES["upload"]["tmp_name"], "Images/DrinkPictures/{$_FILES["upload"]["name"]}");
-
       $DrinkPicture = $_FILES["upload"]["name"];
-
       echo $DrinkPicture;
-
-     // $temp = explode(".", $_FILES["upload"]["name"]);
-   // $newfilename ='p';
-  //  move_uploaded_file($_FILES["upload"]["tmp_name"], "Images/DrinkPictures/" . $newfilename);
 
     } 
 
@@ -67,7 +61,6 @@
                     <div>
                       <form action="" method="POST" enctype="multipart/form-data">
                         <input type="file" name="upload"/>
-
 
                         <button  class='button' type="submit" value="submit" id="connectDrinkIng" for="addIng">Submit</button></br>
 
@@ -169,22 +162,16 @@
       background-color: white;
       text-align: center;
       margin: 0 auto;
-  
       z-index: 0;
     }
 
-form{
-  text-align: center;
-  width: 320px;
-  margin: 0 auto;
-}
+    form{
+      text-align: center;
+      width: 320px;
+      margin: 0 auto;
+    }
 
-    input[type=submit] {
-    
-
-
-  }
-  input[type="file"] {
+    input[type="file"] {
      
      overflow: hidden;
      display: block;
@@ -196,7 +183,7 @@ form{
       text-align: center;
       width: 50%;
 
-  }
+    }
    .back, .next{
       width: 40px;
       height: 40px;
@@ -227,8 +214,8 @@ form{
 
     .knapp2{
       -ms-transform: rotate(180deg); /* IE 9 */
-    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-    transform: rotate(180deg);
+      -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+      transform: rotate(180deg);
     }
 
     .button{
@@ -252,24 +239,21 @@ form{
     
 
 
-    @media (min-width: 600px) {
+  @media (min-width: 600px) {
 
      #container{
           
-          padding-top: 200px;
-        }
+        padding-top: 200px;
+      }
 
-        h2{
+      h2{
      
-      margin: 20px auto 10px auto;
- 
-    }
+        margin: 20px auto 10px auto;
+      }
     
       
     }
 
   </style>
-    
-    
     
 </html>
