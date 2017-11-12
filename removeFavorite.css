@@ -1,26 +1,28 @@
 body {
 	background:  #e72262;
 	color: #fff;
-	margin:100px auto 0 auto;
+	margin:35vh auto 0 auto;
 	width: 300px;
 }
 
 #main{
-	width: 200px;
+	width: 280px;
 	margin: 0 auto;
 	text-align: center;
+  padding-left: 30px;
 }
 
 img{
 	width: 39%;
 	display: block;
-	margin: 8% auto;
+	margin: 4% auto;
 }
 
 h1{
 	font-family: 'open sans', helvetica;
 	text-transform: uppercase;
-	font-size: 20px;
+	font-size: 30px;
+  margin-left: -30px;
 
 }
 
