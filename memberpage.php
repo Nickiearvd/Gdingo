@@ -26,6 +26,22 @@ if(!$user->is_logged_in()){
 
 <div class='c'>
 			<div id="firstc">
+
+				<div class="log">
+
+					<?php 
+						$str = "<a class='logText' href='logout.php'>Log out</a>";
+						$str2 = "<a class='logText' href='login.php'>Log in</a>";
+						if($user->is_logged_in())
+							{ echo $str;
+
+							}
+						else { echo $str2;
+						
+						}?>
+					
+				</div>
+
 				<h2>My Creations</h2>
 
 				<div  class="back">
@@ -113,7 +129,11 @@ if(!$user->is_logged_in()){
 		</div>
 
 		<style>
-			.c{
+
+		.log { 
+			display:none;
+		 }
+					.c{
 			padding-top: 150px;
 			background-color: white;
 		}
@@ -320,6 +340,37 @@ if(!$user->is_logged_in()){
 
 
 @media (min-width: 600px) {
+
+	.log {
+	display: block;
+	width: 150px;
+	height:50px;
+	font-size: 24px;
+	-ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+    position: fixed;
+    top:285px;
+    left:-50px;
+    z-index: 10;
+    padding-top: 10px;
+    background-color: #e72262;
+
+}
+
+.logText {
+	font-size: 24px;
+	color:#fff;
+    font-family: 'open sans', helvetica;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+
+.logText:hover {
+	color:#000;
+}
 
 	
 	#firstc{

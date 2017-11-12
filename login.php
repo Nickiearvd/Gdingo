@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
 			$cookie_value2 = $username;
 			setcookie($cookie_name2, $cookie_value2, time() + (86400 * 30), "/");
 				
-			header('Location: mypanel.php');
+			header('Location: memberpage.php');
 			exit;
 
 		} else {

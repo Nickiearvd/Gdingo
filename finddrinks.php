@@ -1,3 +1,4 @@
+<?php include 'includes/config.php';?>
 <?php include 'config.php';?>
 
 <!Doctype html>
@@ -11,6 +12,22 @@
 	</head>
 	<body>
 		<div class='container'>
+
+			<div class="log">
+
+					<?php 
+						$str = "<a class='logText' href='logout.php'>Log out</a>";
+						$str2 = "<a class='logText' href='login.php'>Log in</a>";
+						if($user->is_logged_in())
+							{ echo $str;
+
+							}
+						else { echo $str2;
+						
+						}?>
+					
+				</div>
+
 		<img src="Images/tri2.png" class="tri1"> <!-- triangle -->
 			<div id="whiteborder">
 			<div class="containersearch">

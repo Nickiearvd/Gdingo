@@ -27,9 +27,24 @@ if(!$user->is_logged_in()){
 		<div id="c"></div> <!-- For the menu -->
 		<div id="content">
 	
-
 			
 			<div id="firstc"> <!-- black container starts -->	
+
+				<div class="log">
+
+					<?php 
+						$str = "<a class='logText' href='logout.php'>Log out</a>";
+						$str2 = "<a class='logText' href='login.php'>Log in</a>";
+						if($user->is_logged_in())
+							{ echo $str;
+
+							}
+						else { echo $str2;
+						
+						}?>
+					
+				</div>
+
 				<h1>my favorites</h1>
 				<form action="mydrinks.php" method="POST">
 					<input type="text" id="name" name="searchname1" placeholder="Search after a drink name"></br>
