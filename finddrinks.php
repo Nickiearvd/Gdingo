@@ -76,6 +76,7 @@
 							    exit();
 							}
 
+
 							# Build the query. Users are allowed to search on title, author, or both
 
 							$query = " SELECT Drinks.DrinkId, Drinks.DrinkName, Drinks.DrinkAuthor, Drinks.DrinkPicture, Ingredients.IngId, Ingredients.NameIng FROM Drinks 

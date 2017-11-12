@@ -4,6 +4,8 @@
        
 <?php 
 
+
+
 	$DrinkId = trim($_GET['DrinkId']); // Get the DrinkId from the finddrinks page the user clicked on.
 	if( $user->is_logged_in() ) {
 		if (isset($_COOKIE["currentuser"])) {
@@ -34,8 +36,6 @@
 	while ($stmt->fetch()) {
 		array_push($alling,$NameIng); // Put the ingredients in the array
 	};
-
-
 
 							
 ?>
@@ -96,12 +96,12 @@
 			
 
 	<form name="form" action="" method="post">
-  		<input type="checkbox" name="subject1" value="1">
+  		<input type="checkbox" name="subject1" value="1" class="checkbox">
   		<input type="checkbox" name="subject2" value="2">
   		<input type="checkbox" name="subject3" value="3">
   		<input type="checkbox" name="subject4" value="4">
   		<input type="checkbox" name="subject5" value="5">
-  		<input type="submit" name="check" >
+  		<input type="submit" name="check" class="checksubmit" value="Submit">
 	</form>
 					<?php 
 						if(isset($_POST['subject1']) ) {
@@ -120,6 +120,7 @@
 							$rate=5;
 						}
 
+						
 
 				
 					
@@ -133,25 +134,87 @@
 		    					$stmt->bind_result($DrinkId3, $username, $Rate);
 		   						$stmt->execute();
 
+
 								while($stmt->fetch()) {};
 
 								if($DrinkId3 == $DrinkId){
-									echo $NewRate;
+									
 									$updateRate = "UPDATE Rating SET Rate='$NewRate' WHERE DrinkId=$DrinkId"; // Insert the values into the database. 
 									$stmt = $db->prepare($updateRate);
 									$stmt->bind_param('i',$NewRate);
 									$stmt->execute(); 
+									echo '<p>You rated ' . $DrinkName . ' with ' . $NewRate . '!</p>';
 
 								} else {
 									$stmt = $db->prepare("INSERT INTO Rating(DrinkId, username, Rate) VALUES (?,?,?)");
 								    $stmt->bind_param('isi', $DrinkId, $User, $rate );
 								    $stmt->execute();
+								    echo '<p>You rated ' . $DrinkName . ' with ' . $NewRate . '!</p>';
 								    
 								   
 								}
 
 						}
+
+				
 					?>
+
+				<style>
+
+					input.checksubmit {
+						
+						height: 30px;
+						background: #e72262;
+						color:#fff;
+						padding:5px 10px 5px 10px;
+						text-transform: uppercase;
+						font-family: 'open sans', helvetica;
+						font-size: 14px;
+						-webkit-appearance:none;
+						  -moz-appearance:none;
+						  -ms-appearance:none;
+						 box-shadow: none;
+						 border:none;
+						 display: block;
+						 margin: auto;
+						 margin-top: 10px;
+
+					}
+
+					
+					 input[type="checkbox"] {
+					    background-image: url("images/star.png"); 
+					    background-size: 30px;
+					    background-repeat: no-repeat;
+					    -webkit-appearance:none;
+						  -moz-appearance:none;
+						  -ms-appearance:none;   
+						width:30px;
+						height: 30px; 
+						opacity: 0.3;
+						
+
+
+					}
+
+					input[type="checkbox"]:hover {
+						opacity: 1.0;
+					}
+
+					input[type="checkbox"]:checked {
+						opacity: 1.0;
+						-webkit-appearance:none;
+						  -moz-appearance:none;
+						  -ms-appearance:none;
+						  
+					}
+
+					input:focus,
+					select:focus {
+					    outline: none;
+					}
+
+				</style>
 
 				</div>
 
