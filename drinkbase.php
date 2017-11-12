@@ -145,7 +145,7 @@
 
 									if($DrinkId3 == $DrinkId){
 										
-										$updateRate = "UPDATE Rating SET Rate='$NewRate' WHERE DrinkId=$DrinkId"; // Insert the values into the database. 
+										$updateRate = "UPDATE Rating SET Rate='$NewRate' WHERE DrinkId=$DrinkId AND username = $Current"; // Insert the values into the database. 
 										$stmt = $db->prepare($updateRate);
 										$stmt->bind_param('i',$NewRate);
 										$stmt->execute(); 
