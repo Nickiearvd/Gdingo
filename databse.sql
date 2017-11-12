@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 11, 2017 at 07:13 PM
+-- Generation Time: Nov 12, 2017 at 04:09 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.6
 
@@ -135,9 +135,14 @@ CREATE TABLE `Favo` (
 --
 
 INSERT INTO `Favo` (`DrinkId`, `username`) VALUES
-(4, 'Nickie'),
 (4, 'anna'),
-(3, 'Nickie');
+(3, 'anna'),
+(5, 'anna'),
+(2, 'Nickie'),
+(1, 'Nickie'),
+(9, 'Nickie'),
+(4, 'Nickie'),
+(7, 'Nickie');
 
 -- --------------------------------------------------------
 
@@ -216,6 +221,30 @@ INSERT INTO `members` (`memberID`, `username`, `password`, `email`, `active`, `r
 (1, 'anna', '$2y$10$RmPFNyg58PW6MLT.Byf3euOTSXmM32Zzr1DeS4.VpmUML9Eg5fJE.', 'darner.96@hotmail.com', '', NULL, 'No'),
 (2, 'Nickie', '$2y$10$fmX0RUCHsIvYB.V5MOlzN.OEM9rdw0EfLmGlxZ/CmE2ykSJPTyi/e', 'arvidssonnickie@gmail.com', '', NULL, 'No');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Rating`
+--
+
+CREATE TABLE `Rating` (
+  `RateId` int(11) NOT NULL,
+  `DrinkId` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `Rate` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Rating`
+--
+
+INSERT INTO `Rating` (`RateId`, `DrinkId`, `username`, `Rate`) VALUES
+(1, 11, 'Nickie', 3),
+(2, 3, 'Nickie', 4),
+(3, 8, 'Nickie', 4),
+(4, 4, 'anna', 4),
+(5, 3, 'anna', 4);
+
 --
 -- Indexes for dumped tables
 --
@@ -246,6 +275,12 @@ ALTER TABLE `members`
   ADD PRIMARY KEY (`memberID`);
 
 --
+-- Indexes for table `Rating`
+--
+ALTER TABLE `Rating`
+  ADD PRIMARY KEY (`RateId`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -253,7 +288,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `Drinks`
 --
 ALTER TABLE `Drinks`
-  MODIFY `DrinkId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `DrinkId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `Ingredients`
 --
@@ -264,6 +299,11 @@ ALTER TABLE `Ingredients`
 --
 ALTER TABLE `members`
   MODIFY `memberID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `Rating`
+--
+ALTER TABLE `Rating`
+  MODIFY `RateId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
