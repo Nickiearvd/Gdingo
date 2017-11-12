@@ -81,9 +81,7 @@
 				<div  class="delete">
 				<?php echo '<a href="delete.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knappdelete" src="Images/delete.png"></a>'; ?>
 				</div>
-				<div  class="edit">
-					<?php echo '<a href="update.php?DrinkId=' . urlencode($DrinkId) . '"><img class="knappdelete" src="Images/edit.png"></a>'; ?>
-				</div>
+				
 				<div  class="back">
 
 					<a href="#" onClick="history.go(-1);return true;"><img class="knapp" src="Images/left-arrow.png"></a>
@@ -291,18 +289,8 @@
 		.knappdelete{
 			width: 20px;
 		}
-		.edit {
-			background: #E61262;
-			width: 20px;
-			height: 20px;
-			border-radius: 50%;
-			padding:10px;
-			position:absolute;
-			margin:0;
-			top:120px;
-			right: 28px;
-		}
-		.delete:hover, .edit:hover{
+		
+		.delete:hover{
 			background-color: black;
 		}
 
@@ -359,7 +347,7 @@
 		}
 
 		.delete{
-			top: 190px;
+			top: 140px;
 			left:28px;
 		}
 			.maincontent{
