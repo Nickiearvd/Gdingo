@@ -213,7 +213,7 @@
 		}
 
 		.container{
-			padding-top:150px;
+			padding-top:200px;
 			margin: 0 auto;
 			text-align: center;
 			background-color: #fff;
